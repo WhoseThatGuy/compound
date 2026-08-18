@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Location | Compound Gym Dunedin</title>
+<meta name="description" content="Visit Compound Gym at Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue, Dunedin. WhatsApp +64 27 341 1609 or enquire online.">
+<link rel="canonical" href="https://www.compoundgym.nz/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact & Location | Compound Gym Dunedin">
+<meta property="og:description" content="Visit Compound Gym at Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue, Dunedin.">
+<meta property="og:image" content="https://www.compoundgym.nz/images/hero-bg.webp">
+<meta property="og:url" content="https://www.compoundgym.nz/contact.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 2,49 A 47,47 0 0 1 49,2 L 88,2 A 10,10 0 0 1 98,12 L 98,88 A 10,10 0 0 1 88,98 L 49,98 A 47,47 0 0 1 2,51 Z" fill="currentColor"/>
+        <rect x="46" y="0" width="8" height="100" fill="var(--navy)"/>
+        <rect x="0" y="46" width="100" height="8" fill="var(--navy)"/>
+      </svg>
+      Compound
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#about" data-page="about">About</a>
+      <a href="memberships.html" data-page="memberships">Memberships</a>
+      <a href="sauna.html" data-page="sauna">Sauna</a>
+      <a href="coaches.html" data-page="coaches">Coaches</a>
+      <a href="free-pass.html" data-page="free-pass">Free Pass</a>
+      <a href="athletes.html" data-page="athletes">Athletes</a>
+      <a href="contact.html" data-page="contact" aria-current="page">Contact</a>
+    </div>
+    <a href="free-pass.html#claim" class="nav-cta">Free 7-Day Pass</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+<!-- /NAV -->
+
+<section class="contact subpage-hero" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Get In Touch</p>
+      <h2 style="font-size:clamp(2rem, 4vw, 2.8rem); margin:0.8rem 0 1.6rem;">Come lift with us.</h2>
+      <div class="contact-info">
+        <div class="info-row">
+          <div class="info-mark">→</div>
+          <div>
+            <h3>Location</h3>
+            <p>Gate J, Level 2A, Forsyth Barr Stadium<br>130 Anzac Avenue, Dunedin</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-mark">→</div>
+          <div>
+            <h3>Hours</h3>
+            <p>24/7 key-tag access · Staffed Mon–Fri 6am–7pm</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-mark">→</div>
+          <div>
+            <h3>Talk to us directly</h3>
+            <p>WhatsApp: <a href="https://wa.me/6427341609">+64 27 341 1609</a><br>
+            Email: <a href="mailto:hello@compoundgym.nz">hello@compoundgym.nz</a></p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-mark">→</div>
+          <div>
+            <h3>Book a session directly</h3>
+            <a href="#" id="calendlyLink">Open our booking calendar →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <form id="contactForm">
+        <div class="form-row">
+          <div>
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" required>
+          </div>
+          <div>
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="lname" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        <div>
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option>Free 7-Day Pass</option>
+            <option>Off Peak Membership</option>
+            <option>Standard Membership</option>
+            <option>Youth (U23) Membership</option>
+            <option>First Responders Membership</option>
+            <option>Personal Training</option>
+            <option>Free Sauna Session</option>
+            <option>General enquiry</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us a bit about your training background or goals..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.4rem;">Send Message</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="index.html#about">About</a>
+      <a href="memberships.html">Memberships</a>
+      <a href="sauna.html">Sauna</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="free-pass.html">Free Pass</a>
+      <a href="athletes.html">Athletes</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-row">
+      <div style="display:flex; align-items:center; gap:0.6rem;">
+        <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:20px; height:20px;">
+          <path d="M 2,49 A 47,47 0 0 1 49,2 L 88,2 A 10,10 0 0 1 98,12 L 98,88 A 10,10 0 0 1 88,98 L 49,98 A 47,47 0 0 1 2,51 Z" fill="currentColor"/>
+          <rect x="46" y="0" width="8" height="100" fill="var(--navy)"/>
+          <rect x="0" y="46" width="100" height="8" fill="var(--navy)"/>
+        </svg>
+        Compound · Est. 2023 · Forsyth Barr Stadium, Dunedin
+      </div>
+      <div style="display:flex; gap:1.4rem;">
+        <a href="https://www.facebook.com/CompoundGymNz" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/compoundgymnz/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@compoundgymnz" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <div>© 2026 Compound Gym. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" href="free-pass.html#claim" id="floatCta">💪 <span>Free 7-Day Pass</span></a>
+<!-- /FOOTER -->
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
