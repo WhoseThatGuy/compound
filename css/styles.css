@@ -169,6 +169,33 @@
     margin-bottom:0.7rem;
   }
   .star-row svg{ width:20px; height:20px; fill:var(--olive); }
+
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:1.2rem;
+    margin-top:2.6rem;
+    text-align:left;
+  }
+  .review-card{
+    background:var(--navy-2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1.5rem 1.4rem;
+  }
+  .review-card p{
+    font-size:0.92rem;
+    color:var(--beige);
+    line-height:1.6;
+  }
+  .review-card p::before{ content:"\201C"; }
+  .review-card p::after{ content:"\201D"; }
+  .review-name{
+    margin-top:1rem;
+    font-size:0.8rem;
+    color:var(--olive);
+    font-weight:600;
+  }
   .logo-mark{
     width:26px;
     height:26px;
