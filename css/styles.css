@@ -196,6 +196,29 @@
     color:var(--olive);
     font-weight:600;
   }
+
+  /* ---------- COMMUNITY (home) ---------- */
+  .community-quote{
+    margin-top:2.6rem;
+    max-width:680px;
+    border-left:3px solid var(--olive);
+    padding-left:1.6rem;
+  }
+  .community-quote p{
+    font-family:'Reem Kufi', sans-serif;
+    text-transform:uppercase;
+    font-size:clamp(1.25rem, 2.6vw, 1.75rem);
+    line-height:1.2;
+    color:var(--beige);
+  }
+  .community-quote cite{
+    display:block;
+    margin-top:0.9rem;
+    font-style:normal;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--olive);
+  }
   .logo-mark{
     width:26px;
     height:26px;
