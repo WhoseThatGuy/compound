@@ -12,13 +12,7 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 
 // ---- CALENDLY -----------------------------------------------------
 const CALENDLY_URL = "https://calendly.com/compoundgymnz/key-pickup";
-const calendlyLink = document.getElementById('calendlyLink');
-if (calendlyLink) {
-  calendlyLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.open(CALENDLY_URL, "_blank");
-  });
-}
+const CALENDLY_TOUR_URL = "https://calendly.com/compoundgymnz/compound-tour";
 
 // ---- CONTACT / FREE-PASS FORMS -> FORMSPREE ------------------------
 // Free-pass claims go to the form with the onboarding auto-response;
@@ -30,19 +24,25 @@ const form = document.getElementById('contactForm');
 if (form) {
   const status = document.getElementById('formStatus');
 
-  // After a successful submit, the next step (key-tag setup) is offered
-  // immediately instead of leaving the prospect waiting on a reply.
-  function showSuccess(isFreePass) {
+  // After a successful submit, the next step (key-tag setup or tour) is
+  // offered immediately instead of leaving the prospect waiting on a reply.
+  function showSuccess(kind) {
     const panel = document.createElement('div');
     panel.className = 'form-success';
     panel.setAttribute('role', 'status');
-    if (isFreePass) {
+    if (kind === 'pass') {
       panel.innerHTML = `
         <h3>You're in.</h3>
         <p>Your free 7-day pass is claimed. Book your 5-minute key-tag setup and you could be training this week.</p>
         <a class="btn btn-primary" href="${CALENDLY_URL}" target="_blank" rel="noopener">Book Your Key-Tag Setup</a>
         <p class="success-note">Or just walk in during staffed hours — Mon–Fri 6am–7pm, Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue.</p>
         <p class="success-note">No card needed. No obligation after your 7 days.</p>`;
+    } else if (kind === 'tour') {
+      panel.innerHTML = `
+        <h3>Good call.</h3>
+        <p>Pick a time below and we'll show you around the floor — no workout required.</p>
+        <a class="btn btn-primary" href="${CALENDLY_TOUR_URL}" target="_blank" rel="noopener">Book Your Gym Tour</a>
+        <p class="success-note">Or just drop in during staffed hours — Mon–Fri 6am–7pm, Gate J, Level 2A, Forsyth Barr Stadium.</p>`;
     } else {
       panel.innerHTML = `
         <h3>Got it.</h3>
@@ -61,9 +61,10 @@ if (form) {
     data.page = window.location.pathname;
 
     // The free-pass page form has no interest dropdown; on the contact page
-    // only "Free 7-Day Pass" enquiries get the pass onboarding panel.
+    // the selected interest decides which onboarding panel appears.
     const interestSel = form.querySelector('#interest');
     const isFreePass = !interestSel || interestSel.value === 'Free 7-Day Pass';
+    const kind = isFreePass ? 'pass' : (interestSel.value === 'Gym Tour' ? 'tour' : 'general');
 
     try {
       const res = await fetch(isFreePass ? FORMSPREE_FREEPASS : FORMSPREE_CONTACT, {
@@ -76,7 +77,7 @@ if (form) {
       });
 
       if (res.ok) {
-        showSuccess(isFreePass);
+        showSuccess(kind);
       } else {
         status.textContent = "Something went wrong sending that. Please call or email us directly.";
       }
