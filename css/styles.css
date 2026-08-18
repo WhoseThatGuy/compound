@@ -757,7 +757,7 @@
       overflow:hidden;
       transition:max-height 0.3s ease;
     }
-    .nav-links.open{ max-height:320px; }
+    .nav-links.open{ max-height:80vh; overflow-y:auto; }
     .nav-links a{ padding:1rem clamp(1.25rem, 4vw, 3rem); width:100%; }
     .nav-links a::after{ display:none; }
     .nav-toggle{
@@ -765,7 +765,7 @@
       background:none; border:none; color:var(--beige);
       font-size:1.5rem; cursor:pointer;
     }
-    .nav-cta{ display:none; }
+    .nav-cta{ padding:0.5rem 0.9rem; font-size:0.72rem; margin-left:auto; margin-right:0.9rem; }
     .hero-grid{ grid-template-columns:1fr; }
     .hero-plates{ display:none; }
     .hero-stats{ gap:1.6rem; flex-wrap:wrap; }
@@ -779,10 +779,14 @@
     .process-arrow{ display:none; }
     .pricing-grid, .trainers-grid{ grid-template-columns:1fr; }
     .form-row{ grid-template-columns:1fr; }
-    .float-cta span{ display:none; }
+    .float-cta{ padding:0.8rem 1.1rem; font-size:0.78rem; bottom:1rem; right:1rem; }
     .hero-photo-bg::after{
       background:
         linear-gradient(180deg, rgba(28,27,25,0.55) 0%, rgba(28,27,25,0.88) 55%, var(--navy) 100%),
         linear-gradient(0deg, var(--navy) 0%, transparent 12%);
     }
+  }
+
+  @media (max-width: 520px){
+    .nav-cta-long{ display:none; }
   }
