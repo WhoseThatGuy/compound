@@ -658,7 +658,8 @@
   .trainer-photo:not(:has(img))::after{ display:none; }
   .trainer-body{ padding:1.4rem 1.5rem 1.7rem; }
   .trainer-body h3{ font-family:'Montserrat'; text-transform:none; font-weight:700; font-size:1.15rem; margin-bottom:0.3rem; }
-  .trainer-role{ color:var(--olive); font-size:0.82rem; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:0.8rem; }
+  .trainer-role{ color:var(--olive); font-size:0.82rem; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:0.6rem; }
+  .trainer-line{ color:var(--dusky); font-size:0.88rem; line-height:1.5; }
   .trainer-tags{ display:flex; flex-wrap:wrap; gap:0.5rem; }
   .tag{
     font-family:'Montserrat', sans-serif;
