@@ -1,0 +1,811 @@
+<title>Compound Trial Audit</title>
+<style>
+  @font-face{
+    font-family:'Reem Kufi Local';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url(data:font/woff2;base64,d09GMgABAAAAAC4AAA4AAAAAaRgAAC2lAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGm4bvHYchFgGYD9TVEFUKgCEegrwONc1C4NaAAE2AiQDhzAEIAWEKAeGexvBWRXjmKWA8wBKCnw/plEEG4cAkmGf5P8vyc0h6gKw/kIWynYnK8EudktwEyMWYZlBkIfv3ri93y2sOlgteawKOfs5fFAVtjzYrabpVtBMVmu2H3uxkITjlwxz6ghJZu15fs5+zn0Ww0PrNKildcyCp6aIp6RFvKphoeq6UKMu+xUZnt/m/9HF2wwUBBSUVkDKC4LQCi0gIGHPJsSZc05dtG7KwlW6yta317qK71vrX7yB0S/eJdl77fUX4cEpjMAyDMJrBLbH8//s7/mfa537HPEVv5PsBDU4EemHxEQnKr3Rf2jef73TfCvHuel7djGIhuSAudpd2WpHYedGZZB/pZYDTAdMX39t+AfAtVze0C0hsBu4K6knORH9VX72MzGL329hIXojFCiNSCqUYJJ/fhm3qHFRvT2xwaRxNKf1VWJCqnGSAv6HgC797cq0NJ3G3PIXAClh3uLkQW9TeRcppJQEu7P7O9jt3cceQLMAiHOgAe5Y9QCOBn+gAR4yC/BexkLGe+A9KEdnXChnMkVMZWxobMQPj2mmyPjKFaSBCJ6/Uh7AAH5cjNvm5Xy5cQ+q5aDFFSnycWPVqljE+ss3zQ9k6JWTUBkRpOnftXs/lvlvIEcvczw/ZZFMcIJTZIlFVm3vPPfff8FAGHMAAAQKJiHRiE42ksuA5KtATjuNnHUOua8Bh3AABwDtAFgKRu57DiDMCw2I6L6HHqvzxDMEUAjkw53w0+wEDtfWl5QC9c0lDdXAwVAAWl4hzOCMspK76U99NXD6FEdBh1sqb3mgBrAoqPMY7owSQFz37t18XWeX6cyJLAVRYGi1hbYBrXwIuzkNM4BenEjBRHhYqIiwguzqG8j69kMOtQ+yryyCtCh/gzR3GsS40AgyrrWQFWhcqbNX/TTyvF7fhNy1B1h15ga68BkVEakaC6kYKw8gMrRSiAOgpQaV8mXSmla/0fOgvHh5c87CYPh7RTXZUgaNsfjhFzPEwjiRA/u7T/X3ssf91a/d7XoXO93R9rezzXW1okXNbVbTmlBjtfkrr7Cc7JnTlZYkfpzokYsLXWQhjGc8NTvoB9/63D7/sNvbXvW8Jz3sXq+63Y2ucZkLDNjqFFtssFqfpRaYpa0QataoRoUiebKkShQrUhjJiKHRlw5lM/khKFdjNxaBDhKzzctaV4u2RgTQAQFl1D+dce+4NB4O2W4ge405nqiXOZNyzhF3CebVErRC4FcXtCOhdlQDdgpY9wLM3TN0D6teaGip20uVYJdiSuqzNfUCrLPnGTUcrYmYFlQqgfxofeRnZ+bj0AQJh20nGfS60yNw+IT2xM2A/UOIxLQ/nFY0hsbQWBrD8upjy/YvjouvNVIMFuxPLECw4J3MVq1Lgce42IVWBZxTsQcMM9L91BLjgbbgNnfcKeaN2n5cIuC3zOU9A803LgZcjLbqlZSN5DhWD3xLymcWsiVkS8jFsC10IV2OPQHtAqFD6BBaTofQYJwGAX24ayPDLhCLZndJ7aASfekrryEwHAEVoMSMkivdMAPoxYkUrMdOWzxEic07W0SAFsoOLUT8kXzUlxMco7O/S6W32Ksa4LkopnXlIdqiJKGmv2DpZ5GzKiRe5K4AkcV8bwiVErcz2thpUuQ1bocHnsIzPfHfXhNGzvN8rxegwMPZb9rwoKzDU/1P34JLggFGaeAw+SUNbiwPc++DIMAOPncGgA0ATAlEnACD9gA+wdFd1E63YTXQpThZwb+AutNArNexlaA90kLzv4x+o5tp5+2OBKCCFtAqdAa050Hz6H60BBpPW+hOuo1up/VUF4gL2RLOQjqO9qRDaDWrfQx6OAG9XZYwrJYRMdEwrdMomklzaMm3W4qB+Y0ACqRqGp9kZKi+stsYCpDMNVmqIfqZy0MQyTjjTTbVHCYXKIwbNn5gwtRMHDZppqZ6OGqejotnhpwnk0qYqZQ+IFPKMrw+4IgDcHUTM25gfMCdUsDu0uA2jrhgUGEtgAfuobqxEQkAQAsBoPuaRpXqbDM4aQrUuirjwyMIKkYCQBcnQdUUnvqWE5yS15qkNeGhqZ/na5kqjyOgMxdVA2BGxkOJwLUnDs/5MBvZ29AbQhK2u8Zp/xablvUMhYihWoB6onHg5qdnnRuyJe//AyoWMUDpkCeslUGo0nkqFhPlykSt7w9H0fp66uAifXVdub2tvb3XP7+bLGBiTCHzfZbOs2KJVaus0RDNLvR62O+7gwENRzwhAZRIpGhEJwFJkoQMNZxkhHQkUxaSKxfJk0diYGDOyEhSpIigWDGFEiUslConMKmmVKsWGTHLBJMSraUg8MJQlyuqVuP1uhMAHZMM547huWGxAqva4RRGyEQRo0StKa84RvLfF+C/lvwWcz5Rp/+8PPfP2TPtNJys6+DVcpUHGgxdOj35YVzzPq1wzv47WfV1P1/DqdH+CRObJjfPrpnzfPNGPeY9xF8w7jsoFWQUlMNAlXkocacMySjiJZzQArBe40gCEUghDHKiprsONlQWIiQlWabPm/B8h3QdoYfpWWUCBkZUW5PNHTmFVGmUNLR0DNIZmZhZFCpSrESpcm6+XZCv8Hg9MWemkZKhoAhQzEqVKW/akNLfZvQ04xQNFM+JBlobINje5SPJlxncJcfJG4FIIiMvyilSseXAkRNnLty485r2mZWACTGEh+eMk9GObCAIgoUIFSZSlGg6seLES5BkhBSp0qTLlCW3lM6JRuN+MoR8QjoM0wMkbETIfoeA8VgWzNoQ24JmbUU531RsOXDkxJkLN+68+oARROOiCSmejAoU05BqtScW6cdzpv5/feeEaJrRer14vjFdJ6Pb1PZVoddMTWDeFnGGJxBJZDt5Vp2+HdIUZTWrjUi3hAOeQCSRpQA0yfD9rscU9RpmTjmgAlsOHDlx5sKNO6/0XWy7jfQFbZDbskHNbDlw5MSZCzfuvCIvM1BSThRSpVHS0NIxSGdkYmZRqEixEqXKufnG9dNUPFOlPsugPGICAAAwy866rczjee0JwKKuVhueQCSRRf5lB86ApZII0I8HAgwDxtOJj2/28BHbdcTPutLakhReQYGtJWd4ApFElvLqrtcwcd/5pWssKCmH2Obp4NPLet9pIvquI6F2iZEw+O03MhUPCNp08HP9+btFn4jX99eHV87L/tH9keUuhvv+fTBcifO9/vRwz7ob+aviO+sm3oh7qDT7re+tlM/n4tILh3FirvY9Xcv3dmbqAtTaphtUq2+/Kst2ueDMvxZ6VUjQVIMWe4r2E/c6CLl4tyoJqTThIkROOVOTJOtj8NT68UfIkMcgfwIqr2BCusmfcg6kAAIBBAEIBhACIBQQBogERAGiATpALCAOEA9IACQBhgKGAYYDRgBSAKmANEA6IBOQBcgF5AEMACOgaLJJcyIAiVCBSm7tInzMJM9dkpbzASrANHOXMFc0ItTnYWK4zSdXznB2eLB7bmfA98oEqAbUAgQRTglmQRYMRCK5H7fowkmft+3CXtGkBIDhbsk9wo3RfZ44Mn3OZ2K7YkYOD4L/Bp5BM0L07hZc2TXPmud9J4bP+nBvUhRFcdnAy96KlMDss8sBMOY4Pl6WZo/AaXyxVG5GOSsqA1twAEdwAmdwATdwBy8nIOQcEyETwhTmN8QDeUtDlrWKRn9GDAVeiJyku7+m5XUWdZzMRRylAG6YhZ3K2QbLQBTS1zKJKJh31bxDNoAgokUYSiKE2a2ZinxcPjRWUNy+Iq8co0X/yfOCfOtoP9pvPWoa4rG/tETgH690OkY/3j7IP12ZN/cCpTNoN9X/PDrB6Q0/q6a9b/7631W1wOvfJVgDXG6uKRsNNBLbIVACKoKC0/BdL2UM2h2B/zluH2unAun6afMToLPFS7BWQhDeTJwVJmDMiaYbcuPMsHBeS8caj9zBqU5iKxYGgIyZI1zkBYbn7AQpDJAvGII6ABnZvTUatk2mgxAcODljo+4IUTIN5lgbv30ieeCRv9V76rkGwgXBgiQXsJZ8FAG2lOkF2OdYc+qG3zUwXwAsHUXMgYqM3sD+6JaCOQkDjmANHhyAnIE2cJCsm/wuwykjenw1nUQA9lg5APHq+6ar0GY4TnucCDmAOJda2BnpOrCGZmfUUPPXCyDc6XxAPwOA3qoPQGMoik4WUCvnrkOGlv/1NQQNA8AQALSJnQAAWEimGkh7NrTZ2IXsylZLIjZJi5yro5Nd7o/+WhDHc3LO8QeSiCXiiWQilSghaohD9g5kBBn18wU0IBJdi3PsMcAtnGyzKGIMMe7BiW9s8QC0GIHmvZP03zcAAGj6sMEEQMMdDZUNTQ3KBvSLpdsObtuDdAGg9zfQCwAAAHrK+S4AAAlLPVzaZJ79ljvrnkMOWG+DZS6ptorJCn+pccM11y1wEPvq2dhlo8VVSNgfF+P7s70ltlhpizvWeXPiMhEt1f8nlYtDDDVMc9ly9wnj/j+LChudtMktZL7TzjvjglOOeOWoSrvdttoxH51w02xzvHXXYYt8MkuVPWaYbqaFRByejEAip2IjEhxCrBgYWDD2qCji0SW4yhUfF08yMaZKIWTklIKlCRclQaw48Qboo69+YgyXLkWqTGmuylBolNEKlMlRzp17+Jv39ed0p1222m6HbQDgCwD0B8C/APPPgM0TAPcdYC8BAAzA5lQyHPLcck/R8/JNBtpw5wbtDNxynRxG3l6vA+xRcZrFqATMgPMt9k+eEJDD9Aakw2qDRcuCW4x3OCcfIzQoGhyae9a8iZ3DKY5gA0aZn3n3c276uZ0QBZtUo65HL2GYC3RLAALQAevKFCHKPILyuEFrwJoIiYwCG/cQ6mLSuRLoIeemdJCIfB1qDw+i6Yz2QQK8gm8ihZQRP5fochMnBfPTiUr4pNEYnsuo8fSsdqI4zaY1HPl8BlFUCpmwQ3bU1IcCAKMmXqt1Wde1QPjoihfMJIUFHViDXSgXSBiEQlhAUX/0UpCXCYkwj9Ll3MUDis8+p6o3P++ThTZT4ExGu//0e0b/qO7VrTzaPthXm3hPMVTSd4E2RtUXq0RTIxhVORtY8AgF+Fbdq9AdclIWHUCAkKHgCtxPq9KhnU+uERYlcZooWaMOvNBWF6zVMnJIIbkHRjumCNVldSaDaPjW6yVv6kUFP62qqi02ZUdPc2Xbo/QzZN5vY9A10c1NitdlUAyWWhVXZZeVMzfpaYU6lZVjeD2oL8t6wUNuOrbTrPZycQ3DUvn4izUheJ/7woq6L9FNfvt9nkj+Glsu3t0fvxLffoYdMnsc3pPqnnnjU0gjmBE9f2fQvI+NyFqw99zRVk0zIydUTeu3LoG67WSzlL5/Nz4l8FRwsR9sG2kUgVH3UMZDGDZPPDm1A8t/vGL6LSdKH5THRS7Pjgk3fDMn3vW4RMkawwsY8zKOuhXf6HAXmYsUK03VLjI+FAZ994NNhnw6197KVFl6DD0Rrum9p5VWxGR5ZRlIiqZPTyfrIkv32M4IYwTWO3krE7zAn3Vtc2aCSbmkIEu2n3PXpDNmsoYB7WoMLPl6UWmBdTRf7TGS/hZYiJw2lREMgWTRQPJdkjjbRx0AoZa78CIh8xoCtKc5svU3/XwOiu1XQSrgPFLYYNN7wxY9bt1obQKG+9K+UEX3htSaIVp8Xo8cM5H5ILgo1psDIQ+8CItxRtKsvfd/7qC8nUB1gqdtMe2H4bhRJEqLO14kFzKq6IzIvdwDIEBl9gF3CmR///aEseQm5qm4zGcNwyA6WEHzSEkZvagkW0FXgxBHAUA/CLkYTLP6XPdYPYRCFaX8R4rFMyZc9Xzpca5jjM/2dk5iaMalgpo3oOyQGHDuE/lOjhsReNe/LBORMhRPmJWZ1S/HU06CdHF8PtT3OMKeynmkNA42i40LyfS+tC1KZSNjOk8Zlax6BbqvzmUWyv6kl7EonvHdUKM4rczx9TyhDk3nT8/+eDmxd/hOrj6ulKLdJMjqG8XVNj1ZjsJhWdSJClGOiowMAgLU4/xyYee4SKnnyQmfMkYKivghKK6gkNBJi/A8SVpYCxNfKZdGJKkcx19ERclNqhRhCun2klWyVuB59AUhr8jd+9nxcZlKk9lUgt+eA4s3+l1tcb4R0RQKxlDcjz/tS1zHGAVaibPuF17PjTTghccVTrQaawgsOaj2XCuIV7tZEJia6N3PbrdvxXtUru/JGl/e+17jEuQaZJKZpBAgfC6oCcR4MVog+zc6rq1ajS4vIBR8Plo3OI4+PcQfSQesVJ913j4OneoKFn/c/ACNNR4m669z1z+g8DskCnT3w81m26Q7GU6pr6caA92KeMIIfgNPkHZgmUf7ReipFWM35G7aZ+rE/G0lmnXyI0rrxPeAGbqW96tLDeNBxiBZQbKKgCTwsN7x7kU/tVaSbg8Jstq/se30DgkWvKqodU+h+rw/0qpHdvD+bYfk+GB5cgwW4yRZppv9mm6quUm1BswDe2eCkqfZz01dOLlR2h5Y/lYIWTSQNk7OFg4GwbdHGEoSjerDnvqYpwJ93BiASmFHmgoRWKj/1MMdTeV10r1HeOUb1lp7W3GSMclkuX1/ovWqZ1yDkFLLJtbghEYxtRrFM7IoONxGPZ9c9cyL15H6hDpYCZpNkEatJJPU7dYdk7CKSlIjEzMhttt4SaXGQ6IKK4RVo5NmPvpT8ekTaTz+5/ikXugEqH92jb0Fb0q/Dz/DMLWJL08O4FzMBg7YKE93+UIx7WsTgCUNxVXzwwAW3U0EaBcnJhiLKmeQ9YaTXVo9eTUb586j9VgcTazBIx8nielBZOTkx8cBLPl0PtjeWItDc5e4aBBgjMWKkZH7R5XB+yBdbVEvGmKQZMh6OCej7t2Hd08yiD7n+lgUne5nIMxb/zTq3Hlw54RyRI4rQ3LqRYIUzdwfUulUow2ykHkVajjF8yBtWz9zed3MJXXdS1WkPp6c0eq+C6Axp9Jiqy1uvH381MFE2BkXyRew8u4cWPNb9vVgVlGj5HV+gToyjG15uj5eLeYWP+V1pPKxJeURdhFpQr+x5R3HFOssPeoshOC02gi+V8/rzoXsiqwbCyLv4VOqehvUMylffFTY1/O769u5eZpEIz7hm6mS6vjj+b3m4Kd9sPMKlOTX49UGQ0hE4k63UJsV1s8ExKfNd62l934TDIYzyormd550PsX62U3jKMygKgqnrENRKlhRUAtoRNWbtK56HCzpGtrNBB/ZSixkUCwaUxDedZ1iUC54CvJoYQOzTz+k1nwkvB/sNRe1PQqPBIZ3FpUUPDyY2qWhbfjk+IA4VnzmcdcmFymbFWPWSfQhT7qt0MdfXqQiUNp58/gStcbxW6GAReX5RtIkk1Ow62F95tHI2oVkR85IecgORCnJCNE/MhgW9s/BPi/Q7wfVgaCgSw8sBUmnkPoI6Vd0RxQEE+zLl1Kw4rKIyuEsYtAHtBNiDwU1GO1jMraQh+T0wW50mv7bmkLtcEv3XlwR2bgeJV8GvBGuoGsp0FYfFgXrRM5F31UGbeqY3dUr38cjtuObL1pUF8hdZudXq+1NbYZTP9rTRi/7D8ZfjpJ7R5sPNwzWtJrHgFhBR/cbMfFLXck2GuMDLcvRVFFGxCrnEs/JSmYyHbJIC021fGyz+ILJdCPue7qQpC6sfSRenbL5jKq8YMmfO/erGtva8CXzwf3dqGfff7J2h9wySK7c9X+a443X3r+8Zjl41rsqELr2ceDxakxgO4yPnQNkoVv7entuvBiDBCm9Y9oKCjSqvHqWEZ2RH+BmFihlDLuBl4/mfu57yWJOJ1ETmJZ1BUxISWUSoQDB0QVaZcfSSKMwU7KCZkkK3dzpJievw3edLrQZ62gpolnT7HS5MRTLJT61XuAvk6qljgQnKOr7q2alsrCK2aa1S6a5C2ZCpuqOLGMVT1ZmNHDyNFw9AtMICnu/BNyrZQHZ2jGBocGN7WZAugUegJM6wYH0WxMM0SYYedye/MK1Xrdska90VpJJPxbfymnFHPgrxlrNF1VYtfKyaoGeIMLkTg4gwLXevk5mOrOzrzMxPREU9l4uIgCtKDa1tRpygueoh7hMeaoF4H0dP/9f2MmkdGjx0cfiZPTCvoX4K86ZF3gDiv4LWqb+e6kg+L/OIyOMgyXBP0/baPaB9x1rA1uCzy38IZI+/2DXF/wHbrVZ3ObxtUktGbY1n0/SZrZszedpE2dYXI8nP2GLM5Qyv1ehTC1XiP1KtdTvVqSlQfHfcgDE25B3LN9ecLyxjabrk8yxmKRMSi/ZCUG0ptQ0OwXCjo1vvZHkvMRC/ls8zBcX/7c21UZMO6bL1vEcyHtnd7bWsbF5kvRSlsH3qrNvoIJ0eNomWGim6xrV9w/I9+ZXy3jVZnZ0Xkp6EctQVbfkryUNBRVU/FQcBjGEXfgP8Mx5Ond9Yy88kGV6hRIiO+9kUqDtSfIBee+oyTJVtZmNzZWll7GMvtddOZQ1lIcK29xx+nMPxW47Fg1esJdk4ahJLip2VhqBtccKJTt1InFRjcSeOi1hWWptfgmFhrVQiOgL4dfj9KQ+qkGQJhrlTVEH51YnngSs3neBA85O507QF0FZq6ElsrW0eZS78x5kWie06Rz2Vp3vm/mgE9zq/RXuiDwPdqKGBN9vKCD8sX3VrYpZTtXlB5cN3+cfPL2w9fiq2K+A3Hust/fEy2Er1Z2LR669tzR87/fZAPcU9vXAqYnrj085EPX1WSdgA5QoV1dnHGcK/YOMAgNy1Pk+ZMVMGPouYvn0sskdAfCT5KWQ2G01SitLJEKlipFruzPtUKBoV3BKdSuoo0LvKs9souM5PRTKgBXcC8lxZMgZBdlELsuJLEBZT4mJREc0egA7P/kclV/+sIgp+188CREIpa/o1mYHl6boUvLIQo0AWRdvq5aKK7QqdUWdQlfYNBrucVTiTZ/tN5tbE5Mmp8iVCih6j1nupdiigSdUaIw/tcsVQHXsYC924YTiUQKRx2hUVHrFeWMJ1gFK5rOFkNhzpzJyCjhOvZwVyzBVp8g86elKj18glWYRXqlz/xhOwv04QCb2WOKjR/8J/q+UF4lSKo1GqdcrUDHMmBWsHR2ogGtXrIM6YiyjNrLyTA+DYPkc6hUVGar0CxUVRrWoolgmS9IzIG1MJi3DGTdeUpKTc8abf7i8zjCbttScTChLyyyGBHVcsYbPp/Vw8T8P7UI+/PMLH7WNVbC9pgA+NPQ/d/VS4wTjsqzS0YVxmsgFkvJVW8Pw2axFMybMkILEP6W22HGZmUXll3k8I49bbHjv4Gmk5TKpT61N9bvlYrGdqDf/O/VQmr60UXT6JGWghszsIlb2fmamqz8DA2r2UeBz8OQKu2GkPhAVdp7MFeXp9gP9wcChACi/b8vqieDsChyyCD3AgAqgqumX6Bsm/SYrCp/xyzmnEQydMrjoA+DywRAzamUGJBTombvSjlq4TKXZMNLQAQv7c47cjzbQDgRgYU7nSLfReuqhwCGXF5WB9q2O7+yEXrWiok5mNFXJJBVqtcRfJc8w1ApTKwIG8uGfdv36zcawrctuq2SLbywfct1JyA2lGePaRbSOzqYo5644R4LwLjh+v8ko91YKSqrIc6iUhOcWYvJH98wEBQtRHaad9cpeBHZsknMThoZDgPHPSlHhXVljSvV7xDJR+nD9gp0dtLjFWbhhVYyeM5WRtYx79X/KwKWDYeNIVGVKGg4+vGOYlpmgp+7oOAR6RqQUJLwXr333obEEBHzDqsb9fAOTRFaZWXKhCRXDz+Q8hbq6YcFvv3n/beHS6To7E/gepCryPNB8TWEClEan4XSIZ6Lc3Ep/WQ50fKXA8acnnH4mSXFz3XDQhL2OxmeQeGStekNAr6xXgtqGwGl/ld8YMGqqNKAbKbUaMPpAVNwCAuFajIGzP3Bocog1JieTByJkwsnNi9iu4CmMVQMnweSDRX2djsezLt7uIE0mXb49q+LDl77HSkC4u729Y+e/Fy9usx3cqaWXdHTsfAX898itkzCt8Ds9h1dvrAUdqngHS1YBQz2PQr0vWjWy/sSgQQ8Wb+cbDFaIpG0kJmTfZvvKyf4UW5DWNcyJcNTJ7TOi0Jfw+JcgRsOma9JpEFdPo2rYLKpOT+Pp8zIr9dgnaMwFbOwFDPoJEAPzJL1pcf0Uw4KJciswg4kG06Ix48yLJqrN7bwGdL5IiHbV87hjUNlCISq3AXCXXFm6IFQAUv6pa8gbzXdDuGWXCIRNdgQxDZFju0VXIg0xQllZQ6pT65aLysUyqCrDd1mJ+BIAV5YsJlgYejRRC59DtioMKk+lIJVbSX+fPu7xAzJpHcQawsI/fUJp+GP+vQAYWRO0OSxojbXa2rmgc/hts6fH6QPvJWkNs984BqWKI1BkLKgFItQ6ghpMgduV4fc6w3XF8mS3TCWt8MgB7hfDGLV6epGUVW0p92avL/ZZ8e7iJC8rebdTa4ZyBaKiNKPOUyNQT2VO4yatZsRdXI+MiVn+B3ix5Mui9Tdj+ygBAHvET9BXV2X1sdk8rYvK52dR+UoGL2jcJGuCLlmidNcq0tNrFaluyaJhuL1/xeG+n8Xhdt/auze0j5CCQoYjED+Qtj8q6j9krO82lCMQF6fadDU1YkV6fZq6Vm8XTSv0jnFuLPZZic1OdQE7ebdDi2xmLCZHY1ffxDFbBfyFAHdsybFpS46Bg+rZwJAvr51G1vDeV1vy4d0JOZub0A9rNsBBzBLbryKAVS3Pp77TgWyzkpNkMaQakxeiR/U0yDLT00KC2pPnxaK/doH1Qzjnf/oONxExqEFiVoKBaVSVxokXOsqDPTdysX9yY3HLGhgMmtZABy0Hfd2Z2bGXSYRrsZhrBNJlcCLbyfQ6a/lULx9kxVUtMU9kAKYZZTXjM/FN2MYIFnus8zC4hZxJt74+QPk+MWWisjv+VyLhFYVyLBMPP/ieH6w5FwW8GFUNb+t8OnpUXwTOP7u1XpD50GtPkIjzqAKbSohTn84CL1FUlPb+1bvQugTcGHV1cghVeI/2mV5tfkJnKvG0z7jgD9f30cQ2MphGDodpMrLYHHNZpt5lGeNuYPLAy76XnZp1A3fPJ+Dxy/nk+YOvBk3OqKFRg+//U8MLir9kg48GKydp8N4gnMFtAD+vICSrQGEOzTJP1k6Ik22WuwhQpEsxnuOShDiMk4wPUYlcEmpNBtOalVgjIYJVXrWsV5XkJkakRSrCqgiwvV93ds5ksye93RdMN0lzLwgB6WTLSeDGJTcng3IcaAYgq2lZ8zLwYfNqczu01+OB9vluq+r5YpXlVnu75ebmgY1b3j6vRJ1xs72AskzeVFkv2GnqQF8hpnYgnoSqnM0ppXruXd3SNwnXxJ5diUposcaV3F8PbcIjubENXRASvwbqvFCPs7aALPzMLtvZpTT34yPLfj4qZ1YU6mqInUNYa+Hg62m5c3OnvgbopdoXLXupj3XEmkr9w91J80E+x3CC8pFqL4D9BuY1H1eZwURwpPAIeCC2VzZhyM2GlxLQXw6wJpaHnHHUY3/DgsZFNP4I/mMKLDX9d6bpB7jxyL40qbFUs8ynpgVcU9s8p2QTZx4qLdjsUVLrdTmlPDlTlUjUV018etpMShTmcHh5SnNqU53OzFLD9v03PX6E+Hc45ieBS3SpDdP13sol4uICQQWqhJzJq8vW1ZNSxTVkmNBS60msiArS04k2mL/GRU/YHEbhzAE3YEJJIlAfWH23gECnW5x8pb5SPGgoftQWS34YA+v7Gp9eT7Q+wBH6c4lc+l8F5vXV+lxtjVjpVvFYDpN8VDz4c8Z4oU8Obu7mmFhMEyeJaTSxOJQfE2YwZkwEk9vLeZnxkDZZJi51S9Wi8XizftwnPY6U8ICIfhN8+YUS08SgiQUaW2z9hgUDrZfIFLRO4iTLlaA8sVThr9tyllOIRoWqHz4c8ISwRLpC3Xj4j/1QKQw5dMESbcmem6DsUHtOUldmjjA5P0XOHZUvSEMLg/uF/nfiCYqKQLLFox8Mq8y3BcSVXlm73SHr8F5AZAOIYh0Ou6z9BIitNRlNWl2LxaprbtJlmFt0cK0WdG3RAuwz3Vilts6QbgqldfqGXk43kIYqI8/KZluT+aQQ8kSIn3zjpLP80A4qrpVByzDlz4xYHTpyciRcYKXRRmXh88FZ/1dLTWbNl3YHrH1xWMdiWPay4LO25AN5B5IBSkr8WEgiKp4Qic8URFLh58YQeBsc3oSAj7tXgexrk45MAjyXdk/qt0876P+/U+G84V+sd190Yfu4zmNo9Ob5rh2uzzI9v0sLZtx2l4uBPrrOF9wn3SObj0srRljkxL8J9xCR8C0PvFDvn9Tm3DBh1o66r9W+GXM/zaybGTajbsbSrd9tuJHeWhcoCyjnQFKbP0lvHC3e4NOv+IfDfc0LReJ2h8suoe1I0kSQKdUZ9BsDbKR3DRnsksysmzliRt2M6k+w7QdOsdcfhw5EbRd0gjvrJ09oam5qmdziLkOQGVnTUgPwNL5Ls1y4HO6N4uVoqkdTliQjGhHHncuT3Xx75uhqcGTnC8/rYmIvY/We9QM1zTXAvXJoy1CzFYB19l6ffIylJ3+eAOrzxPPf1npOjkNsfsnJNjFKS67Ph2GeMFwWrLM7CQ+U4ZdgkdeoCNd0rGMe4Bpq+jtL/wHwlwVmV/ORliOgGyk1mTFt8MSAcJ7JwrJSPXAhYVjKJblSUkhOXyIU6rhkZ++SXegy6lTih+ipx4lJr+XV/nqVg/yJYtmdZ+tnBT3pAop75L84WzPCkNcTdDq0lknDjA//sy4savQvOj9K8wIgH1Au+jneUB6aDYedjwy3GnFD9xOIeSOQtGQyEI7G1MZEF2OwNdExk0HUHuk0KeDiiFdjMVeJxCuY2CtXCE90A4wywi9xcS8IhOfcdTjA1ayUt7oAombhdoFltILgDxnpGItj0tEjQSePALQAesFNGoAa/09q/t/AitIiENoolGa7XjWAy/xZ0nLQtrI/Cq5EhApIkb8+QCg1pUWeaXYtWKucX2hmL6KejW4dYLUEAbY7wQDJ24RRwPut3qmOfqtXqmLe6o2pSd3ivbpYakX1V7oBVag19skjoOHRl5rqRPhjIeQqRbC5SZYiWEVEUgSbHKYd7Ro2aCA6PPOB6PC0B6LD06XErdVbAnDIDEbyxBm2eudpErd65Uo4W71xL6Rive0UcCAiZPAZgMJ2DEBhSwagsHWOSCDb1ZaKvBvUBh0SEyEuAm/QF3/wV2Kf+L3FobqLUSPYp6PgGOhzm9lWcRG+y+UjvToh9OYCmrno9U5fFr3dikXvvnzlr17nEnrzuZ1ji+zyBbSA1R2qcApZ4XrutBDeGXr41TG68J0D0bq91AA1BFvThQOAU0VHtmsGDfBqXQffKRB6c4kz1oktAzqWvToYMLvcVXs+fX0tzZtmcrJjoyU20zEozs1fX4N+b0yAumran+FWAQPZlW96BK7AnocE1ZOudpnjM7QT7NbsHrAYVswTveKKNZd1CgCGK0AApMz7CPL44jMn8jrYtMe1cWuzC/hFNfMmf7d/HEdMrLBebDotvN0F2IObSgXwOr04cT4AVMBe245KeikdkPZIb6ueox1126qCOvZjfaTkrt9SkLqltbDSA91UkZ8PmS6Xn6dMZ8nPPoQfVcP9stNo04NG3hwhXZcWS52Rq+jv28YtlbqlteUrsQD2BR3eZa7hmwHSoXbjbdJ+mLqZOmc8lwtl00A6lBgL/aMAz7qUEID2rPYZIHta60IcPiwvRn62Mh6UoR6T5ytEl2cbWTkVojhwVTrUbrwtMLXHxF5HN/8Fmw7SW4l74PCKMTeMFUC/HNrOfdUdRwtwF297sVBnZfwE07n/RbrZ6lfIIKdsj+Hb+utR4GPRCIW9Qt2k6ETWg9XssqN/0eZXZ+VF21Ls/CP4vOLfrQ1W593CA7JRCoI1mHdWYjfkxjLTcUveTv+mGbPh8BzL+elzyk2v1gbLQ651CwRgcOevo7uLImT/xRDuAwDu3fRiDgBvbv+2cQb/13I/VWaIiAEAgl9ZH+J3KxAbd2w8fX19ySd4pgF7F1W90uUyQmeQ0mNo68FlCFL2Xt0VpECO+bVGEveLFYLPBzzL95mP0DOIT0VwOSi5nrwTrZOnFn8g7YQ1mFCciLa7+6+2Hk2NePcTNvmAPjTLzz20h7a9j8Uz5F0PLvKSuYvWoksvLipUgPQhJJblAG5tRrkdXeLQAgwkNfgM7A9zxbMNDSSkSsZ4hqUI3E2DJy+FapPVfZZsPuOtI57L93VWoMsZHFuPW9rxrgGdjKEJ6Q4wf+BWO1dAnZm0zdgT2QYck4O2ehwbAbcmElKRY1zwGeiPJKIO4GtEWNbQdinA2ZuNNrFgsgzvNOGW5djZycLNuXIA2FfJp+UatZvUuYsiF2hjDws4E/mAPlbaVkfrbMIqu5+7PFKaY9W/ILvXyWo5jWUZ8Yhp04ljTJtGUrbp7RJ1LBkTFiA7y81uS6Cyp48XwQy/uKsJtVuHVQLUPsW7NlyrRrvUom0KmBpxCwF0eOR4onO6l/1KXoUQ+6OW6SJ+uHCefcsgpwjsjaQw/6HNitllYrPe+EaTkwtY5QFatopScLSFAQWAVkh2kgfE+PtjnP4APcAzqU5ZKu/nGTl4/AAxshhF7InOM5xShjZj0bqFIcAXgwjC8cgJOVNGabZ2tJUcwAGf9lsQa79twcjc2YLjp2sLXgczthC04wdRsm1urhvsDoiHOdUWAlSASh84cJUcliPX7EO1OUrlS1NkVLR3gWK9JEkyRoayPAXFYj7GcDGfjxrU5vBlFS2BRtG0Ubya2SXmTVXMl2lAhkWOKxttFA0eDugsPiQ0Yo5GILX1lliC2BkGeBJqE1qMePxipFJRyJzHVAiXAFtL8/BgOnPIasosbVOkkwZZMihMZZotkRuHd1xMgx450wuOOvel0vkoM5qRrxL58mQrUalAFl/1sMBb5RR3HMFOT7f5F61L8wuA4+Say9LtlGGXGs6oyrl6xY3bFddc575e0pFvuumW24/mnH4uD6277spxX63d9ujsf7o8tHP4bg/lerTmRUzmjSCFYOTJMxjFaI0o0UaL8YlOQeUUPhDzhRMSjBJlyjMEpRIz9FGfy7O3Cn1UGmOsKmuNs1df3/TT3wCzDDTIeBNNMuGhoHV9ccxwK61i88iR/rjO3ymx4pz0x2dfvPfBxwyDlQgd4e3AW8/BeucznCTMYEZkLVVkRmCf/cIpqYyQKliaCy464KBDDmckKXDKaQIFRyPNNN0cs801RYoPpjpJihLTLEoYzH33w1EaJAQLpdkgLOGQxZwsyFK4CKNEihJttDFixBprHHM9FcHkb8/Uqfc8uPv224vnj1WNLflR8vT8VaP3FXdmC1c+NtbSxskP+16c/5vW+aORb8Ly4sZcE/83jVlyZevjvfl9ubl8ouvP24eHy8fLj7WLE55BezVjC16rO0ErTk8+nL7fjK+WHce49fJfI9T4ryNrib/TfLS6/1U167JyPM1ovM/p+eeHDgLu83H7cCFA767z+P+6xk2O/thonqSb5+f79Zz520TCII55vHj+WNlZY2o8IWBUv3+8zeHl6s58O06nL89P48s/nMa6AA==) format('woff2');
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+  :root{
+    --bg:#F3F4F1;
+    --surface:#FFFFFF;
+    --surface-2:#ECE7DA;
+    --text:#1C2431;
+    --text-soft:#57626F;
+    --accent:#7C6D41;
+    --accent-soft:rgba(124,109,65,0.12);
+    --accent-strong:#4E4327;
+    --line:rgba(28,36,49,0.14);
+    --good:#2F6B45; --good-soft:rgba(47,107,69,0.12);
+    --warn:#A6752B; --warn-soft:rgba(166,117,43,0.12);
+    --bad:#B23B3B;  --bad-soft:rgba(178,59,59,0.12);
+    --info:#3A5A85; --info-soft:rgba(58,90,133,0.12);
+    --shadow: 0 1px 2px rgba(28,36,49,0.06), 0 8px 24px rgba(28,36,49,0.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#1B2331;
+      --surface:#232D3F;
+      --surface-2:#2A3548;
+      --text:#EEE5CD;
+      --text-soft:#9CA6B5;
+      --accent:#C9AE74;
+      --accent-soft:rgba(201,174,116,0.14);
+      --accent-strong:#E7D8B0;
+      --line:rgba(238,229,205,0.14);
+      --good:#6FBF8B; --good-soft:rgba(111,191,139,0.14);
+      --warn:#D9A54B; --warn-soft:rgba(217,165,75,0.14);
+      --bad:#E07575;  --bad-soft:rgba(224,117,117,0.14);
+      --info:#8FA9C9; --info-soft:rgba(143,169,201,0.14);
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#1B2331;
+    --surface:#232D3F;
+    --surface-2:#2A3548;
+    --text:#EEE5CD;
+    --text-soft:#9CA6B5;
+    --accent:#C9AE74;
+    --accent-soft:rgba(201,174,116,0.14);
+    --accent-strong:#E7D8B0;
+    --line:rgba(238,229,205,0.14);
+    --good:#6FBF8B; --good-soft:rgba(111,191,139,0.14);
+    --warn:#D9A54B; --warn-soft:rgba(217,165,75,0.14);
+    --bad:#E07575;  --bad-soft:rgba(224,117,117,0.14);
+    --info:#8FA9C9; --info-soft:rgba(143,169,201,0.14);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px rgba(0,0,0,0.35);
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height:1.6;
+    font-size:16px;
+  }
+  .disp{
+    font-family:'Reem Kufi Local', ui-sans-serif, sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:1.05;
+  }
+  .eyebrow{
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:0.55rem;
+  }
+  .eyebrow::before{ content:""; width:20px; height:2px; background:var(--accent); display:inline-block; flex-shrink:0; }
+  a{ color:var(--accent); }
+  strong{ color:var(--text); }
+
+  .wrap{ max-width:840px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); }
+  .wrap-wide{ max-width:1040px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); }
+
+  /* ---- MASTHEAD ---- */
+  header.masthead{ padding:clamp(3rem,8vw,5.5rem) 0 3rem; border-bottom:1px solid var(--line); }
+  header.masthead .disp.kicker{ font-size:0.85rem; color:var(--accent); margin-bottom:0.9rem; }
+  header.masthead h1{ font-size:clamp(2.3rem,6vw,3.6rem); text-wrap:balance; margin-bottom:1.1rem; }
+  header.masthead .lede{ max-width:640px; color:var(--text-soft); font-size:1.08rem; margin-bottom:1.6rem; }
+  .meta-row{ display:flex; flex-wrap:wrap; gap:0.5rem 1.6rem; font-size:0.85rem; color:var(--text-soft); }
+  .meta-row b{ color:var(--text); }
+
+  .role-strip{ display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.8rem; }
+  .role-chip{
+    font-size:0.74rem; font-weight:600; letter-spacing:0.02em;
+    padding:0.4rem 0.75rem; border-radius:999px;
+    background:var(--accent-soft); color:var(--accent-strong);
+    border:1px solid var(--line);
+  }
+
+  /* ---- STICKY TOC ---- */
+  nav.toc{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.toc .toc-inner{
+    max-width:1040px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem);
+    display:flex; gap:1.4rem; overflow-x:auto;
+    -ms-overflow-style:none; scrollbar-width:none;
+  }
+  nav.toc .toc-inner::-webkit-scrollbar{ display:none; }
+  nav.toc a{
+    flex-shrink:0; padding:0.85rem 0.1rem; font-size:0.78rem; font-weight:600;
+    color:var(--text-soft); text-decoration:none; white-space:nowrap;
+    border-bottom:2px solid transparent;
+  }
+  nav.toc a:hover{ color:var(--text); }
+  nav.toc a span{ color:var(--accent); font-weight:700; margin-right:0.35rem; }
+
+  /* ---- SECTIONS ---- */
+  section{ padding:clamp(3rem,7vw,5rem) 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  .sec-head{ margin-bottom:2.2rem; }
+  .sec-num{ font-size:0.85rem; color:var(--accent); font-weight:700; }
+  .sec-head h2{ font-size:clamp(1.7rem,4vw,2.3rem); margin-top:0.5rem; text-wrap:balance; }
+  .sec-head .dek{ color:var(--text-soft); margin-top:0.7rem; max-width:640px; font-size:0.98rem; }
+
+  p{ max-width:66ch; }
+  p + p{ margin-top:0.9rem; }
+  .prose{ color:var(--text-soft); font-size:1rem; }
+  .prose strong{ color:var(--text); }
+
+  /* ---- DIAGNOSIS LIST ---- */
+  .diag-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+  .diag-col h3{ font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
+  .diag-col.good h3{ color:var(--good); }
+  .diag-col.bad h3{ color:var(--bad); }
+  .diag-list{ list-style:none; display:grid; gap:0.9rem; }
+  .diag-list li{ font-size:0.95rem; color:var(--text-soft); padding-left:1.1rem; position:relative; }
+  .diag-list li::before{ content:"—"; position:absolute; left:0; color:var(--text-soft); opacity:0.5; }
+  .diag-list li strong{ display:block; color:var(--text); font-weight:600; margin-bottom:0.15rem; }
+
+  /* ---- TIER CARDS ---- */
+  .tier-label{ display:flex; align-items:baseline; gap:0.7rem; margin:2.6rem 0 1.3rem; }
+  .tier-label:first-child{ margin-top:0; }
+  .tier-label .disp{ font-size:1.2rem; color:var(--text); }
+  .tier-label .tier-note{ font-size:0.85rem; color:var(--text-soft); }
+
+  .rec-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:1.6rem 1.7rem; box-shadow:var(--shadow);
+    display:grid; gap:0.9rem; margin-bottom:1.1rem;
+  }
+  .rec-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; flex-wrap:wrap; }
+  .rec-title{ font-size:1.08rem; font-weight:700; color:var(--text); max-width:52ch; }
+  .rec-tags{ display:flex; gap:0.4rem; flex-wrap:wrap; flex-shrink:0; }
+  .tag{
+    font-size:0.68rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    padding:0.28rem 0.6rem; border-radius:5px; white-space:nowrap;
+  }
+  .tag.impact-high{ background:var(--good-soft); color:var(--good); }
+  .tag.impact-med{ background:var(--warn-soft); color:var(--warn); }
+  .tag.diff-low{ background:var(--info-soft); color:var(--info); }
+  .tag.diff-med{ background:var(--accent-soft); color:var(--accent-strong); }
+  .tag.diff-high{ background:var(--bad-soft); color:var(--bad); }
+  .rec-body{ display:grid; grid-template-columns:1fr 1fr; gap:1rem 1.6rem; }
+  .rec-field b{ display:block; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-soft); margin-bottom:0.3rem; }
+  .rec-field p{ font-size:0.92rem; color:var(--text); max-width:none; }
+  .rec-field.full{ grid-column:1 / -1; }
+  .rec-type{ font-size:0.76rem; color:var(--accent); font-weight:600; border-top:1px solid var(--line); padding-top:0.8rem; margin-top:0.2rem; }
+
+  .compact-list{ list-style:none; display:grid; gap:0.85rem; }
+  .compact-list li{
+    display:flex; gap:0.8rem; align-items:flex-start; font-size:0.94rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:0.9rem 1.05rem;
+  }
+  .compact-list .num{ font-family:'Reem Kufi Local',sans-serif; font-weight:700; color:var(--accent); font-size:0.85rem; flex-shrink:0; padding-top:0.1rem; }
+  .compact-list span.body{ color:var(--text-soft); }
+  .compact-list span.body strong{ color:var(--text); }
+
+  /* ---- SCORE GRID ---- */
+  .score-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:0.9rem; margin-bottom:2.4rem; }
+  .score-card{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; box-shadow:var(--shadow); }
+  .score-card.overall{ grid-column:1 / -1; background:linear-gradient(135deg, var(--accent-soft), transparent); border-color:var(--accent); display:flex; align-items:center; justify-content:space-between; }
+  .score-num{ font-family:'Reem Kufi Local',sans-serif; font-weight:700; font-size:1.9rem; color:var(--accent); line-height:1; }
+  .score-card.overall .score-num{ font-size:2.6rem; }
+  .score-label{ font-size:0.76rem; color:var(--text-soft); margin-top:0.35rem; letter-spacing:0.02em; }
+  .score-card.overall .score-label{ font-size:0.85rem; margin-top:0; }
+  .score-bar{ height:4px; background:var(--line); border-radius:2px; margin-top:0.6rem; overflow:hidden; }
+  .score-bar i{ display:block; height:100%; background:var(--accent); border-radius:2px; }
+
+  /* ---- HOMEPAGE TEARDOWN ---- */
+  .td-card{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1.5rem 1.6rem; box-shadow:var(--shadow); margin-bottom:1.1rem; }
+  .td-head{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap; margin-bottom:0.9rem; }
+  .td-head h4{ font-size:1.02rem; color:var(--text); }
+  .td-head .td-order{ font-size:0.72rem; color:var(--text-soft); }
+  .td-rows{ display:grid; gap:0.55rem; }
+  .td-row{ display:grid; grid-template-columns:88px 1fr; gap:0.9rem; align-items:baseline; font-size:0.92rem; }
+  .td-row .verdict{ font-size:0.68rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:0.22rem 0.5rem; border-radius:5px; width:fit-content; }
+  .v-keep{ background:var(--good-soft); color:var(--good); }
+  .v-change{ background:var(--warn-soft); color:var(--warn); }
+  .v-remove{ background:var(--bad-soft); color:var(--bad); }
+  .v-add{ background:var(--info-soft); color:var(--info); }
+  .td-row p{ color:var(--text-soft); max-width:none; }
+
+  /* ---- FUNNEL ---- */
+  .funnel{ display:grid; gap:0; }
+  .fstep{ display:grid; grid-template-columns:44px 1fr; gap:1.1rem; position:relative; padding-bottom:1.8rem; }
+  .fstep:last-child{ padding-bottom:0; }
+  .fstep::before{
+    content:""; position:absolute; left:21px; top:44px; bottom:0; width:2px; background:var(--line);
+  }
+  .fstep:last-child::before{ display:none; }
+  .fnum{
+    width:44px; height:44px; border-radius:50%; background:var(--surface); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Reem Kufi Local',sans-serif; font-weight:700; color:var(--accent); font-size:0.95rem;
+    flex-shrink:0; z-index:1;
+  }
+  .fbody h4{ font-size:1rem; color:var(--text); margin-bottom:0.3rem; }
+  .fbody p{ color:var(--text-soft); font-size:0.92rem; max-width:60ch; }
+  .frisk{
+    margin-top:0.6rem; font-size:0.86rem; padding:0.6rem 0.85rem; border-radius:7px;
+    background:var(--bad-soft); color:var(--bad); border-left:3px solid var(--bad);
+  }
+  .frisk.ok{ background:var(--good-soft); color:var(--good); border-left-color:var(--good); }
+
+  /* ---- CONTRAST TABLE (competitive) ---- */
+  .vs{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-bottom:1.6rem; }
+  .vs-col{ border-radius:10px; padding:1.3rem 1.4rem; }
+  .vs-col.them{ background:var(--surface-2); }
+  .vs-col.us{ background:var(--accent-soft); border:1px solid var(--accent); }
+  .vs-col h4{ font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.9rem; color:var(--text-soft); }
+  .vs-col.us h4{ color:var(--accent-strong); }
+  .vs-col ul{ list-style:none; display:grid; gap:0.55rem; font-size:0.9rem; }
+  .vs-col li{ color:var(--text-soft); }
+  .vs-col.us li{ color:var(--text); }
+
+  .lean-list{ list-style:none; display:grid; gap:0.9rem; margin-top:1.6rem; }
+  .lean-list li{ display:flex; gap:0.9rem; font-size:0.95rem; }
+  .lean-list b{ color:var(--accent); flex-shrink:0; }
+
+  /* ---- FUTURE HOMEPAGE ---- */
+  .flow{ display:grid; gap:0.9rem; }
+  .fl-card{ background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:8px; padding:1.2rem 1.4rem; box-shadow:var(--shadow); }
+  .fl-top{ display:flex; align-items:baseline; gap:0.7rem; margin-bottom:0.5rem; }
+  .fl-top .disp{ color:var(--accent); font-size:0.85rem; }
+  .fl-top h4{ font-size:1rem; color:var(--text); }
+  .fl-job{ font-size:0.85rem; color:var(--accent); font-style:italic; margin-bottom:0.4rem; }
+  .fl-card p{ color:var(--text-soft); font-size:0.92rem; max-width:none; }
+
+  /* ---- VERDICT ---- */
+  .verdict-block{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:clamp(1.8rem,4vw,2.6rem); box-shadow:var(--shadow); position:relative; overflow:hidden;
+  }
+  .verdict-block::before{
+    content:""; position:absolute; top:0; left:0; width:4px; height:100%; background:var(--accent);
+  }
+  .verdict-answer{ font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); margin-bottom:0.9rem; }
+  .verdict-block p{ max-width:70ch; font-size:1.02rem; }
+  .verdict-block p + p{ margin-top:1rem; }
+
+  blockquote{
+    margin:1.4rem 0; padding:1rem 1.3rem; border-left:3px solid var(--accent);
+    background:var(--accent-soft); border-radius:0 8px 8px 0; font-size:0.98rem; color:var(--text);
+  }
+
+  .swap-example{
+    display:grid; gap:0.6rem; margin:1.2rem 0; font-size:0.92rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem;
+  }
+  .swap-example .was{ color:var(--text-soft); }
+  .swap-example .now{ color:var(--text); }
+  .swap-example .was b, .swap-example .now b{ font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; margin-right:0.5rem; }
+  .swap-example .was b{ color:var(--bad); }
+  .swap-example .now b{ color:var(--good); }
+
+  footer.end{ padding:3rem 0 5rem; text-align:center; color:var(--text-soft); font-size:0.85rem; }
+
+  @media (max-width:760px){
+    .diag-grid{ grid-template-columns:1fr; gap:2rem; }
+    .rec-body{ grid-template-columns:1fr; }
+    .score-grid{ grid-template-columns:repeat(2,1fr); }
+    .vs{ grid-template-columns:1fr; }
+    .td-row{ grid-template-columns:1fr; gap:0.3rem; }
+  }
+</style>
+
+<header class="masthead">
+  <div class="wrap-wide">
+    <p class="disp kicker">Compound Gym · Dunedin</p>
+    <h1 class="disp">Trial Conversion &amp; Brand Audit</h1>
+    <p class="lede">A full pass through compoundgym.nz against one question: does this page get the right person in Dunedin to start a free 7-day trial? Reviewed as a CRO specialist, brand strategist, UX designer, direct-response marketer, and a first-time visitor who's never heard of Compound.</p>
+    <div class="meta-row">
+      <span><b>Scope:</b> Homepage, memberships, free pass, sauna, coaches, athletes, contact — desktop &amp; mobile</span>
+      <span><b>Benchmark:</b> CityFitness Dunedin (live, pulled for this review)</span>
+    </div>
+    <div class="role-strip">
+      <span class="role-chip">CRO</span>
+      <span class="role-chip">Brand strategy</span>
+      <span class="role-chip">UX / UI</span>
+      <span class="role-chip">Direct response</span>
+      <span class="role-chip">First-time visitor</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#s1"><span>1</span>Diagnosis</a>
+    <a href="#s2"><span>2</span>Opportunities</a>
+    <a href="#s3"><span>3</span>Homepage</a>
+    <a href="#s4"><span>4</span>Funnel</a>
+    <a href="#s5"><span>5</span>Brand</a>
+    <a href="#s6"><span>6</span>Competitive</a>
+    <a href="#s7"><span>7</span>Quick wins</a>
+    <a href="#s8"><span>8</span>Bigger projects</a>
+    <a href="#s9"><span>9</span>Future homepage</a>
+    <a href="#s10"><span>10</span>Verdict</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="s1">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">01</p>
+      <h2 class="disp">Executive diagnosis</h2>
+      <p class="dek">What's fundamentally right and wrong, before anything else.</p>
+    </div>
+    <div class="diag-grid">
+      <div class="diag-col good">
+        <h3>What's genuinely working</h3>
+        <ul class="diag-list">
+          <li><strong>Real photography, no stock.</strong> Every facility, coach, and athlete photo is actually Compound. This alone puts it ahead of most local gym sites.</li>
+          <li><strong>Copy discipline.</strong> No "transform your life," no countdown timers, no guru language. The restraint is a genuine brand asset — rare in this category.</li>
+          <li><strong>Pricing transparency.</strong> No hidden joining fees, plain cancellation terms. Builds trust with a skeptical, training-literate audience.</li>
+          <li><strong>"Included, not upsold."</strong> The sauna framing quietly, correctly rejects the amenities-tier upsell that chain gyms run on.</li>
+          <li><strong>The trial itself is low-pressure by design.</strong> "No obligation," repeated without irony, and meant.</li>
+        </ul>
+      </div>
+      <div class="diag-col bad">
+        <h3>What's holding it back</h3>
+        <ul class="diag-list">
+          <li><strong>The hero sells the room before it sells the person.</strong> Square meterage and platform counts land before anyone learns whether people like them train here.</li>
+          <li><strong>"Serious training" is under-specified.</strong> It reads as strength-gym-generic until proven otherwise — nothing yet tells a first-HYROX beginner they're included in that word.</li>
+          <li><strong>No motion, no sound.</strong> The brand wants "energy" and "people pushing themselves." Static photography, however good, can only imply that — it can't show it.</li>
+          <li><strong>Social proof is a number, not a voice.</strong> 4.9★ from 233 reviews is real and repeated three times, but never once quoted. The only words on the site are Compound's own.</li>
+          <li><strong>Membership is segmented by clock, not by identity.</strong> Off Peak / Standard / Youth speaks to <em>when</em> you train, never to <em>why</em> — which is exactly the range the brand claims to serve.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <p class="sec-num">02</p>
+      <h2 class="disp">The biggest conversion opportunities</h2>
+      <p class="dek">Ranked. Tier 1 is where the leverage is — each one is graded on impact, difficulty, and what kind of problem it actually is, so effort gets spent in the right place.</p>
+    </div>
+
+    <div class="tier-label">
+      <span class="disp">Tier 1 — High impact</span>
+      <span class="tier-note">Do these first.</span>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-top">
+        <div class="rec-title">1. The hero doesn't tell an unsure visitor they belong here</div>
+        <div class="rec-tags"><span class="tag impact-high">High impact</span><span class="tag diff-low">Low effort</span></div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-field"><b>Problem</b><p>The lede lists activities (runners, lifters, fighters, field athletes) but never explicitly tells a beginner, a HYROX first-timer, or someone returning from injury that they qualify as "serious." "Serious training" reads as a bar to clear, not an invitation.</p></div>
+        <div class="rec-field"><b>Why it matters</b><p>Per Compound's own positioning, "athlete" is meant to span the full range — but the silent objection ("is this too intense for me?") is exactly the thing stopping an unsure visitor from clicking the trial CTA, and nothing currently answers it.</p></div>
+        <div class="rec-field full"><b>Recommended change</b><p>Make the invitation explicit in the lede, not just the activity list.</p>
+          <div class="swap-example">
+            <div class="was"><b>Was</b>A purpose-built gym for people who take their training seriously — from runners and lifters to fighters and field athletes.</div>
+            <div class="now"><b>Try</b>Whether you're chasing a first HYROX finish, coming back from injury, or just done half-assing it — this is where Dunedin trains seriously.</div>
+          </div>
+        </div>
+        <div class="rec-field"><b>Expected impact</b><p>Medium–high — removes the single biggest silent objection at the exact moment a visitor decides whether to keep reading.</p></div>
+        <div class="rec-field"><b>Type</b><p>Brand · Copy · Conversion</p></div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-top">
+        <div class="rec-title">2. Social proof is a number, never a voice</div>
+        <div class="rec-tags"><span class="tag impact-high">High impact</span><span class="tag diff-low">Low effort</span></div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-field"><b>Problem</b><p>"4.9 from 233 reviews" appears on three pages, always followed by a Compound-written paraphrase ("Members consistently point to…"). Not one real sentence written by an actual member appears anywhere on the site.</p></div>
+        <div class="rec-field"><b>Why it matters</b><p>For a brand built on "no bullshit" and authenticity, a marketing paraphrase pretending to summarise reviews is the opposite of proof — it's the one place the site could let someone other than Compound talk, and doesn't.</p></div>
+        <div class="rec-field full"><b>Recommended change</b><p>Pull 3–4 short, verbatim quotes from the existing 233 reviews (with permission), credited by first name and what they train for — "first HYROX," "back after a knee reco," "used to just avoid the gym." Place them near the trial CTAs, not buried in a dedicated testimonials page. This also does double duty: it shows the beginner-to-competitive range in real voices instead of Compound asserting it.</p></div>
+        <div class="rec-field"><b>Expected impact</b><p>High — the raw material already exists (233 real reviews); this is a content pull, not new proof to generate.</p></div>
+        <div class="rec-field"><b>Type</b><p>Conversion · Brand authenticity</p></div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-top">
+        <div class="rec-title">3. The homepage sells specs before it sells belonging</div>
+        <div class="rec-tags"><span class="tag impact-med">Medium impact</span><span class="tag diff-low">Low effort</span></div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-field"><b>Problem</b><p>650m², 9 platforms, 24/7 loads directly under the hero CTA. Real, good facts — but facility facts. The "Trusted by Dunedin's top athletes" strip, the closest thing to a belonging signal, is a separate scroll-stop after it.</p></div>
+        <div class="rec-field"><b>Why it matters</b><p>The emotional target, per the brief, is "this is my gym" — a feeling, not a spec sheet. CityFitness already competes on scale and price; that's not a fight worth picking first.</p></div>
+        <div class="rec-field full"><b>Recommended change</b><p>Don't remove the stats — they're good proof points — but pull the athlete/community strip visually closer to the hero, so belonging and facility land in the same first impression instead of sequentially.</p></div>
+        <div class="rec-field"><b>Expected impact</b><p>Medium — reorders what's learned first without cutting anything; low-risk sequencing change.</p></div>
+        <div class="rec-field"><b>Type</b><p>UX · Brand sequencing</p></div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-top">
+        <div class="rec-title">4. Membership speaks to access windows, never to training identity</div>
+        <div class="rec-tags"><span class="tag impact-high">High impact</span><span class="tag diff-med">Medium effort</span></div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-field"><b>Problem</b><p>Off Peak / Standard / Youth &amp; First Responders segments purely by <em>when</em> and <em>who</em> demographically — never by <em>why</em> someone trains. A visitor training for their first HYROX has no line of copy, no photo, no CTA that speaks directly to them.</p></div>
+        <div class="rec-field"><b>Why it matters</b><p>This is the single most direct way to operationalise Compound's actual positioning — "athletes of all levels" — into something a visitor reads and self-identifies with, instead of a claim the brand makes about itself.</p></div>
+        <div class="rec-field full"><b>Recommended change</b><p>Don't touch pricing structure. Add a short "who trains here" section — first HYROX, coming back from injury, competitive athlete, just done half-assing it — the same range from Compound's own brief, in Compound's voice, paired with real members who fit each. Turns membership from a transaction into "which one of these is me."</p></div>
+        <div class="rec-field"><b>Expected impact</b><p>High — directly closes the gap between what Compound says it stands for and what a visitor actually reads.</p></div>
+        <div class="rec-field"><b>Type</b><p>Brand · Copy · Conversion</p></div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-top">
+        <div class="rec-title">5. No motion, no sound — a kinetic brand told through still photos</div>
+        <div class="rec-tags"><span class="tag impact-high">High impact</span><span class="tag diff-high">Higher effort</span></div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-field"><b>Problem</b><p>Every page is static. The brand wants "energy," "people pushing themselves," "a place where you want to train" — that's a kinetic feeling. Photos, even genuinely good ones, can only imply it.</p></div>
+        <div class="rec-field"><b>Why it matters</b><p>This is the widest gap between "good gym photography" and "you can feel what training here is like" — the exact bar the brand brief sets for its imagery.</p></div>
+        <div class="rec-field full"><b>Recommended change</b><p>A single 15–30 second muted, looping clip in the hero or About section — real members, real coaching, the actual noise of plates and turf implied through motion. Doesn't need commercial production; a well-shot phone montage from an existing session would outperform more static photography on exactly the dimensions the brief cares about most.</p></div>
+        <div class="rec-field"><b>Expected impact</b><p>High on brand/emotional pull, medium–high on conversion — engaged time on a considered local-service decision like gym membership correlates with trial starts.</p></div>
+        <div class="rec-field"><b>Type</b><p>Brand · Design · Conversion</p></div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-top">
+        <div class="rec-title">6. The moment right after submitting the trial form is unreassuring</div>
+        <div class="rec-tags"><span class="tag impact-med">Medium impact</span><span class="tag diff-low">Very low effort</span></div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-field"><b>Problem</b><p>The free-pass page explains the 3-step process well before the form. After submitting, all a visitor sees is "Thanks — we'll be in touch shortly." No timeframe, no next step.</p></div>
+        <div class="rec-field"><b>Why it matters</b><p>The instant after converting is when doubt creeps in — "did that actually work? when do I hear back?" — especially since nothing on the page lets a first-time visitor verify it themselves.</p></div>
+        <div class="rec-field full"><b>Recommended change</b><p>Name a real timeframe: "Thanks — a real person will message you within one business day to sort your key-tag." A two-sentence fix with outsized trust return.</p></div>
+        <div class="rec-field"><b>Expected impact</b><p>Medium — cheap, meaningfully reduces post-submit anxiety and the temptation to forget about it.</p></div>
+        <div class="rec-field"><b>Type</b><p>Copy · Conversion</p></div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-top">
+        <div class="rec-title">7. "Explore Compound" is a sitemap dressed as a section</div>
+        <div class="rec-tags"><span class="tag impact-med">Medium impact</span><span class="tag diff-med">Medium effort</span></div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-field"><b>Problem</b><p>The four-card grid near the bottom of the homepage (Memberships / Sauna / Coaches / Contact) is purely descriptive — "5 plans from $16.95/week," "Gate J, Level 2A…" — functionally a nav restated as a section.</p></div>
+        <div class="rec-field"><b>Why it matters</b><p>By this point in the scroll, a visitor has largely decided how they feel about Compound. This section should be closing remaining objections, not re-listing links that already exist in the nav and footer.</p></div>
+        <div class="rec-field full"><b>Recommended change</b><p>Either cut it, or repurpose the same four slots to answer the objections a hesitant visitor still has here — cost, whether coaches actually help a beginner, what recovery really includes — framed as answers, not a directory.</p></div>
+        <div class="rec-field"><b>Expected impact</b><p>Medium — removes a low-value scroll-stop or turns a flat section into real persuasion.</p></div>
+        <div class="rec-field"><b>Type</b><p>UX · Copy</p></div>
+      </div>
+    </div>
+
+    <div class="tier-label">
+      <span class="disp">Tier 2 — Medium impact</span>
+      <span class="tier-note">Worth doing, after Tier 1.</span>
+    </div>
+    <ul class="compact-list">
+      <li><span class="num">01</span><span class="body"><strong>Add trial-specific objection handling.</strong> The current FAQ only covers billing and cancellation. Nothing answers "do I need to already be fit," "I've never lifted before," "will I feel out of place" — the actual hesitations a first-timer has, not a member deciding between Annual and Flexi.</span></li>
+      <li><span class="num">02</span><span class="body"><strong>Give each coach one line of who they're best for,</strong> not just a role tag. "Strength &amp; Sports Performance" describes a specialty, not a person — a nervous beginner can't tell which coach will actually be patient with them.</span></li>
+      <li><span class="num">03</span><span class="body"><strong>Link the star-rating badge</strong> to the real Google listing so a skeptical visitor can verify 4.9★/233 independently instead of taking Compound's word for it.</span></li>
+      <li><span class="num">04</span><span class="body"><strong>Reconsider the 💪 emoji on the floating CTA.</strong> Small, but it's the one persistent element on every page, and it's the single spot on the site that reads generic-fitness-app rather than considered.</span></li>
+      <li><span class="num">05</span><span class="body"><strong>Tie the sauna page back to identity,</strong> not just features — recovery matters because you're training seriously, not as a feature-for-feature checklist against what CityFitness sells as a tier.</span></li>
+    </ul>
+
+    <div class="tier-label">
+      <span class="disp">Tier 3 — Nice to have</span>
+      <span class="tier-note">Small, low-stakes polish.</span>
+    </div>
+    <ul class="compact-list">
+      <li><span class="num">01</span><span class="body">Cut "Just $3.28/day" on the Standard plan — the one line on the whole site that reads like a budget-gym trick, out of place next to otherwise disciplined pricing copy.</span></li>
+      <li><span class="num">02</span><span class="body">Fix the small accessibility contrast gap on olive links/eyebrows at small sizes (currently ~3.9:1, under the 4.5:1 AA minimum for body-size text).</span></li>
+      <li><span class="num">03</span><span class="body">Add one line explaining the "Dunedin residents only" trial restriction — currently unexplained, easy to misread as exclusionary rather than logistical.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <p class="sec-num">03</p>
+      <h2 class="disp">Homepage teardown</h2>
+      <p class="dek">Scored honestly, then walked section by section: keep, change, remove, add.</p>
+    </div>
+
+    <div class="score-grid">
+      <div class="score-card"><div class="score-num">6</div><div class="score-label">Brand clarity</div><div class="score-bar"><i style="width:60%"></i></div></div>
+      <div class="score-card"><div class="score-num">6</div><div class="score-label">Positioning</div><div class="score-bar"><i style="width:60%"></i></div></div>
+      <div class="score-card"><div class="score-num">7</div><div class="score-label">First impression</div><div class="score-bar"><i style="width:70%"></i></div></div>
+      <div class="score-card"><div class="score-num">7</div><div class="score-label">Differentiation</div><div class="score-bar"><i style="width:70%"></i></div></div>
+      <div class="score-card"><div class="score-num">6</div><div class="score-label">Trust</div><div class="score-bar"><i style="width:60%"></i></div></div>
+      <div class="score-card"><div class="score-num">5</div><div class="score-label">Emotional appeal</div><div class="score-bar"><i style="width:50%"></i></div></div>
+      <div class="score-card"><div class="score-num">7</div><div class="score-label">Conversion potential</div><div class="score-bar"><i style="width:70%"></i></div></div>
+      <div class="score-card"><div class="score-num">8</div><div class="score-label">CTA clarity</div><div class="score-bar"><i style="width:80%"></i></div></div>
+      <div class="score-card"><div class="score-num">7</div><div class="score-label">Mobile UX</div><div class="score-bar"><i style="width:70%"></i></div></div>
+      <div class="score-card overall"><div><div class="score-label">Overall effectiveness</div></div><div class="score-num">6.5<span style="font-size:1.1rem;">/10</span></div></div>
+    </div>
+
+    <p class="prose">The gap to a 9 isn't a redesign. The site is honest, functional, and tasteful — it's currently more <strong>restrained</strong> than it is <strong>expressive</strong>. A 9 doesn't fix copy alone: it makes a visitor feel the room through motion, sees themselves named explicitly in the range of who trains here, and hears it from real members instead of a paraphrase — all without picking up a single trick CityFitness already runs on.</p>
+
+    <div class="tier-label" style="margin-top:2.6rem;"><span class="disp">Section by section</span></div>
+
+    <div class="td-card">
+      <div class="td-head"><h4>Hero</h4><span class="td-order">1st scroll-stop</span></div>
+      <div class="td-rows">
+        <div class="td-row"><span class="verdict v-keep">Keep</span><p>Real facility photo, "Built for Proper Training" structure, the CTA pair (Claim Free Pass / View Memberships), the eyebrow that anchors it in Dunedin and the stadium instantly.</p></div>
+        <div class="td-row"><span class="verdict v-change">Change</span><p>Broaden the lede to explicitly name the beginner/comeback range, not just the activity list (see Opportunity 1).</p></div>
+        <div class="td-row"><span class="verdict v-add">Add</span><p>The rating badge is now live here — make it a clickable link to the real Google listing (Opportunity T2).</p></div>
+      </div>
+    </div>
+
+    <div class="td-card">
+      <div class="td-head"><h4>Athlete trust strip</h4><span class="td-order">2nd</span></div>
+      <div class="td-rows">
+        <div class="td-row"><span class="verdict v-keep">Keep</span><p>Real photos of all five now in place — this section pulls its weight now that it's not half initials.</p></div>
+        <div class="td-row"><span class="verdict v-change">Change</span><p>Consider pulling it visually closer to the hero so belonging and facility read together, not sequentially (Opportunity 3).</p></div>
+      </div>
+    </div>
+
+    <div class="td-card">
+      <div class="td-head"><h4>About / pillars / facility gallery</h4><span class="td-order">3rd</span></div>
+      <div class="td-rows">
+        <div class="td-row"><span class="verdict v-keep">Keep</span><p>The strongest section on the page. "Eleiko bars," "chalk allowed," "40m turf sprint lane" — specific, real, exactly the "no bullshit" the brand wants. Don't touch.</p></div>
+      </div>
+    </div>
+
+    <div class="td-card">
+      <div class="td-head"><h4>Free-pass teaser (3-step)</h4><span class="td-order">4th</span></div>
+      <div class="td-rows">
+        <div class="td-row"><span class="verdict v-keep">Keep</span><p>Clear, low-pressure, correctly unhyped.</p></div>
+      </div>
+    </div>
+
+    <div class="td-card">
+      <div class="td-head"><h4>Google Reviews</h4><span class="td-order">5th</span></div>
+      <div class="td-rows">
+        <div class="td-row"><span class="verdict v-change">Change</span><p>Replace or supplement the Compound-written paraphrase with 3–4 real, verbatim quotes (Opportunity 2). This is the highest-leverage single change on the page.</p></div>
+      </div>
+    </div>
+
+    <div class="td-card">
+      <div class="td-head"><h4>Explore Compound grid</h4><span class="td-order">6th</span></div>
+      <div class="td-rows">
+        <div class="td-row"><span class="verdict v-remove">Remove or change</span><p>Currently a restated nav. Either cut it or turn it into genuine objection-handling (Opportunity 7).</p></div>
+      </div>
+    </div>
+
+    <div class="td-card">
+      <div class="td-head"><h4>Final CTA banner / footer</h4><span class="td-order">Close</span></div>
+      <div class="td-rows">
+        <div class="td-row"><span class="verdict v-keep">Keep</span><p>Appropriately placed, not overused, no changes needed.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <p class="sec-num">04</p>
+      <h2 class="disp">Free-trial funnel teardown</h2>
+      <p class="dek">Ad, search, or word of mouth → website → decision → form → real-world visit. Where it actually leaks, and where it doesn't.</p>
+    </div>
+
+    <div class="funnel">
+      <div class="fstep">
+        <div class="fnum">1</div>
+        <div class="fbody">
+          <h4>Arrival — homepage or free-pass landing page</h4>
+          <p>Paid traffic likely lands directly on <code>free-pass.html</code>, which is genuinely a good single-purpose landing page: one job, low friction, no distractions. Organic and word-of-mouth traffic more often lands on the homepage first.</p>
+          <div class="frisk">If arriving at the homepage first: the "is this too intense for me" ambiguity (Opportunity 1) is live risk here — an unsure visitor can bounce before ever reaching a trial CTA.</div>
+        </div>
+      </div>
+      <div class="fstep">
+        <div class="fnum">2</div>
+        <div class="fbody">
+          <h4>Deciding to act</h4>
+          <p>The offer itself is clear and genuinely low-pressure — "no obligation," repeated and meant, with no manufactured urgency. This is a real strength; nothing here needs fixing.</p>
+        </div>
+      </div>
+      <div class="fstep">
+        <div class="fnum">3</div>
+        <div class="fbody">
+          <h4>The form</h4>
+          <p>Now four fields — first name, last name, email, phone — down from six after this project trimmed the message field and interest dropdown that didn't belong on a single-purpose trial page. Friction here is genuinely low.</p>
+          <div class="frisk ok">No material risk remaining at this step.</div>
+        </div>
+      </div>
+      <div class="fstep">
+        <div class="fnum">4</div>
+        <div class="fbody">
+          <h4>Immediately after submitting</h4>
+          <p>The confirmation is a single vague sentence with no timeframe.</p>
+          <div class="frisk">This is where quiet doubt creeps in — "did that actually work?" (Opportunity 6). Cheap to fix, real trust return.</div>
+        </div>
+      </div>
+      <div class="fstep">
+        <div class="fnum">5</div>
+        <div class="fbody">
+          <h4>Between submitting and walking in</h4>
+          <p>"Get your key-tag: book a setup time, or come in during staffed hours" is functionally fine but generic. The last real anxiety a first-timer has before showing up — "will I feel out of place" — isn't addressed anywhere on the site.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="prose" style="margin-top:2.2rem;">Does the trial feel like an invitation rather than a funnel? <strong>Mostly, yes</strong> — genuinely one of the site's real strengths. The repeated "no pressure," "no obligation" language, and the total absence of urgency tricks or popups, are doing real work and should not be touched. The leaks that exist are upstream (does an unsure visitor even reach the CTA) and just past conversion (does the confirmation reassure them) — not in the form itself, which is in good shape.</p>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">05</p>
+      <h2 class="disp">Brand assessment</h2>
+      <p class="dek">Does this actually feel like Compound? Honestly — mostly.</p>
+    </div>
+    <div class="prose">
+      <p>Yes, more than most local business sites manage. The photography discipline — real, unstaged, named-equipment specific — and the copy restraint — no guru language, no fake urgency, no countdown timers — genuinely set it apart from a generic gym template, and specifically from CityFitness's national-chain voice.</p>
+      <p>But right now it reads as <strong>a tasteful, honest gym</strong> more than it reads as <strong>a gym with pride and identity</strong>. It's stronger on "authentic" and "no bullshit" than it is on "pride," "ambition," and "energy" — the pillars that are hardest to fake and currently least represented. That's a real gap, but a fixable one — the fix is imagery and voice, not more adjectives, which is exactly the trap a site this disciplined could easily fall into if pushed the wrong way.</p>
+
+      <blockquote>Reem Kufi's uppercase, geometric headlines paired with Montserrat's clean body text is a good, slightly unusual choice — it avoids both the bold-slab "GYM FONT" cliché and the sterile, over-designed feel the brand explicitly wants to avoid. The navy/olive/beige palette is moody without tipping into luxury-fitness gold-and-marble territory. These are correct calls; don't touch them.</blockquote>
+
+      <p><strong>Can someone looking at the site understand what it feels like to train here?</strong> Partly. The facility photography answers "what does the room look like" convincingly. It doesn't yet answer "what does it sound and feel like when it's full" — that's the motion gap named in Opportunity 5, and it's the single biggest lever left for making the brand feel as alive as the brief wants it to be.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <p class="sec-num">06</p>
+      <h2 class="disp">Competitive differentiation</h2>
+      <p class="dek">Grounded in CityFitness's actual live homepage, pulled for this review — not assumption.</p>
+    </div>
+
+    <div class="vs">
+      <div class="vs-col them">
+        <h4>CityFitness leads with</h4>
+        <ul>
+          <li>"Memberships from $7.99 per week" — price, first thing on the page</li>
+          <li>"60+ Clubs Nationwide" — scale, repeated as a scrolling city list</li>
+          <li>A live urgency banner: "Now's the best time to join"</li>
+          <li>An amenities checklist: Pilates, Yoga, massage chairs, recovery rooms, "free gym bag"</li>
+          <li>Generic, replaceable-anywhere language: "Achieve More Everyday"</li>
+        </ul>
+      </div>
+      <div class="vs-col us">
+        <h4>Compound correctly does the opposite</h4>
+        <ul>
+          <li>Price never appears on the homepage — it's on a dedicated page, where it belongs</li>
+          <li>No scale claims — one room, one city, inside an actual stadium</li>
+          <li>No urgency banners, no manufactured scarcity</li>
+          <li>Sauna framed as "included, not upsold" — the direct rejection of the amenities-tier play</li>
+          <li>Specific, real language: "Eleiko bars," "40m turf sprint lane," "chalk allowed"</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="prose">The instinct not to compete with CityFitness on its own terms is already correct throughout the site. What's worth leaning into <em>harder</em>, because a 60-club franchise structurally cannot replicate it:</p>
+
+    <ul class="lean-list">
+      <li><b>The stadium.</b> No other Dunedin gym trains inside Forsyth Barr Stadium. This is a visual and narrative asset that's currently just a detail in the address — it should be a story.</li>
+      <li><b>24/7 key-tag access on a single-site gym.</b> Many boutique gyms don't offer this; many chains offer it without the boutique feel. Compound has both — worth stating more plainly as a differentiator, not just a hero stat.</li>
+      <li><b>A fixed local roster.</b> A franchise's staff and members rotate; Compound's don't. Named coaches, named athletes, real quotes — a chain has no equivalent to offer, because it has no fixed community to draw from.</li>
+      <li><b>Specificity over policy-safe copy.</b> Chains write copy that has to work in 60 locations, which is why it says nothing. Compound can name the actual bar brand, the actual turf length, the actual coach — because it's one real place. Do more of this, not less.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">07</p>
+      <h2 class="disp">Quick wins</h2>
+      <p class="dek">A day or two of work, no design system changes required.</p>
+    </div>
+    <ul class="compact-list">
+      <li><span class="num">01</span><span class="body">Broaden the hero lede to explicitly include beginners and comeback athletes.</span></li>
+      <li><span class="num">02</span><span class="body">Rewrite the post-submit form message with a real, named timeframe.</span></li>
+      <li><span class="num">03</span><span class="body">Cut the "$3.28/day" line and the 💪 emoji on the floating CTA.</span></li>
+      <li><span class="num">04</span><span class="body">Pull 2–3 real review quotes and place them near the trial CTA sections.</span></li>
+      <li><span class="num">05</span><span class="body">Link the star-rating badge to the real Google listing.</span></li>
+      <li><span class="num">06</span><span class="body">Add one line explaining the Dunedin-residents restriction on the trial.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="s8">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">08</p>
+      <h2 class="disp">Bigger projects</h2>
+      <p class="dek">More work, materially different result.</p>
+    </div>
+    <ul class="compact-list">
+      <li><span class="num">01</span><span class="body">Produce a short hero/about video — real members, real coaching, real noise, even lightly shot.</span></li>
+      <li><span class="num">02</span><span class="body">Build a genuine "who trains here" identity section, replacing the flat access-window-only membership framing.</span></li>
+      <li><span class="num">03</span><span class="body">Rebuild "Explore Compound" as real objection-handling content instead of a restated nav.</span></li>
+      <li><span class="num">04</span><span class="body">Commission the real logo redraw — the current mark is a faithful but hand-built recreation, flagged as an open item.</span></li>
+      <li><span class="num">05</span><span class="body">A short specialty pass on the coaches page — one real line per coach on who they're best suited to help, not just a role tag.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="wrap-wide">
+    <div class="sec-head">
+      <p class="sec-num">09</p>
+      <h2 class="disp">Recommended future homepage</h2>
+      <p class="dek">Top to bottom — what each section needs to accomplish psychologically, not just what content sits in it.</p>
+    </div>
+
+    <div class="flow">
+      <div class="fl-card">
+        <div class="fl-top"><span class="disp">01</span><h4>Hero</h4></div>
+        <div class="fl-job">Job: "I see myself in this room in under five seconds."</div>
+        <p>Real photo or motion, plus a headline that names both the room <em>and</em> the range of people training in it — not just the equipment.</p>
+      </div>
+      <div class="fl-card">
+        <div class="fl-top"><span class="disp">02</span><h4>Belonging strip</h4></div>
+        <div class="fl-job">Job: answer "is this for someone like me," explicitly.</div>
+        <p>The full athlete range — first HYROX, comeback, competitive, just training hard — shown in real photos, not asserted in abstract copy.</p>
+      </div>
+      <div class="fl-card">
+        <div class="fl-top"><span class="disp">03</span><h4>Proof</h4></div>
+        <div class="fl-job">Job: "people who aren't Compound say this is real."</div>
+        <p>Real quotes, a linkable rating, and outcomes spanning the same range — a first HYROX finish next to a comeback from injury next to a competitive result.</p>
+      </div>
+      <div class="fl-card">
+        <div class="fl-top"><span class="disp">04</span><h4>The room</h4></div>
+        <div class="fl-job">Job: "this is a serious, well-equipped space" — largely unchanged from today.</div>
+        <p>Keep the facility gallery close to as-is. It's already doing this job correctly.</p>
+      </div>
+      <div class="fl-card">
+        <div class="fl-top"><span class="disp">05</span><h4>Coaches (brief callout)</h4></div>
+        <div class="fl-job">Job: "there are real people here who'll actually help me" — especially reassuring for a nervous beginner.</div>
+        <p>A short callout, not the full roster — the dedicated coaches page already does the deep version.</p>
+      </div>
+      <div class="fl-card">
+        <div class="fl-top"><span class="disp">06</span><h4>The offer</h4></div>
+        <div class="fl-job">Job: "trying this costs me nothing and no one will pressure me."</div>
+        <p>Keep the current low-pressure framing exactly as it is — it's working.</p>
+      </div>
+      <div class="fl-card">
+        <div class="fl-top"><span class="disp">07</span><h4>Final CTA</h4></div>
+        <div class="fl-job">Job: last, low-friction nudge.</div>
+        <p>Unchanged in spirit from today.</p>
+      </div>
+      <div class="fl-card">
+        <div class="fl-top"><span class="disp">08</span><h4>Footer</h4></div>
+        <div class="fl-job">Job: logistics and trust, no persuasion required.</div>
+        <p>Correctly minimal today — no changes needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s10">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">10</p>
+      <h2 class="disp">Final verdict</h2>
+    </div>
+    <div class="verdict-block">
+      <p class="verdict-answer">Would I start the trial? Yes — but slower than I should.</p>
+      <p>As a first-time Dunedin visitor who takes training moderately seriously but isn't a competitive athlete: the trust signals clear the bar. Real photos, transparent pricing, genuinely low-pressure language, and forms that now actually work — nothing here reads scummy or corporate, which is most of the battle against a category full of both.</p>
+      <p>But I'd hesitate a beat longer than I should, for one specific reason: nothing on the page tells me, directly, that someone like me — not yet fit, first HYROX on the calendar, coming back from a long break — actually belongs here. The site currently assumes I'll infer that from "serious training." Compound's own positioning says that's exactly the ambiguity it shouldn't leave to the visitor to resolve alone.</p>
+      <p>Fix that one thing — in the hero, in the membership framing, in real voices instead of a rating — and the rest of the site is honestly already doing its job.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="end">
+  Compound Trial Audit — reviewed against compoundgym.nz, live, this session.
+</footer>
