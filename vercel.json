@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/book-gym-tour", "destination": "/contact", "permanent": true },
+    { "source": "/dunedin-gym-blog", "destination": "/", "permanent": true },
+    { "source": "/dunedin-gym-blog/:path*", "destination": "/", "permanent": true },
+    { "source": "/search", "destination": "/", "permanent": true },
+    { "source": "/free-pass", "destination": "/free-7-day-pass", "permanent": true },
+    { "source": "/memberships", "destination": "/gym-memberships", "permanent": true },
+    { "source": "/coaches", "destination": "/personal-trainers", "permanent": true },
+    { "source": "/sauna", "destination": "/dunedin-gym-sauna", "permanent": true }
+  ]
+}
