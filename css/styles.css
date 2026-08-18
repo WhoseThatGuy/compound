@@ -446,7 +446,6 @@
     margin:0.5rem 0 0.1rem;
   }
   .plate-price span{ font-family:'Montserrat'; font-size:0.95rem; color:var(--dusky); text-transform:none; }
-  .plate-perday{ color:var(--olive); font-size:0.82rem; font-weight:600; margin-bottom:0.6rem; }
   .plate-prepay{ color:var(--dusky); font-size:0.78rem; margin-bottom:1rem; }
   .plate-prepay strong{ color:var(--beige); font-weight:600; }
   .plate-desc{ color:var(--dusky); font-size:0.9rem; margin-bottom:1.6rem; }
@@ -503,6 +502,34 @@
   }
 
   /* ---------- FREE PASS ---------- */
+  .pass-hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.6rem 3.5rem;
+    align-items:start;
+  }
+  .pass-hero-copy{ grid-column:1; grid-row:1; }
+  .pass-hero-copy h2{ font-size:clamp(2rem, 4.4vw, 3.1rem); margin-top:0.8rem; }
+  .pass-hero-copy .pass-lede{ color:var(--dusky); margin-top:1rem; font-size:1.02rem; max-width:46ch; }
+  .pass-hero-grid > .pass-checklist{ grid-column:1; grid-row:2; margin-top:1rem; }
+  .pass-form-card{
+    grid-column:2;
+    grid-row:1 / span 2;
+    background:var(--navy-2);
+    border:1px solid var(--olive);
+    border-radius:4px;
+    padding:2rem 1.8rem;
+    scroll-margin-top:6rem;
+  }
+  .pass-form-card h2{ font-size:1.6rem; margin-bottom:0.5rem; }
+  .pass-form-card > p{ color:var(--dusky); font-size:0.92rem; margin-bottom:1.4rem; }
+  .pass-form-note{ color:var(--dusky); font-size:0.8rem; margin-top:0.9rem; text-align:center; }
+  .pass-steps-band{
+    margin-top:4rem;
+    padding-top:3rem;
+    border-top:1px solid var(--line);
+  }
+
   .pass-grid{
     display:grid;
     grid-template-columns:0.8fr 1.6fr;
@@ -661,6 +688,23 @@
   textarea{ resize:vertical; min-height:110px; }
   .form-status{ font-size:0.88rem; color:var(--olive); min-height:1.2rem; }
 
+  .form-success{
+    background:var(--navy-2);
+    border:1px solid var(--olive);
+    border-radius:4px;
+    padding:2rem 1.8rem;
+    display:grid;
+    gap:0.9rem;
+    justify-items:start;
+  }
+  .form-success h3{
+    font-size:1.7rem;
+    color:var(--olive);
+  }
+  .form-success p{ color:var(--dusky); font-size:0.95rem; }
+  .form-success .success-note{ font-size:0.82rem; }
+  .form-success .success-note a{ color:var(--olive); font-weight:600; }
+
   /* ---------- FOOTER ---------- */
   footer{
     padding:2.6rem 0;
@@ -729,6 +773,8 @@
     .facility-gallery{ grid-template-columns:1fr; }
     .action-strip{ grid-template-columns:1fr; }
     .pass-grid{ grid-template-columns:1fr; gap:2rem; }
+    .pass-hero-grid{ grid-template-columns:1fr; gap:2rem; }
+    .pass-hero-grid > *{ grid-column:auto; grid-row:auto; }
     .process-steps{ flex-direction:column; }
     .process-arrow{ display:none; }
     .pricing-grid, .trainers-grid{ grid-template-columns:1fr; }

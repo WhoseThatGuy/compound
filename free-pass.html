@@ -47,13 +47,41 @@
 
 <section class="subpage-hero" id="free-pass">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Try Before You Join</p>
-      <h2>Free for 7 days.</h2>
-      <p>Train on the floor, try the equipment, use the sauna, and see if it's the right fit — no pressure to join. For Dunedin residents.</p>
-    </div>
-
-    <div class="pass-grid">
+    <div class="pass-hero-grid">
+      <div class="pass-hero-copy">
+        <p class="eyebrow">Try Before You Join</p>
+        <h2>Free for 7 days.</h2>
+        <p class="pass-lede">Train on the floor, try the equipment, use the sauna, and see if it's the right fit — no pressure to join. Free for Dunedin locals.</p>
+      </div>
+      <div class="pass-form-card" id="claim">
+        <h2>Claim your pass.</h2>
+        <p>Four fields, about 30 seconds — then book your 5-minute key-tag setup and you're training this week.</p>
+        <form id="contactForm">
+          <div class="form-row">
+            <div>
+              <label for="fname">First name</label>
+              <input type="text" id="fname" name="fname" required>
+            </div>
+            <div>
+              <label for="lname">Last name</label>
+              <input type="text" id="lname" name="lname" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.4rem;">Claim Free 7-Day Pass</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+        <p class="pass-form-note">No card needed. No auto-signup. After your 7 days, you decide.</p>
+      </div>
       <ul class="pass-checklist">
         <li>7 days of full gym access</li>
         <li>Training floor, lifting platforms &amp; turf</li>
@@ -61,11 +89,15 @@
         <li>Free parking</li>
         <li>No obligation to join after</li>
       </ul>
-      <div class="process-steps">
+    </div>
+
+    <div class="pass-steps-band">
+      <p class="eyebrow">How It Works</p>
+      <div class="process-steps" style="margin-top:1.8rem;">
         <div class="process-step">
           <div class="process-num">1</div>
           <h3>Claim your pass</h3>
-          <p>Fill in the form below and we'll send you everything you need to get started.</p>
+          <p>Fill in the form above — it takes about 30 seconds.</p>
         </div>
         <div class="process-arrow">→</div>
         <div class="process-step">
@@ -80,38 +112,6 @@
           <p>You're set for 7 days of free training, sauna included.</p>
         </div>
       </div>
-    </div>
-
-    <div class="wrap" id="claim" style="max-width:640px; margin:4rem auto 0; padding-top:3rem; border-top:1px solid var(--line);">
-      <div class="section-head" style="margin-bottom:1.8rem;">
-        <p class="eyebrow">Last Step</p>
-        <h2 style="font-size:clamp(1.8rem, 3.4vw, 2.4rem); margin-top:0.8rem;">Claim your pass.</h2>
-        <p>Fill in your details and we'll be in touch to set up your key-tag — no obligation to join after your 7 days.</p>
-      </div>
-      <form id="contactForm">
-        <div class="form-row">
-          <div>
-            <label for="fname">First name</label>
-            <input type="text" id="fname" name="fname" required>
-          </div>
-          <div>
-            <label for="lname">Last name</label>
-            <input type="text" id="lname" name="lname" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.4rem;">Claim Free 7-Day Pass</button>
-        <p class="form-status" id="formStatus"></p>
-      </form>
     </div>
   </div>
 </section>
@@ -147,7 +147,7 @@
   </div>
 </footer>
 
-<a class="float-cta" href="free-pass.html#claim" id="floatCta">💪 <span>Free 7-Day Pass</span></a>
+<a class="float-cta" href="free-pass.html#claim" id="floatCta"><span>Free 7-Day Pass</span></a>
 <!-- /FOOTER -->
 
 <script src="js/main.js"></script>
