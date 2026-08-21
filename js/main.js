@@ -36,7 +36,7 @@ if (form) {
         <p>Your free 7-day pass is claimed. Book your 5-minute key-tag setup and you could be training this week.</p>
         <a class="btn btn-primary" href="${CALENDLY_URL}" target="_blank" rel="noopener">Book Your Key-Tag Setup</a>
         <p class="success-note">Or just walk in during staffed hours — Mon–Fri 6am–7pm, Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue.</p>
-        <p class="success-note">No card needed. No obligation after your 7 days.</p>`;
+        <p class="success-note">No obligation after your 7 days — if it's not the right fit, no hard feelings.</p>`;
     } else if (kind === 'tour') {
       panel.innerHTML = `
         <h3>Good call.</h3>
