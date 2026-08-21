@@ -49,8 +49,16 @@
       <div class="pass-hero-copy">
         <p class="eyebrow">Try Before You Join</p>
         <h2>Free for 7 days.</h2>
-        <p class="pass-lede">Train on the floor, try the equipment, use the sauna, and see if it's the right fit — no pressure to join. Free for Dunedin locals, since setting up your key-tag means coming in person.</p>
+        <p class="pass-lede">Train on the floor, try the equipment, use the sauna, and see if it's the right fit — no pressure to join. The pass is for people living in Dunedin. Setting up your key-tag takes about five minutes, in person.</p>
       </div>
+      <!-- Checklist sits before the form in source order so the mobile stack
+           reads value-then-ask; desktop placement is set explicitly in CSS. -->
+      <ul class="pass-checklist">
+        <li>7 days of full gym access</li>
+        <li>Training floor, lifting platforms &amp; turf</li>
+        <li>Sauna access during your pass</li>
+        <li>Free parking</li>
+      </ul>
       <div class="pass-form-card" id="claim">
         <h2>Claim your pass.</h2>
         <p>Four fields, about 30 seconds — then book your 5-minute key-tag setup and you're training this week.</p>
@@ -58,21 +66,21 @@
           <div class="form-row">
             <div>
               <label for="fname">First name</label>
-              <input type="text" id="fname" name="fname" required>
+              <input type="text" id="fname" name="fname" autocomplete="given-name" required>
             </div>
             <div>
               <label for="lname">Last name</label>
-              <input type="text" id="lname" name="lname" required>
+              <input type="text" id="lname" name="lname" autocomplete="family-name" required>
             </div>
           </div>
           <div class="form-row">
             <div>
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
+              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
             </div>
             <div>
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone">
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
             </div>
           </div>
           <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.4rem;">Claim Free 7-Day Pass</button>
@@ -80,12 +88,6 @@
         </form>
         <p class="pass-form-note">We'll be in touch to get your key-tag sorted.</p>
       </div>
-      <ul class="pass-checklist">
-        <li>7 days of full gym access</li>
-        <li>Training floor, lifting platforms &amp; turf</li>
-        <li>Sauna access during your pass</li>
-        <li>Free parking</li>
-      </ul>
     </div>
 
     <div class="pass-steps-band">
@@ -113,6 +115,10 @@
 
     <div class="pass-steps-band">
       <p class="eyebrow">From The Google Reviews</p>
+      <blockquote class="community-quote" style="margin-top:1.8rem;">
+        <p>"Spacious and good equipment. Not to mention a lot of lifting platforms so very good if you like SBD training."</p>
+        <cite>— Mark Uy, Google review</cite>
+      </blockquote>
       <div class="review-grid">
         <div class="review-card">
           <p>Had a short run of the free weekly trial they provide for the gym. Although I didn't end up staying, the overall experience was super positive. The people are pretty amazing, and they have built a super inspirational place to workout. 5 stars.</p>
@@ -137,8 +143,12 @@
           <p>Yes — the 7 days themselves are completely free. We'll walk you through membership options and next steps when you come in for your key-tag setup.</p>
         </div>
         <div class="faq-item">
+          <h3>I'm visiting Dunedin — can I use the pass?</h3>
+          <p>The free 7-day pass is for people living in Dunedin. If you're in town short-term, <a href="/contact" style="color:var(--olive); font-weight:600;">message us</a> and we'll sort out a drop-in instead.</p>
+        </div>
+        <div class="faq-item">
           <h3>Do I need to be fit or experienced to use it?</h3>
-          <p>No. Compound is for anyone who takes their training seriously — including people just getting started or coming back after time off. If you'd like a guided start, every membership includes 2 free PT sessions.</p>
+          <p>No. Nobody's checking. Plenty of people start here with no training background, and every membership includes a training programme and 2 free PT sessions if you'd like a guided start.</p>
         </div>
         <div class="faq-item">
           <h3>What does the pass include?</h3>
