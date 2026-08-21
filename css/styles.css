@@ -271,9 +271,8 @@
   .hero{
     position:relative;
     min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding-top:5rem;
+    min-height:100svh;
+    padding-top:9rem;
     overflow:hidden;
   }
   .hero-photo-bg{
