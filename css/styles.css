@@ -705,7 +705,8 @@
     padding:0.85rem 1rem;
     border-radius:2px;
     font-family:'Montserrat';
-    font-size:0.95rem;
+    /* Keep at 1rem (16px) — iOS Safari zooms the viewport on focus below 16px. */
+    font-size:1rem;
     transition:border-color 0.2s ease;
   }
   input:focus, textarea:focus, select:focus{ border-color:var(--olive); outline:none; }
