@@ -14,6 +14,28 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 const CALENDLY_URL = "https://calendly.com/compoundgymnz/key-pickup";
 const CALENDLY_TOUR_URL = "https://calendly.com/compoundgymnz/compound-tour";
 
+// ---- ANNUAL / FLEXI PRICING TOGGLE -----------------------------------
+// Flips one attribute; CSS does the swapping. Both prices are already in the
+// DOM, so with JS off the page still shows annual pricing rather than nothing.
+const pricingWrap = document.querySelector('.pricing-wrap');
+if (pricingWrap) {
+  pricingWrap.querySelectorAll('[data-set-term]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const term = btn.getAttribute('data-set-term');
+      if (pricingWrap.getAttribute('data-term') === term) return;
+      pricingWrap.setAttribute('data-term', term);
+      pricingWrap.querySelectorAll('[data-set-term]').forEach(b => {
+        const on = b === btn;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      if (typeof gtag === 'function') {
+        gtag('event', 'pricing_term_toggle', { term });
+      }
+    });
+  });
+}
+
 // ---- CALENDLY INLINE EMBED ------------------------------------------
 // The booking widget is mounted straight into the success panel rather than
 // sending people to calendly.com, so claiming a pass and booking the key-tag

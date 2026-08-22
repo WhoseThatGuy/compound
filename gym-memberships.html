@@ -57,63 +57,114 @@
   <div class="wrap">
     <p class="eyebrow">Memberships</p>
     <h2>Pick your load.</h2>
-    <p style="color:var(--dusky); margin-top:1rem; max-width:560px;">Annual (12-month term) or Flexi (week to week, cancel anytime) — no joining fees either way. Pay upfront and save 10%.</p>
-    <p style="color:var(--dusky); margin-top:0.9rem; max-width:560px;">These plans aren't about how fit you are — a first-time HYROX entrant and a national-level lifter pick the same way: by when they can train. Every plan gets the same floor, the same equipment, the same personal training.</p>
+    <p style="color:var(--dusky); margin-top:1rem; max-width:560px;">Every plan gets the same floor, the same equipment, the same personal training. The only thing that changes is when you can train.</p>
     <p style="margin-top:0.9rem;">Not ready to commit? <a href="/free-7-day-pass#claim" style="color:var(--olive); font-weight:600;">Try Compound free for 7 days →</a></p>
-    <div class="pricing-grid" style="margin-top:3rem;">
-      <div class="plate-card">
-        <div class="plate-disc">17</div>
-        <div class="plate-tier">Off Peak</div>
-        <div class="plate-price">$16.95<span> / week annual</span></div>
-        <p class="plate-prepay">Or <strong>$793/yr</strong> paid upfront — save $88</p>
-        <p class="plate-desc">Train 9am–3pm or 9pm–3am. Best if your schedule sits comfortably outside peak hours. $19.95/week on Flexi.</p>
-        <ul class="plate-list">
-          <li>Off-peak access window</li>
-          <li>Free training programme + 2 PT sessions</li>
-          <li>Unlimited infrared sauna</li>
-          <li>Free parking &amp; Wi-Fi</li>
-        </ul>
-        <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;">Join Off Peak</a>
-        <p class="plate-cta-note">Rather talk it through first? <a href="/contact" style="color:var(--olive);">Message us</a> — no commitment.</p>
+
+    <!-- data-term drives every price and terms line on the page. Both values
+         are in the DOM and CSS hides the inactive one, so the annual pricing
+         still renders with JS off. -->
+    <div class="pricing-wrap" data-term="annual">
+      <div class="term-toggle" role="group" aria-label="Payment term">
+        <button type="button" class="term-btn is-on" data-set-term="annual" aria-pressed="true">Annual</button>
+        <button type="button" class="term-btn" data-set-term="flexi" aria-pressed="false">Flexi</button>
       </div>
-      <div class="plate-card featured">
-        <span class="plate-badge">Flagship</span>
-        <div class="plate-disc">23</div>
-        <div class="plate-tier">Standard</div>
-        <div class="plate-price">$22.95<span> / week annual</span></div>
-        <p class="plate-prepay">Or <strong>$1,074/yr</strong> paid upfront — save $119</p>
-        <p class="plate-desc">Full 24/7 access — train whenever life allows, no schedule required. $27.95/week on Flexi.</p>
-        <ul class="plate-list">
-          <li>24/7 gym access, any hour</li>
-          <li>Free training programme + 2 PT sessions</li>
-          <li>Unlimited infrared sauna</li>
-          <li>Free parking &amp; Wi-Fi</li>
-        </ul>
-        <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center;">Join Standard</a>
-        <p class="plate-cta-note">Rather talk it through first? <a href="/contact" style="color:var(--olive);">Message us</a> — no commitment.</p>
-      </div>
-      <div class="plate-card">
-        <div class="plate-disc">21</div>
-        <div class="plate-tier">Youth &amp; First Responders</div>
-        <div class="plate-price">$20.95<span> / week annual</span></div>
-        <p class="plate-prepay">Or <strong>$980/yr</strong> paid upfront — save $109</p>
-        <p class="plate-desc">Full 24/7 access. $24.95/week on Flexi.</p>
-        <div class="plate-eligibility">
-          <span class="tag">Under 23</span>
-          <span class="tag">Fire</span>
-          <span class="tag">Police</span>
-          <span class="tag">Ambulance</span>
-          <span class="tag">Defence Force</span>
+      <p class="term-note">
+        <span class="term-annual">12-month term at the lower weekly rate. Pause any time from the app.</span>
+        <span class="term-flexi">Week to week, no term. Cancel any time, no fee.</span>
+      </p>
+
+      <div class="pricing-grid">
+        <div class="plate-card">
+          <div class="plate-disc">17</div>
+          <div class="plate-tier">Off Peak</div>
+          <div class="plate-price"><span class="term-annual">$16.95</span><span class="term-flexi">$19.95</span><span> / week</span></div>
+          <p class="plate-prepay term-annual">Or <strong>$793/yr</strong> paid upfront — save $88</p>
+          <p class="plate-desc">Train 9am–3pm or 9pm–3am. Best if your schedule sits comfortably outside peak hours.</p>
+          <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;">Join Off Peak</a>
+          <p class="plate-cta-note">Rather talk it through first? <a href="/contact" style="color:var(--olive);">Message us</a>.</p>
         </div>
-        <ul class="plate-list" style="margin-top:1rem;">
-          <li>24/7 gym access</li>
-          <li>Free training programme + 2 PT sessions</li>
-          <li>Unlimited infrared sauna</li>
-          <li>Free parking &amp; Wi-Fi</li>
-        </ul>
-        <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;">Join Now</a>
-        <p class="plate-cta-note">First responder? <a href="/contact" style="color:var(--olive);">Message us</a> and we'll set you up directly.</p>
+        <div class="plate-card featured">
+          <span class="plate-badge">Flagship</span>
+          <div class="plate-disc">23</div>
+          <div class="plate-tier">Standard</div>
+          <div class="plate-price"><span class="term-annual">$22.95</span><span class="term-flexi">$27.95</span><span> / week</span></div>
+          <p class="plate-prepay term-annual">Or <strong>$1,074/yr</strong> paid upfront — save $119</p>
+          <p class="plate-desc">Full 24/7 access. Train whenever life allows, no schedule to work around.</p>
+          <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center;">Join Standard</a>
+          <p class="plate-cta-note">Rather talk it through first? <a href="/contact" style="color:var(--olive);">Message us</a>.</p>
+        </div>
+        <div class="plate-card">
+          <div class="plate-disc">21</div>
+          <div class="plate-tier">Youth &amp; First Responders</div>
+          <div class="plate-price"><span class="term-annual">$20.95</span><span class="term-flexi">$24.95</span><span> / week</span></div>
+          <p class="plate-prepay term-annual">Or <strong>$980/yr</strong> paid upfront — save $109</p>
+          <p class="plate-desc">Full 24/7 access, if you're under 23 or a first responder.</p>
+          <div class="plate-eligibility">
+            <span class="tag">Under 23</span>
+            <span class="tag">Fire</span>
+            <span class="tag">Police</span>
+            <span class="tag">Ambulance</span>
+            <span class="tag">Defence Force</span>
+          </div>
+          <a href="/contact" class="btn btn-ghost" style="justify-content:center;">Check You're Eligible</a>
+          <p class="plate-cta-note">We'll confirm and set you up directly — usually same day.</p>
+        </div>
       </div>
+
+      <div class="compare-wrap">
+        <table class="compare">
+          <caption class="sr-only">Compound membership plans compared</caption>
+          <colgroup>
+            <col class="compare-label">
+            <col class="compare-plan">
+            <col class="compare-plan">
+            <col class="compare-plan">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col"><span class="sr-only">Feature</span></th>
+              <th scope="col">Off Peak</th>
+              <th scope="col">Standard</th>
+              <th scope="col">Youth &amp; First&nbsp;Responders</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="compare-group"><th scope="colgroup" colspan="4">What changes</th></tr>
+            <tr>
+              <th scope="row">Training hours</th>
+              <td>9am–3pm<br>9pm–3am</td>
+              <td class="is-yes-text">Any hour</td>
+              <td class="is-yes-text">Any hour</td>
+            </tr>
+            <tr>
+              <th scope="row">Price per week</th>
+              <td><span class="term-annual">$16.95</span><span class="term-flexi">$19.95</span></td>
+              <td><span class="term-annual">$22.95</span><span class="term-flexi">$27.95</span></td>
+              <td><span class="term-annual">$20.95</span><span class="term-flexi">$24.95</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Who it's for</th>
+              <td>Anyone</td>
+              <td>Anyone</td>
+              <td>Under 23, or a first responder</td>
+            </tr>
+
+            <tr class="compare-group"><th scope="colgroup" colspan="4">The same on every plan</th></tr>
+            <tr><th scope="row">Nine lifting platforms, Eleiko bars</th><td data-yes></td><td data-yes></td><td data-yes></td></tr>
+            <tr><th scope="row">40m indoor turf, sleds and ergs</th><td data-yes></td><td data-yes></td><td data-yes></td></tr>
+            <tr><th scope="row">Infrared sauna, unlimited</th><td data-yes></td><td data-yes></td><td data-yes></td></tr>
+            <tr><th scope="row">Training programme written for you</th><td data-yes></td><td data-yes></td><td data-yes></td></tr>
+            <tr><th scope="row">2 personal training sessions</th><td data-yes></td><td data-yes></td><td data-yes></td></tr>
+            <tr><th scope="row">Free parking at Gate J</th><td data-yes></td><td data-yes></td><td data-yes></td></tr>
+            <tr><th scope="row">WiFi</th><td data-yes></td><td data-yes></td><td data-yes></td></tr>
+            <tr><th scope="row">Joining fee</th><td class="is-none">None</td><td class="is-none">None</td><td class="is-none">None</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-foot">
+        <span class="term-annual">On Annual: 12-month term, then it rolls over — after that, 3 days' notice to cancel, no fee. Need out before 12 months? A flat $99. Pause any time from the app.</span>
+        <span class="term-flexi">On Flexi: no term at all. Pause or cancel any time from the app, no fee, at a slightly higher weekly rate.</span>
+      </p>
     </div>
 
     <div class="faq-list">

@@ -520,6 +520,120 @@
   .plate-eligibility{ display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.8rem; }
   .plate-cta-note{ color:var(--dusky); font-size:0.76rem; text-align:center; margin-top:0.7rem; }
 
+  /* ---- ANNUAL / FLEXI TOGGLE ---- */
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+  }
+  /* Both terms ship in the DOM; the inactive one is hidden here rather than
+     swapped in JS, so annual pricing still renders if the script never runs. */
+  .pricing-wrap[data-term="annual"] .term-flexi{ display:none; }
+  .pricing-wrap[data-term="flexi"]  .term-annual{ display:none; }
+
+  .term-toggle{
+    display:inline-flex;
+    margin-top:2.4rem;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:0.25rem;
+    background:var(--navy-2);
+  }
+  .term-btn{
+    font-family:'Montserrat', sans-serif;
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--dusky);
+    background:none;
+    border:0;
+    border-radius:999px;
+    padding:0.55rem 1.5rem;
+    cursor:pointer;
+    transition:background 0.15s, color 0.15s;
+  }
+  .term-btn:hover{ color:var(--beige); }
+  .term-btn.is-on{ background:var(--olive); color:var(--navy); }
+  .term-btn:focus-visible{ outline:2px solid var(--olive); outline-offset:2px; }
+  .term-note{ color:var(--dusky); font-size:0.85rem; margin-top:0.9rem; }
+  .pricing-wrap .pricing-grid{ margin-top:2.2rem; }
+
+  /* ---- PLAN COMPARISON TABLE ---- */
+  .compare-wrap{ margin-top:3.5rem; overflow-x:auto; }
+  .compare{
+    width:100%;
+    min-width:640px;
+    border-collapse:collapse;
+    font-size:0.9rem;
+    /* fixed, so the three plan columns stay equal — otherwise the longest
+       cell (the eligibility list) drags its column to ~4x the others. */
+    table-layout:fixed;
+  }
+  .compare col.compare-label{ width:34%; }
+  .compare col.compare-plan{ width:22%; }
+  .compare th, .compare td{
+    padding:0.85rem 1rem;
+    border-bottom:1px solid var(--line);
+    text-align:center;
+    vertical-align:middle;
+  }
+  .compare thead th{
+    font-family:'Reem Kufi', sans-serif;
+    text-transform:uppercase;
+    font-size:0.85rem;
+    color:var(--beige);
+    border-bottom:1px solid var(--olive);
+    position:sticky;
+    top:0;
+    background:var(--navy);
+  }
+  .compare tbody th[scope="row"]{
+    text-align:left;
+    font-weight:400;
+    color:var(--dusky);
+    width:34%;
+  }
+  .compare td{ color:var(--beige); }
+  .compare-group th{
+    text-align:left;
+    font-family:'Montserrat', sans-serif;
+    font-size:0.7rem;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--olive);
+    padding-top:2rem;
+    border-bottom:1px solid var(--olive);
+  }
+  /* A tick drawn in CSS, with a text alternative for screen readers — an
+     empty cell would otherwise announce as nothing at all. */
+  .compare td[data-yes]::before{
+    content:"✓";
+    color:var(--olive);
+    font-size:1.1rem;
+    font-weight:700;
+  }
+  .compare td[data-yes]::after{
+    content:"Included";
+    position:absolute; width:1px; height:1px; overflow:hidden;
+    clip:rect(0 0 0 0); white-space:nowrap;
+  }
+  .compare td.is-yes-text{ color:var(--beige); font-weight:600; }
+  .compare td.is-none{ color:var(--olive); font-weight:600; }
+  .compare-foot{ color:var(--dusky); font-size:0.85rem; margin-top:1.4rem; max-width:640px; }
+
+  @media (max-width:700px){
+    .compare-wrap{
+      margin-left:calc(-1 * clamp(1.2rem, 5vw, 2.5rem));
+      margin-right:calc(-1 * clamp(1.2rem, 5vw, 2.5rem));
+      padding-left:clamp(1.2rem, 5vw, 2.5rem);
+      padding-right:clamp(1.2rem, 5vw, 2.5rem);
+    }
+    .compare{ min-width:560px; font-size:0.84rem; }
+    .compare th, .compare td{ padding:0.7rem 0.6rem; }
+    .compare tbody th[scope="row"]{ width:40%; }
+  }
+
   /* ---------- FAQ ---------- */
   .faq-list{ display:grid; gap:1.6rem; max-width:720px; margin-top:2.2rem; }
   .faq-item{ padding-bottom:1.6rem; border-bottom:1px solid var(--line); }
