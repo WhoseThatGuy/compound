@@ -98,11 +98,6 @@
       "permanent": true
     },
     {
-      "source": "/personal-training-consult",
-      "destination": "/personal-trainers",
-      "permanent": false
-    },
-    {
       "source": "/hyrox-training",
       "destination": "/",
       "permanent": true

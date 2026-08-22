@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request A Personal Trainer | Compound Gym Dunedin</title>
+<meta name="description" content="Tell us what you're training for and we'll match you with the right personal trainer at Compound Gym, Dunedin. Every membership includes 2 free PT sessions.">
+<link rel="canonical" href="https://compoundgym.nz/personal-training-consult">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Request A Personal Trainer | Compound Gym Dunedin">
+<meta property="og:description" content="Tell us what you're training for and we'll match you with the right trainer.">
+<meta property="og:image" content="https://compoundgym.nz/images/action-benchpress.webp">
+<meta property="og:url" content="https://compoundgym.nz/personal-training-consult">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<!-- ANALYTICS -->
+<!-- Google tag (gtag.js) — GA4 property "Compound Gym", stream 6663089156 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BTDQQ0DQVC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BTDQQ0DQVC');
+</script>
+<!-- /ANALYTICS -->
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <nav class="nav">
+    <a href="/" class="logo">
+      <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 2,49 A 47,47 0 0 1 49,2 L 88,2 A 10,10 0 0 1 98,12 L 98,88 A 10,10 0 0 1 88,98 L 49,98 A 47,47 0 0 1 2,51 Z" fill="currentColor"/>
+        <rect x="46" y="0" width="8" height="100" fill="var(--navy)"/>
+        <rect x="0" y="46" width="100" height="8" fill="var(--navy)"/>
+      </svg>
+      Compound
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="/gym-memberships" data-page="gym-memberships">Memberships</a>
+      <a href="/gym-equipment" data-page="gym-equipment">Equipment</a>
+      <a href="/free-7-day-pass" data-page="free-7-day-pass">Free Pass</a>
+      <a href="/personal-trainers" data-page="personal-trainers">Trainers</a>
+      <a href="/contact" data-page="contact">Contact</a>
+    </div>
+    <a href="/free-7-day-pass#claim" class="nav-cta">Free <span class="nav-cta-long">7-Day </span>Pass</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+<!-- /NAV -->
+
+<section class="subpage-hero" id="pt-consult">
+  <div class="wrap">
+    <div class="pass-hero-grid">
+      <div class="pass-hero-copy">
+        <p class="eyebrow">Personal Training</p>
+        <h2>Get matched with<br>the right trainer.</h2>
+        <p class="pass-lede">Tell us what you're training for and we'll put you with the trainer who fits — by specialism first, then by when you can actually train.</p>
+      </div>
+      <!-- Checklist before the form in source order so the mobile stack reads
+           value-then-ask; desktop placement is set explicitly in CSS. -->
+      <ul class="pass-checklist">
+        <li>2 free PT sessions with every membership</li>
+        <li>Matched on specialism and availability</li>
+        <li>Olympic lifting, running, HYROX, strength, sports performance</li>
+        <li>No obligation — we'll talk it through first</li>
+      </ul>
+      <div class="pass-form-card" id="request">
+        <h2>Request a trainer.</h2>
+        <p>We'll review your request and come back to you with the right match.</p>
+        <form id="contactForm">
+          <input type="hidden" id="interest" name="interest" value="Personal Training">
+          <div class="form-row">
+            <div>
+              <label for="fname">First name</label>
+              <input type="text" id="fname" name="fname" autocomplete="given-name" required>
+            </div>
+            <div>
+              <label for="lname">Last name</label>
+              <input type="text" id="lname" name="lname" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
+            </div>
+          </div>
+          <div>
+            <label for="trainer">Preferred trainer</label>
+            <select id="trainer" name="trainer">
+              <option>Not sure — match me</option>
+              <option>Ben Thompson — Olympic Lifting &amp; CrossFit</option>
+              <option>Sammy Burke — Running &amp; Hyrox</option>
+              <option>Josh Dryden — Strength &amp; Body Composition</option>
+              <option>James Douglas — Strength &amp; Sports Performance</option>
+              <option>Josh Skryba — Strength &amp; Performance</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">What are you training for?</label>
+            <textarea id="message" name="message" placeholder="An event, a lift, coming back from injury, or just getting started — whatever it is."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.4rem;">Request A Personal Trainer</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+        <p class="pass-form-note">We'll be in touch to sort your first session.</p>
+      </div>
+    </div>
+
+    <div class="pass-steps-band">
+      <p class="eyebrow">How It Works</p>
+      <div class="process-steps" style="margin-top:1.8rem;">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <h3>Tell us your goal</h3>
+          <p>Fill in the form above — it takes about a minute.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <h3>We match you</h3>
+          <p>We pick the trainer whose specialism and hours fit what you're after.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <h3>Start training</h3>
+          <p>Two sessions are included with every membership, so the first ones are on us.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pass-steps-band">
+      <p class="eyebrow">The Team</p>
+      <div class="review-grid">
+        <div class="review-card">
+          <p>I coach people who want to move better, lift safely, build strength, and train with more structure — new to lifting or already training hard.</p>
+          <div class="review-name">— Ben Thompson, Olympic Lifting &amp; CrossFit</div>
+        </div>
+        <div class="review-card">
+          <p>I help people improve their running, build endurance, prepare for events, and train with a smarter, more structured approach.</p>
+          <div class="review-name">— Sammy Burke, Running &amp; Hyrox</div>
+        </div>
+        <div class="review-card">
+          <p>My goal is simple: to help you get stronger, more capable, and more confident, ready for whatever sport, training, or daily life demands.</p>
+          <div class="review-name">— Josh Skryba, Strength &amp; Performance</div>
+        </div>
+      </div>
+      <p style="margin-top:1.6rem;">
+        <a href="/personal-trainers" style="color:var(--olive); font-weight:600;">Meet the full team →</a>
+      </p>
+    </div>
+
+    <div class="pass-steps-band">
+      <p class="eyebrow">Not Ready For That Yet?</p>
+      <p style="color:var(--dusky); max-width:560px;">The free 7-day pass gets you on the floor first, no trainer required. <a href="/free-7-day-pass#claim" style="color:var(--olive); font-weight:600;">Claim a free 7-day pass →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/about-us">About</a>
+      <a href="/gym-memberships">Memberships</a>
+      <a href="/gym-equipment">Equipment</a>
+      <a href="/dunedin-gym-sauna">Sauna</a>
+      <a href="/personal-trainers">Trainers</a>
+      <a href="/free-7-day-pass">Free Pass</a>
+      <a href="/athletes">Athletes</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-row">
+      <div style="display:flex; align-items:center; gap:0.6rem;">
+        <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:20px; height:20px;">
+          <path d="M 2,49 A 47,47 0 0 1 49,2 L 88,2 A 10,10 0 0 1 98,12 L 98,88 A 10,10 0 0 1 88,98 L 49,98 A 47,47 0 0 1 2,51 Z" fill="currentColor"/>
+          <rect x="46" y="0" width="8" height="100" fill="var(--navy)"/>
+          <rect x="0" y="46" width="100" height="8" fill="var(--navy)"/>
+        </svg>
+        Compound · Est. 2023 · Forsyth Barr Stadium, Dunedin
+      </div>
+      <div style="display:flex; gap:1.4rem;">
+        <a href="https://www.facebook.com/CompoundGymNz" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/compoundgymnz/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@compoundgymnz" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <div>© 2026 Compound Gym. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" href="/free-7-day-pass#claim" id="floatCta"><span>Free 7-Day Pass</span></a>
+<!-- /FOOTER -->
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

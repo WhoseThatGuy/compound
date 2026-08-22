@@ -59,6 +59,12 @@ if (form) {
         <p>Pick a time below and we'll show you around the floor — no workout required.</p>
         <a class="btn btn-primary" href="${CALENDLY_TOUR_URL}" target="_blank" rel="noopener">Book Your Gym Tour</a>
         <p class="success-note">Or just drop in during staffed hours — Mon–Fri 6am–7pm, Gate J, Level 2A, Forsyth Barr Stadium.</p>`;
+    } else if (kind === 'pt') {
+      panel.innerHTML = `
+        <h3>Request received.</h3>
+        <p>We'll go through it and come back to you with the trainer who fits what you're training for.</p>
+        <p class="success-note">Need us sooner? WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a>.</p>
+        <p class="success-note">Your first 2 sessions are included with every membership.</p>`;
     } else {
       panel.innerHTML = `
         <h3>Got it.</h3>
@@ -98,7 +104,10 @@ if (form) {
     // the selected interest decides which onboarding panel appears.
     const interestSel = form.querySelector('#interest');
     const isFreePass = !interestSel || interestSel.value === 'Free 7-Day Pass';
-    const kind = isFreePass ? 'pass' : (interestSel.value === 'Gym Tour' ? 'tour' : 'general');
+    const kind = isFreePass ? 'pass'
+      : interestSel.value === 'Gym Tour' ? 'tour'
+      : interestSel.value === 'Personal Training' ? 'pt'
+      : 'general';
 
     try {
       const res = await fetch(isFreePass ? FORMSPREE_FREEPASS : FORMSPREE_CONTACT, {
