@@ -404,38 +404,6 @@
   }
   .pillar p{ color:var(--dusky); font-size:0.95rem; }
 
-  /* ---- HOUSE RULES ---- */
-  #house-rules{ border-bottom:1px solid var(--line); }
-  .rules-list{
-    list-style:none;
-    margin:1.6rem 0 0;
-    padding:0;
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1.1rem 2rem;
-  }
-  .rules-list li{
-    font-family:'Reem Kufi', sans-serif;
-    text-transform:uppercase;
-    font-size:clamp(1.15rem, 2.4vw, 1.7rem);
-    line-height:1.15;
-    color:var(--beige);
-    padding-bottom:1.1rem;
-    border-bottom:1px solid var(--line);
-  }
-  .rules-note{
-    margin-top:1.8rem;
-    color:var(--dusky);
-    font-size:0.95rem;
-  }
-  .rules-note a{ color:var(--olive); font-weight:600; white-space:nowrap; }
-  @media (max-width:860px){
-    .rules-list{ grid-template-columns:repeat(2, 1fr); }
-  }
-  @media (max-width:520px){
-    .rules-list{ grid-template-columns:1fr; gap:0.9rem; }
-    .rules-list li{ padding-bottom:0.9rem; }
-  }
 
   .facility-gallery{
     display:grid;
@@ -847,6 +815,10 @@
   .trainer-role{ color:var(--olive); font-size:0.82rem; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:0.6rem; }
   .trainer-line{ color:var(--dusky); font-size:0.88rem; line-height:1.5; }
   .trainer-credential{ color:var(--dusky); font-size:0.78rem; margin-bottom:0.6rem; }
+  /* Replaces the "I help people…" quote. A reader picking a trainer needs to
+     know who each one suits, not what all five have in common. */
+  .trainer-bestfor{ color:var(--beige); font-size:0.88rem; line-height:1.5; }
+  .trainer-bestfor b{ color:var(--olive); font-weight:600; }
   .trainer-tags{ display:flex; flex-wrap:wrap; gap:0.5rem; }
   .tag{
     font-family:'Montserrat', sans-serif;
