@@ -300,11 +300,18 @@
   .hero h1 .line2{ color:var(--olive); }
   .hero p.lede{
     max-width:480px;
-    color:var(--dusky);
+    /* --beige, not --dusky: over the hero photo scrim dusky measures 3.42:1,
+       below the 4.5:1 AA floor. Beige measures 6.7:1. */
+    color:var(--beige);
     font-size:1.08rem;
     margin-bottom:2.1rem;
   }
   .hero-ctas{ display:flex; gap:1rem; flex-wrap:wrap; }
+  .hero-cta-note{
+    margin-top:0.9rem;
+    font-size:0.85rem;
+    color:var(--dusky);
+  }
 
   .hero-rating{
     display:flex;
