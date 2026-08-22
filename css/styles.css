@@ -473,7 +473,11 @@
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
     gap:1.2rem;
-    align-items:end;
+    /* stretch, not end: the cards used to be filled out by .plate-list's
+       flex-grow, so bottom-aligning them looked deliberate. With the feature
+       lists moved into the comparison table the cards have unequal content
+       and align:end left them visibly ragged. */
+    align-items:stretch;
   }
   .plate-card{
     background:var(--navy-2);
@@ -518,7 +522,21 @@
   .plate-list li{ font-size:0.9rem; display:flex; gap:0.6rem; }
   .plate-list li::before{ content:"—"; color:var(--olive); flex-shrink:0; }
   .plate-eligibility{ display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.8rem; }
-  .plate-cta-note{ color:var(--dusky); font-size:0.76rem; text-align:center; margin-top:0.7rem; }
+  /* Takes over the job .plate-list's flex-grow used to do — pins the CTA and
+     its note to the bottom so buttons line up across cards of unequal height. */
+  .plate-card > .btn{
+    margin-top:auto;
+    /* nowrap keeps every CTA one line high, so a label a couple of characters
+       longer than its neighbours can't knock the row out of alignment. Keep
+       card CTAs under about 20 characters. */
+    white-space:nowrap;
+  }
+  /* Reserve two lines so a one-line note doesn't sit a whole line higher than
+     its neighbours and drag its CTA out of alignment with the rest of the row. */
+  .plate-cta-note{
+    color:var(--dusky); font-size:0.76rem; text-align:center;
+    margin-top:0.7rem; min-height:3.2em;
+  }
 
   /* ---- ANNUAL / FLEXI TOGGLE ---- */
   .sr-only{
@@ -569,8 +587,24 @@
        cell (the eligibility list) drags its column to ~4x the others. */
     table-layout:fixed;
   }
-  .compare col.compare-label{ width:34%; }
-  .compare col.compare-plan{ width:22%; }
+  .compare col.compare-label{ width:28%; }
+  .compare col.compare-plan{ width:18%; }
+  .compare .cell-sub{ display:block; color:var(--dusky); font-size:0.76rem; font-weight:400; }
+  /* Our column is tinted so the eye can hold it while scanning across. */
+  .compare .is-us{ background:rgba(153,134,81,0.10); }
+  .compare thead th.is-us{ color:var(--olive); }
+  .compare td:not(.is-us){ color:var(--dusky); }
+
+  .included-strip{ margin-top:3rem; }
+  .included-list{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:0.7rem 2rem;
+    margin-top:1.2rem;
+  }
+  .included-list li{ font-size:0.92rem; display:flex; gap:0.6rem; color:var(--beige); }
+  .included-list li::before{ content:"✓"; color:var(--olive); flex-shrink:0; font-weight:700; }
   .compare th, .compare td{
     padding:0.85rem 1rem;
     border-bottom:1px solid var(--line);
