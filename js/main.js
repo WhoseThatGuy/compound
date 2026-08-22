@@ -14,6 +14,75 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 const CALENDLY_URL = "https://calendly.com/compoundgymnz/key-pickup";
 const CALENDLY_TOUR_URL = "https://calendly.com/compoundgymnz/compound-tour";
 
+// ---- CALENDLY INLINE EMBED ------------------------------------------
+// The booking widget is mounted straight into the success panel rather than
+// sending people to calendly.com, so claiming a pass and booking the key-tag
+// pickup are one uninterrupted step. Loaded on demand — only someone who has
+// actually submitted a form ever pays for this script.
+const CALENDLY_WIDGET_JS  = "https://assets.calendly.com/assets/external/widget.js";
+const CALENDLY_WIDGET_CSS = "https://assets.calendly.com/assets/external/widget.css";
+let calendlyLoader = null;
+
+function loadCalendly() {
+  if (calendlyLoader) return calendlyLoader;
+  calendlyLoader = new Promise((resolve, reject) => {
+    if (window.Calendly) return resolve();
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = CALENDLY_WIDGET_CSS;
+    document.head.appendChild(css);
+    const s = document.createElement('script');
+    s.src = CALENDLY_WIDGET_JS;
+    s.async = true;
+    s.onload  = () => window.Calendly ? resolve() : reject(new Error('widget.js loaded but Calendly missing'));
+    s.onerror = () => reject(new Error('widget.js blocked'));
+    document.head.appendChild(s);
+  });
+  return calendlyLoader;
+}
+
+// Prefill goes through Calendly's JS API, not query params, so nobody's name
+// and email end up in a URL. Ad blockers block Calendly often enough that the
+// plain link has to survive as a fallback — it's revealed if the widget can't
+// mount within 8s.
+function mountCalendly(panel, url, data) {
+  const host = panel.querySelector('.calendly-embed');
+  const fallback = panel.querySelector('.calendly-fallback');
+  if (!host) return;
+
+  let settled = false;
+  const fail = () => {
+    if (settled) return;
+    settled = true;
+    host.remove();
+    if (fallback) fallback.hidden = false;
+  };
+  const timer = setTimeout(fail, 8000);
+
+  loadCalendly().then(() => {
+    if (settled) return;
+    clearTimeout(timer);
+    settled = true;
+    const name = [data && data.fname, data && data.lname].filter(Boolean).join(' ').trim();
+    window.Calendly.initInlineWidget({
+      url,
+      parentElement: host,
+      prefill: { name, email: (data && data.email) || '' }
+    });
+  }).catch(() => { clearTimeout(timer); fail(); });
+}
+
+// The inline widget never navigates, so the outbound click tracker below can't
+// see it. Calendly posts its own lifecycle events to the parent frame instead —
+// event_scheduled is the one that means a booking actually happened, which is a
+// better signal than the click ever was.
+window.addEventListener('message', (e) => {
+  if (!/^https:\/\/([a-z0-9-]+\.)?calendly\.com$/.test(e.origin)) return;
+  const name = e.data && e.data.event;
+  if (name !== 'calendly.event_scheduled' || typeof gtag !== 'function') return;
+  gtag('event', 'calendly_booked', { page_path: window.location.pathname });
+});
+
 // ---- CALENDLY OUTBOUND TRACKING ------------------------------------
 // Calendly runs on its own domain, so GA4 records the booking page itself
 // (/compoundgymnz/<event>) but nothing about the click that sent someone
@@ -42,21 +111,23 @@ if (form) {
 
   // After a successful submit, the next step (key-tag setup or tour) is
   // offered immediately instead of leaving the prospect waiting on a reply.
-  function showSuccess(kind) {
+  function showSuccess(kind, data) {
     const panel = document.createElement('div');
     panel.className = 'form-success';
     panel.setAttribute('role', 'status');
     if (kind === 'pass') {
       panel.innerHTML = `
         <h3>You're in.</h3>
-        <p>Your Free 7-Day Pass is claimed. Pick a time to collect your key-tag — five minutes, and you're training.</p>
-        <a class="btn btn-primary" href="${CALENDLY_URL}" target="_blank" rel="noopener">Book Your Key-Tag Pickup</a>
+        <p>Your Free 7-Day Pass is claimed. Pick a time below to collect your key-tag — five minutes, and you're training.</p>
+        <div class="calendly-embed"></div>
+        <p class="calendly-fallback" hidden><a class="btn btn-primary" href="${CALENDLY_URL}" target="_blank" rel="noopener">Book Your Key-Tag Pickup</a></p>
         <p class="success-note">Or just walk in during staffed hours — Mon–Fri 6am–7pm, Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue.</p>`;
     } else if (kind === 'tour') {
       panel.innerHTML = `
         <h3>Good call.</h3>
         <p>Pick a time below and we'll show you around the floor — no workout required.</p>
-        <a class="btn btn-primary" href="${CALENDLY_TOUR_URL}" target="_blank" rel="noopener">Book Your Gym Tour</a>
+        <div class="calendly-embed"></div>
+        <p class="calendly-fallback" hidden><a class="btn btn-primary" href="${CALENDLY_TOUR_URL}" target="_blank" rel="noopener">Book Your Gym Tour</a></p>
         <p class="success-note">Or just drop in during staffed hours — Mon–Fri 6am–7pm, Gate J, Level 2A, Forsyth Barr Stadium.</p>`;
     } else if (kind === 'pt') {
       panel.innerHTML = `
@@ -88,8 +159,13 @@ if (form) {
     const floatCta = document.getElementById('floatCta');
     if (floatCta) floatCta.remove();
 
+    // Must be in the DOM before Calendly mounts into it.
     form.replaceWith(panel);
-    panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (kind === 'pass') mountCalendly(panel, CALENDLY_URL, data);
+    if (kind === 'tour') mountCalendly(panel, CALENDLY_TOUR_URL, data);
+    // 'start', not 'center' — with the calendar embedded the panel is taller
+    // than the viewport, and centring it hides the heading off the top.
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   form.addEventListener('submit', async (e) => {
@@ -119,7 +195,7 @@ if (form) {
       });
 
       if (res.ok) {
-        showSuccess(kind);
+        showSuccess(kind, data);
       } else {
         status.textContent = "Something went wrong sending that. Please call or email us directly.";
       }
