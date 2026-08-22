@@ -3,6 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.compoundgym.nz"
+        }
+      ],
+      "destination": "https://compoundgym.nz/:path*",
+      "permanent": true
+    },
+    {
       "source": "/book-gym-tour",
       "destination": "/contact",
       "permanent": true
