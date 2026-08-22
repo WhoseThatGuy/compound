@@ -692,7 +692,7 @@
     margin-bottom:3rem;
   }
   .action-photo{
-    aspect-ratio:16/10;
+    aspect-ratio:3/2;
     overflow:hidden;
     border-radius:4px;
     border:1px solid var(--line);
@@ -714,6 +714,13 @@
   .pass-hero-copy h2{ font-size:clamp(2rem, 4.4vw, 3.1rem); margin-top:0.8rem; }
   .pass-hero-copy .pass-lede{ color:var(--dusky); margin-top:1rem; font-size:1.02rem; max-width:46ch; }
   .pass-hero-grid > .pass-checklist{ grid-column:1; grid-row:2; margin-top:1rem; }
+  .pass-hero-grid > .pass-hero-photo{ grid-column:1; grid-row:3; margin-top:1.6rem; }
+  .pass-hero-photo img{
+    width:100%;
+    border-radius:4px;
+    aspect-ratio:3/2;
+    object-fit:cover;
+  }
   .pass-form-card{
     grid-column:2;
     grid-row:1 / span 2;

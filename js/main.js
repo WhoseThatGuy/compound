@@ -131,6 +131,17 @@ const form = document.getElementById('contactForm');
 if (form) {
   const status = document.getElementById('formStatus');
 
+  // Pages can deep-link into a specific enquiry: /contact?interest=Sponsorship
+  // request. Matched case-insensitively so the link doesn't silently break if
+  // the option's wording is edited later.
+  const wanted = new URLSearchParams(window.location.search).get('interest');
+  const interestField = form.querySelector('#interest');
+  if (wanted && interestField) {
+    const match = [...interestField.options]
+      .find(o => o.text.toLowerCase() === wanted.trim().toLowerCase());
+    if (match) interestField.value = match.value;
+  }
+
   // After a successful submit, the next step (key-tag setup or tour) is
   // offered immediately instead of leaving the prospect waiting on a reply.
   function showSuccess(kind, data) {
@@ -219,10 +230,10 @@ if (form) {
       if (res.ok) {
         showSuccess(kind, data);
       } else {
-        status.textContent = "Something went wrong sending that. Please call or email us directly.";
+        status.innerHTML = "That didn't send. WhatsApp us on <a href=\"https://wa.me/64273411609\">+64 27 341 1609</a> and we'll sort it.";
       }
     } catch (err) {
-      status.textContent = "Something went wrong sending that. Please call or email us directly.";
+      status.innerHTML = "That didn't send. WhatsApp us on <a href=\"https://wa.me/64273411609\">+64 27 341 1609</a> and we'll sort it.";
     }
   });
 }
