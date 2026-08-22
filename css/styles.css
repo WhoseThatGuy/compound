@@ -412,6 +412,39 @@
   }
   .pillar p{ color:var(--dusky); font-size:0.95rem; }
 
+  /* ---- HOUSE RULES ---- */
+  #house-rules{ border-bottom:1px solid var(--line); }
+  .rules-list{
+    list-style:none;
+    margin:1.6rem 0 0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.1rem 2rem;
+  }
+  .rules-list li{
+    font-family:'Reem Kufi', sans-serif;
+    text-transform:uppercase;
+    font-size:clamp(1.15rem, 2.4vw, 1.7rem);
+    line-height:1.15;
+    color:var(--beige);
+    padding-bottom:1.1rem;
+    border-bottom:1px solid var(--line);
+  }
+  .rules-note{
+    margin-top:1.8rem;
+    color:var(--dusky);
+    font-size:0.95rem;
+  }
+  .rules-note a{ color:var(--olive); font-weight:600; white-space:nowrap; }
+  @media (max-width:860px){
+    .rules-list{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width:520px){
+    .rules-list{ grid-template-columns:1fr; gap:0.9rem; }
+    .rules-list li{ padding-bottom:0.9rem; }
+  }
+
   .facility-gallery{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
