@@ -14,6 +14,22 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 const CALENDLY_URL = "https://calendly.com/compoundgymnz/key-pickup";
 const CALENDLY_TOUR_URL = "https://calendly.com/compoundgymnz/compound-tour";
 
+// ---- CALENDLY OUTBOUND TRACKING ------------------------------------
+// Calendly runs on its own domain, so GA4 records the booking page itself
+// (/compoundgymnz/<event>) but nothing about the click that sent someone
+// there. Track the click on our side so the drop-off between claiming a
+// pass and actually booking the key-tag setup is visible.
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href*="calendly.com/"]');
+  if (!link || typeof gtag !== 'function') return;
+  const slug = (link.getAttribute('href').split('calendly.com/')[1] || '').split(/[?#]/)[0];
+  gtag('event', 'calendly_click', {
+    calendly_event: slug,            // e.g. compoundgymnz/key-pickup
+    link_text: link.textContent.trim().slice(0, 100),
+    page_path: window.location.pathname
+  });
+});
+
 // ---- CONTACT / FREE-PASS FORMS -> FORMSPREE ------------------------
 // Free-pass claims go to the form with the onboarding auto-response;
 // general enquiries go to the plain contact form.
