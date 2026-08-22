@@ -803,6 +803,26 @@
     .hero-stats{ gap:1.6rem; flex-wrap:wrap; }
     .about-grid, .contact-grid{ grid-template-columns:1fr; gap:2.4rem; }
     .facility-gallery{ grid-template-columns:1fr; }
+    /* Stacked, the five pillars push the facility photos ~2 screens down, and
+       five full-width photos then push the copy down just as far. On mobile,
+       lead the section with the gallery as a horizontal swipe strip instead. */
+    #about{ display:flex; flex-direction:column; }
+    #about .facility-gallery{
+      order:-1;
+      margin-top:0;
+      margin-bottom:2.6rem;
+      display:flex;
+      gap:0.9rem;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    #about .facility-gallery::-webkit-scrollbar{ display:none; }
+    #about .gallery-photo{
+      flex:0 0 78%;
+      scroll-snap-align:center;
+    }
     .action-strip{ grid-template-columns:1fr; }
     .pass-grid{ grid-template-columns:1fr; gap:2rem; }
     .pass-hero-grid{ grid-template-columns:1fr; gap:2rem; }
