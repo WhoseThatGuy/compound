@@ -111,6 +111,21 @@
       "source": "/free-fit3d-scan",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/sports-combine-testing",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/openings",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
