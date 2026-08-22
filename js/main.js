@@ -49,6 +49,11 @@ if (form) {
         <p>Thanks — we'll be back to you shortly.</p>
         <p class="success-note">Need us sooner? WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a>, or <a href="${CALENDLY_URL}" target="_blank" rel="noopener">book a key-tag setup time</a>.</p>`;
     }
+    // The floating CTA points at the form we just replaced — once the pass is
+    // claimed it only scrolls back to this panel, so retire it.
+    const floatCta = document.getElementById('floatCta');
+    if (floatCta) floatCta.remove();
+
     form.replaceWith(panel);
     panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
