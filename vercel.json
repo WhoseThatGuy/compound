@@ -9,6 +9,24 @@
     { "source": "/free-pass", "destination": "/free-7-day-pass", "permanent": true },
     { "source": "/memberships", "destination": "/gym-memberships", "permanent": true },
     { "source": "/coaches", "destination": "/personal-trainers", "permanent": true },
-    { "source": "/sauna", "destination": "/dunedin-gym-sauna", "permanent": true }
+    { "source": "/sauna", "destination": "/dunedin-gym-sauna", "permanent": true },
+
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/dunedin-gym-sauna-1", "destination": "/dunedin-gym-sauna", "permanent": true },
+    { "source": "/map", "destination": "/contact", "permanent": true },
+    { "source": "/support", "destination": "/contact", "permanent": true },
+    { "source": "/gym-tour-booked", "destination": "/", "permanent": true },
+
+    { "source": "/personal-training-job", "destination": "/contact", "permanent": true },
+    { "source": "/assistant-manager", "destination": "/contact", "permanent": true },
+
+    { "source": "/bulletproof-running", "destination": "/", "permanent": true },
+    { "source": "/fit3d-scanner", "destination": "/", "permanent": true },
+
+    { "source": "/cart", "destination": "/", "permanent": true },
+    { "source": "/products.json", "destination": "/", "permanent": true },
+
+    { "source": "/about-us", "destination": "/#about", "permanent": false },
+    { "source": "/personal-training-consult", "destination": "/personal-trainers", "permanent": false }
   ]
 }

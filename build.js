@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-// Injects partials/nav.html and partials/footer.html into every page's
-// <!-- NAV --> ... <!-- /NAV --> and <!-- FOOTER --> ... <!-- /FOOTER --> markers,
-// marking the current page's nav link with aria-current="page".
+// Injects partials/nav.html, partials/footer.html and partials/analytics.html
+// into every page's <!-- NAV --> ... <!-- /NAV -->, <!-- FOOTER --> ... <!-- /FOOTER -->
+// and <!-- ANALYTICS --> ... <!-- /ANALYTICS --> markers, marking the current
+// page's nav link with aria-current="page".
 //
-// Run after editing partials/nav.html or partials/footer.html:
+// Run after editing any file in partials/:
 //   node build.js
 
 const fs = require('fs');
@@ -12,6 +13,7 @@ const path = require('path');
 const ROOT = __dirname;
 const navTemplate = fs.readFileSync(path.join(ROOT, 'partials/nav.html'), 'utf8').trim();
 const footerTemplate = fs.readFileSync(path.join(ROOT, 'partials/footer.html'), 'utf8').trim();
+const analyticsTemplate = fs.readFileSync(path.join(ROOT, 'partials/analytics.html'), 'utf8').trim();
 
 function navFor(slug) {
   const re = new RegExp(`(<a\\s+href="[^"]*"\\s+data-page="${slug}")>`);
@@ -34,6 +36,10 @@ for (const file of pages) {
   content = content.replace(
     /<!-- FOOTER -->[\s\S]*?<!-- \/FOOTER -->/,
     `<!-- FOOTER -->\n${footerTemplate}\n<!-- /FOOTER -->`
+  );
+  content = content.replace(
+    /<!-- ANALYTICS -->[\s\S]*?<!-- \/ANALYTICS -->/,
+    `<!-- ANALYTICS -->\n${analyticsTemplate}\n<!-- /ANALYTICS -->`
   );
 
   if (content !== before) {

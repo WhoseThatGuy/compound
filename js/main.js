@@ -49,6 +49,19 @@ if (form) {
         <p>Thanks — we'll be back to you shortly.</p>
         <p class="success-note">Need us sooner? WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a>, or <a href="${CALENDLY_URL}" target="_blank" rel="noopener">book a key-tag setup time</a>.</p>`;
     }
+    // The old Squarespace site redirected claimants to a real
+    // /free-7-day-pass-confirmation page, and the GA4 key event is defined on
+    // that pageview. This panel replaces the form in place with no navigation,
+    // so send the pageview manually — same path, so the existing key event and
+    // its history keep working without touching the GA4 config.
+    if (kind === 'pass' && typeof gtag === 'function') {
+      gtag('event', 'page_view', {
+        page_title: 'Free 7-Day Pass Confirmation',
+        page_location: window.location.origin + '/free-7-day-pass-confirmation',
+        page_path: '/free-7-day-pass-confirmation'
+      });
+    }
+
     // The floating CTA points at the form we just replaced — once the pass is
     // claimed it only scrolls back to this panel, so retire it.
     const floatCta = document.getElementById('floatCta');
