@@ -281,7 +281,10 @@
       linear-gradient(0deg, var(--navy) 0%, transparent 18%);
   }
   .hero-grid{ position:relative; z-index:1; width:100%; }
-  .hero-grid > div{ max-width:640px; }
+  /* 700px, not 640: at the top of the h1 clamp "performance gym." measures
+     ~665px, and .hero's overflow:hidden clipped the overhang rather than
+     showing it. Widened the copy column instead of shrinking the type. */
+  .hero-grid > div{ max-width:700px; }
   .hero h1{
     /* 2rem floor, not 2.8rem: "PERFORMANCE" is the longest word in the
        headline and overflowed the 280px content box on a 320px screen,
@@ -660,7 +663,10 @@
   }
   .action-strip{
     display:grid;
-    grid-template-columns:1.4fr 1fr;
+    /* Equal columns. Was 1.4fr 1fr, which combined with the shared 3/2
+       aspect-ratio made one photo taller as well as wider — it read as a
+       mistake rather than a deliberate asymmetry. */
+    grid-template-columns:1fr 1fr;
     gap:1.2rem;
     margin-bottom:3rem;
   }
