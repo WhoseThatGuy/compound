@@ -358,13 +358,17 @@
 
   /* ---------- SECTION shared ---------- */
   section{ padding:clamp(4rem, 9vw, 7.5rem) 0; }
+  /* Section heading scale lives on the element, not on .section-head. Half the
+     h2s on the site aren't wrapped in one, and they were falling back to the
+     browser default — 24px against 32px for their neighbours on the same page.
+     Context-specific sizes (.pass-form-card h2, .plate-tier) still override. */
+  h2{
+    font-size:clamp(2rem, 4.4vw, 3.1rem);
+    margin-top:0.8rem;
+  }
   .section-head{
     max-width:640px;
     margin-bottom:3.4rem;
-  }
-  .section-head h2{
-    font-size:clamp(2rem, 4.4vw, 3.1rem);
-    margin-top:0.8rem;
   }
   .section-head p{
     color:var(--dusky);
