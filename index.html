@@ -14,7 +14,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" as="image" href="images/hero-bg.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">
 {
@@ -124,28 +127,28 @@
     </div>
     <div class="athlete-strip">
       <div class="athlete-strip-item">
-        <div class="athlete-avatar"><img loading="lazy" src="images/trainer-oli-chignell.webp" alt="Oli Chignell"></div>
+        <div class="athlete-avatar"><img loading="lazy" src="images/avatar-oli-chignell.webp" alt="Oli Chignell"></div>
         <div>
           <h3>Oli Chignell</h3>
           <p>World Cross Country Runner</p>
         </div>
       </div>
       <div class="athlete-strip-item">
-        <div class="athlete-avatar"><img loading="lazy" src="images/trainer-rebekah-aitkenhead.webp" alt="Rebekah Aitkenhead"></div>
+        <div class="athlete-avatar"><img loading="lazy" src="images/avatar-rebekah-aitkenhead.webp" alt="Rebekah Aitkenhead"></div>
         <div>
           <h3>Rebekah Aitkenhead</h3>
           <p>National Mile Champion</p>
         </div>
       </div>
       <div class="athlete-strip-item">
-        <div class="athlete-avatar"><img loading="lazy" src="images/trainer-daniel-torr.webp" alt="Daniel Torr"></div>
+        <div class="athlete-avatar"><img loading="lazy" src="images/avatar-daniel-torr.webp" alt="Daniel Torr"></div>
         <div>
           <h3>Daniel Torr</h3>
           <p>NZ Hockey Representative</p>
         </div>
       </div>
       <div class="athlete-strip-item">
-        <div class="athlete-avatar"><img loading="lazy" src="images/trainer-ella-rowe.webp" alt="Ella Rowe"></div>
+        <div class="athlete-avatar"><img loading="lazy" src="images/avatar-ella-rowe.webp" alt="Ella Rowe"></div>
         <div>
           <h3>Ella Rowe</h3>
           <p>International CrossFit Athlete</p>
@@ -169,7 +172,7 @@
         </div>
       </div>
       <div class="athlete-strip-item">
-        <div class="athlete-avatar"><img loading="lazy" src="images/trainer-seb-ferro.webp" alt="Seb Ferro"></div>
+        <div class="athlete-avatar"><img loading="lazy" src="images/avatar-seb-ferro.webp" alt="Seb Ferro"></div>
         <div>
           <h3>Seb Ferro</h3>
           <p>Oceania Games Sprinter</p>
@@ -427,7 +430,7 @@
 <a class="float-cta" href="/free-7-day-pass#claim" id="floatCta"><span>Free 7-Day Pass</span></a>
 <!-- /FOOTER -->
 
-<script src="js/main.js"></script>
+<script defer src="js/main.js"></script>
 
 </body>
 </html>
