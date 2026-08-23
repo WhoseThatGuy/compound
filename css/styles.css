@@ -373,6 +373,13 @@
     max-width:640px;
     margin-bottom:3.4rem;
   }
+  /* Eligibility sits below the offer, smaller — it's a condition, not a
+     selling point, and shouldn't compete with what the seven days contain. */
+  .section-head .eligibility-note{
+    font-size:0.85rem;
+    color:var(--dusky);
+    margin-top:0.7rem;
+  }
   .section-head p{
     color:var(--dusky);
     margin-top:1rem;
