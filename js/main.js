@@ -85,11 +85,20 @@ function mountCalendly(panel, url, data) {
     if (settled) return;
     clearTimeout(timer);
     settled = true;
-    const name = [data && data.fname, data && data.lname].filter(Boolean).join(' ').trim();
+    const first = (data && data.fname) || '';
+    const last  = (data && data.lname) || '';
+    // Both forms: Calendly uses firstName/lastName when the event is set to
+    // collect them separately and falls back to the single name field when it
+    // isn't, so sending both covers either configuration.
     window.Calendly.initInlineWidget({
       url,
       parentElement: host,
-      prefill: { name, email: (data && data.email) || '' }
+      prefill: {
+        name: [first, last].filter(Boolean).join(' ').trim(),
+        firstName: first,
+        lastName: last,
+        email: (data && data.email) || ''
+      }
     });
   }).catch(() => { clearTimeout(timer); fail(); });
 }

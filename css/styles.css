@@ -899,6 +899,16 @@
     gap:0.9rem;
     justify-items:start;
   }
+  /* Inside the pass/consult card the panel replaces the form in place, so it
+     must not repeat the card's chrome — otherwise it reads as a box inside a
+     box, with Calendly's own white card making a third. On the contact page
+     the form has no card around it, so .form-success keeps its own box there. */
+  .pass-form-card .form-success{
+    background:none;
+    border:0;
+    border-radius:0;
+    padding:0;
+  }
   .form-success h3{
     font-size:1.7rem;
     color:var(--olive);
@@ -924,11 +934,14 @@
     overflow:hidden;
   }
   @media (max-width:640px){
-    /* Pull out to the panel's own padding edge (1.8rem) — the embed otherwise
-       sits inside two nested padded boxes and lands at ~216px on a 375px
-       phone, which is too narrow for the date picker. Stays inside the card,
-       so this doesn't reintroduce horizontal overflow. */
-    .calendly-embed{ width:auto; height:940px; margin-inline:-1.8rem; }
+    /* Only the card's own padding is left now that the success panel no longer
+       adds a second box, so this pulls out one level, not two — half the card
+       padding, keeping a little air off the border while still giving the date
+       picker width. calc rather than auto: Calendly's own stylesheet settles an
+       auto box at 300px, which the negative margins then shift off-centre
+       instead of widening. The calc cancels the margins exactly, so it stays
+       symmetrical. */
+    .calendly-embed{ width:calc(100% + 1.8rem); height:940px; margin-inline:-0.9rem; }
   }
 
   /* ---------- FOOTER ---------- */
