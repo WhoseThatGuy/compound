@@ -37,6 +37,10 @@ No build step — serve the folder statically (e.g. `npx serve .`) and deploy as
 
 ## Open items
 
+> **Copy and content gaps live in [`OUTSTANDING.md`](OUTSTANDING.md)** — athlete
+> quotes, missing photos, the sauna page's missing numbers, and what still needs
+> verifying on production. The list below is the older technical/asset backlog.
+
 1. **Logo** — still a hand-built SVG recreation (inline in every page, class `logo-mark`). The two original client-provided PNGs were corrupted/blank. Good news: the coach headshot photos (`images/coach-*.webp`) show the real logo clearly on polos/caps — usable as a reference for a pixel-accurate redraw, or ask the client for a clean vector export.
 2. **Gotham font** — if a licensed file becomes available, swap in for Montserrat.
 3. **Unused source photos** — a few extra facility/action shots (`images/facility-cable-machine.webp`, `facility-leg-press.webp`, `facility-turf-2.webp`, `facility-turf-closeup.webp`, `facility-platforms-2.webp`, `action-sinead.webp`) were processed but not placed on the site yet — available if a page needs more imagery. Raw originals are in `incoming-photos/`.
