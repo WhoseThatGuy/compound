@@ -136,6 +136,57 @@ document.addEventListener('click', (e) => {
 const FORMSPREE_FREEPASS = "https://formspree.io/f/xqpzyrpq";
 const FORMSPREE_CONTACT  = "https://formspree.io/f/xppaozgn";
 
+// ---- CONTACT: ROUTE TO THE BETTER FLOW -------------------------------
+// Three enquiries already have a dedicated flow that does more than a message
+// would: the pass form books a key-tag, the PT form matches a trainer, the
+// tour link books a time. When one of those is chosen, swap the message box
+// and submit button for a link straight there.
+const INTEREST_ROUTES = {
+  'Free 7-Day Pass': {
+    href: '/free-7-day-pass#claim',
+    cta: 'Claim Free 7-Day Pass',
+    text: "You can claim your pass and book your key-tag pickup in one go — no need to message us first."
+  },
+  'Personal Training': {
+    href: '/personal-trainers#request',
+    cta: 'Book A Free PT Session',
+    text: "Tell us what you're training for on the PT form and we'll match you with a trainer. Your first session is free."
+  },
+  'Gym Tour': {
+    href: 'https://calendly.com/compoundgymnz/compound-tour',
+    cta: 'Book A Gym Tour',
+    text: 'Pick a time that suits and we’ll show you around the floor.',
+    external: true
+  }
+};
+
+(() => {
+  const sel = document.querySelector('#interest');
+  const panel = document.getElementById('interestRedirect');
+  const messageField = document.getElementById('messageField');
+  if (!sel || !panel || !messageField) return;
+
+  const submitBtn = sel.form && sel.form.querySelector('button[type="submit"]');
+  const link = panel.querySelector('a');
+  const text = panel.querySelector('.interest-redirect-text');
+
+  function apply() {
+    const route = INTEREST_ROUTES[sel.value];
+    panel.hidden = !route;
+    messageField.hidden = !!route;
+    if (submitBtn) submitBtn.hidden = !!route;
+    if (!route) return;
+    text.textContent = route.text;
+    link.textContent = route.cta;
+    link.href = route.href;
+    if (route.external) { link.target = '_blank'; link.rel = 'noopener'; }
+    else { link.removeAttribute('target'); link.removeAttribute('rel'); }
+  }
+
+  sel.addEventListener('change', apply);
+  apply();
+})();
+
 const form = document.getElementById('contactForm');
 if (form) {
   const status = document.getElementById('formStatus');

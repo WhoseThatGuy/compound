@@ -57,28 +57,29 @@
 <section class="contact subpage-hero" id="contact">
   <div class="wrap contact-grid">
     <div>
-      <p class="eyebrow">Gate J, Level 2A</p>
-      <h2 style="font-size:clamp(2rem, 4vw, 2.8rem); margin:0.8rem 0 1.6rem;">Come lift with us.</h2>
+      <p class="eyebrow">Contact</p>
+      <h2 style="margin:0.8rem 0 1.6rem;">Come and see us.</h2>
       <div class="contact-info">
         <div class="info-row">
           <div class="info-mark">→</div>
           <div>
             <h3>Location</h3>
             <p>Gate J, Level 2A, Forsyth Barr Stadium<br>130 Anzac Avenue, Dunedin</p>
-            <p style="color:var(--olive); font-size:0.85rem; font-style:italic; margin-top:0.5rem;">"A true hidden gem of a gym… a little hard to find, but once you do it's great!" — Ben Ryan. Head for Gate J — that's the one you want.</p>
+            <p style="margin-top:0.6rem;">We're inside Forsyth Barr Stadium. Enter through Gate J and head up to Level 2A.</p>
+            <p style="margin-top:0.6rem;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Compound+Gym+Gate+J+Forsyth+Barr+Stadium+130+Anzac+Avenue+Dunedin" target="_blank" rel="noopener" style="color:var(--olive); font-weight:600;">Get directions →</a></p>
           </div>
         </div>
         <div class="info-row">
           <div class="info-mark">→</div>
           <div>
             <h3>Hours</h3>
-            <p>24/7 key-tag access · Staffed Mon–Fri 6am–7pm</p>
+            <p>Members have 24/7 key-tag access. Staff are here Mon–Fri, 6am–7pm.</p>
           </div>
         </div>
         <div class="info-row">
           <div class="info-mark">→</div>
           <div>
-            <h3>Talk to us directly</h3>
+            <h3>Get in touch</h3>
             <p>WhatsApp: <a href="https://wa.me/64273411609">+64 27 341 1609</a><br>
             Email: <a href="mailto:hello@compoundgym.nz">hello@compoundgym.nz</a></p>
           </div>
@@ -86,7 +87,7 @@
         <div class="info-row">
           <div class="info-mark">→</div>
           <div>
-            <h3>Book a time directly</h3>
+            <h3>Coming in?</h3>
             <p><a href="https://calendly.com/compoundgymnz/key-pickup" target="_blank" rel="noopener">Pick up your key-tag →</a><br>
             <a href="https://calendly.com/compoundgymnz/compound-tour" target="_blank" rel="noopener">Book a gym tour →</a></p>
           </div>
@@ -118,25 +119,48 @@
         <div>
           <label for="interest">I'm interested in</label>
           <select id="interest" name="interest">
+            <option>Memberships</option>
             <option>Free 7-Day Pass</option>
-            <option>Gym Tour</option>
-            <option>Off Peak Membership</option>
-            <option>Standard Membership</option>
-            <option>Youth (U23) Membership</option>
-            <option>First Responders Membership</option>
             <option>Personal Training</option>
-            <option>Free Sauna Session</option>
+            <option>Sauna</option>
+            <option>Gym Tour</option>
             <option>Sponsorship request</option>
-            <option>General enquiry</option>
+            <option>Something else</option>
           </select>
         </div>
-        <div>
+        <!-- Shown instead of the message field when the chosen enquiry already
+             has a better flow of its own. Sending a general message about the
+             free pass is slower than just claiming it. -->
+        <div class="interest-redirect" id="interestRedirect" hidden>
+          <p class="interest-redirect-text"></p>
+          <a class="btn btn-primary" href="#" style="justify-content:center;"></a>
+        </div>
+        <div id="messageField">
           <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us a bit about your training background or goals..."></textarea>
+          <textarea id="message" name="message" placeholder="How can we help?"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.4rem;">Send Message</button>
         <p class="form-status" id="formStatus"></p>
       </form>
+    </div>
+  </div>
+</section>
+
+<!-- Compound is inside a stadium, so a map earns its place here in a way more
+     marketing copy wouldn't. Lazy-loaded so it costs nothing until scrolled to. -->
+<section class="about" id="find-us" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Find Us At Gate J</p>
+      <h2>We're inside<br>Forsyth Barr Stadium.</h2>
+      <p>Enter through Gate J and head up to Level 2A.</p>
+      <p style="margin-top:1rem;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Compound+Gym+Gate+J+Forsyth+Barr+Stadium+130+Anzac+Avenue+Dunedin" target="_blank" rel="noopener" style="color:var(--olive); font-weight:600;">Get directions →</a></p>
+    </div>
+    <div class="map-embed">
+      <iframe
+        title="Map showing Compound Gym at Gate J, Forsyth Barr Stadium, Dunedin"
+        src="https://www.google.com/maps?q=Forsyth+Barr+Stadium,+130+Anzac+Avenue,+Dunedin&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
 </section>
