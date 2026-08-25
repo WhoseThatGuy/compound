@@ -58,8 +58,11 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Personal Training</p>
-      <h2>Your first two sessions<br>are already paid for.</h2>
-      <p>Every membership includes two sessions with a trainer. Use them to learn the lifts, get a programme written, or sort out something that's been holding you back. Five trainers, each with their own specialism — tell us what you're training for and we'll match you.</p>
+      <h2>Find the right<br>trainer for you.</h2>
+      <p>Tell us what you're training for and we'll match you with one of our trainers. Your first session is free, so you can meet your trainer, talk through your training and get started together.</p>
+      <div style="margin-top:1.8rem;">
+        <a href="#request" class="btn btn-primary">Book A Free PT Session</a>
+      </div>
     </div>
 
     <p class="eyebrow" style="margin-bottom:1.6rem;">Meet The Trainers</p>
@@ -113,40 +116,130 @@
     </div>
 
     <div style="margin-top:4rem; padding-top:3rem; border-top:1px solid var(--line);">
-      <p class="eyebrow">Three Steps, Two Free Sessions</p>
+      <p class="eyebrow">First Session Free</p>
+      <h2 style="margin-top:0.8rem;">Start with a free<br>PT session.</h2>
+      <p style="color:var(--dusky); max-width:560px; margin-top:1.1rem;">Meet your trainer, talk through what you're training for and get started together. Your first session is free.</p>
+      <p style="color:var(--dusky); max-width:560px; margin-top:0.9rem;">If you want more sessions after that, you can book them directly with your trainer. Each trainer sets their own rates and availability.</p>
+      <div style="margin-top:1.6rem;">
+        <a href="#request" class="btn btn-primary">Book A Free PT Session</a>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem; padding-top:3rem; border-top:1px solid var(--line);">
+      <p class="eyebrow">How It Works</p>
       <div class="process-steps" style="margin-top:1.8rem;">
         <div class="process-step">
           <div class="process-num">1</div>
-          <h3>Tell us your goal</h3>
-          <p>Fill in the request form — it takes about a minute. Name a trainer if you already know who you want.</p>
+          <h3>Tell us what you're training for</h3>
+          <p>Fill in the short form and tell us what you'd like help with. If you already know which trainer you want, let us know.</p>
         </div>
         <div class="process-arrow">→</div>
         <div class="process-step">
           <div class="process-num">2</div>
-          <h3>We match you</h3>
-          <p>We come back with the trainer whose specialism and hours fit what you're after.</p>
+          <h3>We'll match you</h3>
+          <p>We'll match you with a trainer based on what you're training for and when you're available.</p>
         </div>
         <div class="process-arrow">→</div>
         <div class="process-step">
           <div class="process-num">3</div>
-          <h3>Use your two sessions</h3>
-          <p>They're included with every membership, so the first two cost you nothing.</p>
+          <h3>Start training</h3>
+          <p>Your first session is free. If you want to keep training together, you can book future sessions directly with your trainer.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div style="text-align:center; margin-top:4rem; padding-top:3rem; border-top:1px solid var(--line);">
-      <p class="eyebrow" style="justify-content:center;">Two Sessions Included</p>
-      <h3 style="font-family:'Reem Kufi', sans-serif; text-transform:uppercase; font-size:2rem; color:var(--olive); margin:0.6rem 0 0.6rem;">Tell us what you're training for.</h3>
-      <p style="color:var(--dusky); max-width:520px; margin:0 auto; font-size:0.95rem;">
-        We'll match you with the trainer whose specialism and hours fit, and you can put your two included sessions straight into it.
-      </p>
-      <div style="margin-top:1.6rem;">
-        <a href="/personal-training-consult#request" class="btn btn-primary">Request A Personal Trainer</a>
-      </div>
-      <p style="color:var(--dusky); max-width:520px; margin:1.1rem auto 0; font-size:0.88rem;">
-        Not a member yet? <a href="/free-7-day-pass#claim" style="color:var(--olive); font-weight:600;">Claim a free 7-day pass</a> and get on the floor first.
-      </p>
+<!-- Enquiry form lives on this page rather than a separate step: this is the
+     page's primary conversion, and routing through /personal-training-consult
+     put a click between wanting a trainer and asking for one. -->
+<section class="about" id="pt-enquiry">
+  <div class="wrap" style="max-width:720px;">
+    <div class="pass-form-card" id="request">
+      <h2>Tell us what<br>you're training for.</h2>
+      <p>We'll match you with a trainer and get your first session booked in.</p>
+      <form id="contactForm">
+        <input type="hidden" id="interest" name="interest" value="Personal Training">
+        <div class="form-row">
+          <div>
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" autocomplete="given-name" required>
+          </div>
+          <div>
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="lname" autocomplete="family-name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+        <div>
+          <label for="message">What are you training for?</label>
+          <textarea id="message" name="message" placeholder="An event, a lift, coming back from injury, or just getting started — whatever it is."></textarea>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="trainer">Preferred trainer <span class="label-optional">(optional)</span></label>
+            <select id="trainer" name="trainer">
+              <option>Not sure — match me</option>
+              <option>Ben Thompson — Olympic Lifting &amp; CrossFit</option>
+              <option>Sammy Burke — Running &amp; Hyrox</option>
+              <option>Josh Dryden — Strength &amp; Body Composition</option>
+              <option>James Douglas — Strength &amp; Sports Performance</option>
+              <option>Josh Skryba — Strength &amp; Performance</option>
+            </select>
+          </div>
+          <div>
+            <!-- Tells the team which offer applies: a new client's free first
+                 session, or a member's two included sessions. -->
+            <label for="membership">Already a member?</label>
+            <select id="membership" name="membership">
+              <option>No — I'm new to Compound</option>
+              <option>Yes — I'm a member</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.4rem;">Book My Free PT Session</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+      <p class="pass-form-note">We'll come back to you with the trainer who fits what you're training for.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pt-members">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Already A Member?</p>
+      <h2>Your membership includes<br>two PT sessions.</h2>
+      <p>Every Compound membership includes two sessions with a trainer. Use them to learn the lifts, get a programme written, work on something that's been holding you back, or get some help with your training.</p>
+      <p style="margin-top:0.9rem;">Tell us what you're training for and we'll match you with a trainer.</p>
+    </div>
+    <div>
+      <a href="#request" class="btn btn-ghost">Use My PT Sessions</a>
+    </div>
+    <p style="color:var(--dusky); font-size:0.92rem; margin-top:2.6rem; max-width:560px;">
+      Want to keep training together? You can book ongoing sessions directly with your trainer. Each trainer sets their own rates and availability.
+    </p>
+  </div>
+</section>
+
+<section class="about" id="pt-free-pass" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Not Looking For A Trainer?</p>
+      <h2>Train at Compound<br>free for 7 days.</h2>
+      <p>You can also train at Compound free for 7 days, with full 24/7 access to the gym and saunas.</p>
+    </div>
+    <div>
+      <a href="/free-7-day-pass#claim" class="btn btn-ghost">Claim Free 7-Day Pass →</a>
     </div>
   </div>
 </section>
@@ -197,7 +290,7 @@
     <nav class="footer-col" aria-labelledby="footcol-training">
       <h3 id="footcol-training">Training</h3>
       <a href="/personal-trainers">Personal Trainers</a>
-      <a href="/personal-training-consult">Find a Personal Trainer</a>
+      <a href="/personal-trainers#request">Find a Personal Trainer</a>
       <a href="/gym-memberships">Memberships</a>
       <a href="/free-7-day-pass">Free 7-Day Pass</a>
     </nav>

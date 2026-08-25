@@ -490,6 +490,7 @@
   }
   /* Reserve two lines so a one-line note doesn't sit a whole line higher than
      its neighbours and drag its CTA out of alignment with the rest of the row. */
+  .label-optional{ color:var(--dusky); font-weight:400; text-transform:none; letter-spacing:0; }
   .plate-cta-note{
     color:var(--dusky); font-size:0.76rem; text-align:center;
     margin-top:0.7rem; min-height:3.2em;

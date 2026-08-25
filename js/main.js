@@ -145,7 +145,9 @@ if (form) {
   // the option's wording is edited later.
   const wanted = new URLSearchParams(window.location.search).get('interest');
   const interestField = form.querySelector('#interest');
-  if (wanted && interestField) {
+  // Guard on .options: on the PT page #interest is a hidden input, not a
+  // select, and spreading undefined would throw before the form ever renders.
+  if (wanted && interestField && interestField.options) {
     const match = [...interestField.options]
       .find(o => o.text.toLowerCase() === wanted.trim().toLowerCase());
     if (match) interestField.value = match.value;

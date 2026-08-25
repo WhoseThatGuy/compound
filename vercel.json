@@ -19,6 +19,11 @@
       "permanent": true
     },
     {
+      "source": "/personal-training-consult",
+      "destination": "/personal-trainers#request",
+      "permanent": true
+    },
+    {
       "source": "/dunedin-gym-blog",
       "destination": "/",
       "permanent": true
