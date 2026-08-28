@@ -185,19 +185,27 @@ dumbbells, swiss balls, medicine balls, resistance bands, foam rollers and
 trigger-point balls. Now on the page, plus a new **Warm-up & Mobility** column in
 the equipment directory.
 
-**Peak times — confirmed by Compound.** Nine platforms, never all nine in use at
-once. The FAQ now says exactly that instead of hedging with "usually", and it
-matches the homepage's "Come at 6pm. You'll still get a rack."
+**Rowers — confirmed by Compound.** Concept2. Named in the equipment directory,
+the Zone 5 description and the HYROX answer. This was the brand the review
+called out as worth real search traffic.
+
+**Racks — confirmed by Compound.** Nine platforms, never all nine in use at
+once. That is the whole claim the FAQ makes now.
+
+**Retracted:** an earlier draft of this FAQ said "it gets busier between about
+4pm and 7pm." Nobody at Compound said that and nothing on the site supports it.
+It was invented, and it had reached the FAQ structured data, where Google would
+have read it as fact. Removed in `c28c578`. Do not reintroduce a busy-time
+window without someone at the gym stating one.
+
+Also retracted: the claim that Concept2's air bike and erg bike are the same
+machine. They are two different products, so the air bikes and the Zone 1 erg
+bikes are not a double-count.
 
 **Still owed:**
 
-- **Are the Conditioning air bikes the same Concept2 ergs as Zone 1?** Concept2's
-  BikeErg *is* an air bike, so "Air bikes" under Conditioning may be double-
-  counting the warm-up zone — or there may be separate machines. If they're
-  separate, name the brand; if not, drop the Conditioning line.
-- **Rowing erg brand.** Concept2 is now confirmed on site for the bikes. If the
-  rowers are Concept2 too, say so — the review flagged "gym with Concept2 rowers
-  Dunedin" as real search traffic, and it's the one brand name still unclaimed.
+- **Air bike brand.** Zone 1's erg bikes are Concept2; the Conditioning air
+  bikes are still listed with no brand because none was given.
 - **Zone 4 specifics.** Listed as kettlebells and functional equipment. Anything
   else?
 - **Machine names.** "Selectorised" and "plate-loaded" are categories, not
