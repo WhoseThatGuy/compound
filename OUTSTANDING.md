@@ -5,29 +5,24 @@ See `README.md` → Open items for older technical/asset items (logo, fonts, raw
 
 ---
 
-## Urgent — live and wrong
+## Recently closed
 
-### 0. The Formspree autoresponder contradicts the site
-Formspree dashboard · no repo change needed
+### 0. Formspree autoresponder — RESOLVED
 
-The free-pass confirmation email still says:
+The "No card needed, nothing to sign — after your 7 days, you decide" claim is
+gone from the confirmation email, so it no longer contradicts `a76e5ef` and
+`aae263a` or the no-billing-talk rule.
 
-> No card needed, nothing to sign — after your 7 days, you decide.
+Worth one glance at the next test email to confirm the `{{ fname }}` merge tag
+now renders a name rather than the literal placeholder.
 
-That claim was cut from the site in `a76e5ef` ("Fix **false** auto-signup/
-no-obligation claims") and `aae263a`. The site now carries no card, signing or
-trial-conversion language anywhere. The email undoes both commits, in writing,
-to every person who claims a pass.
+### 16. Josh Skryba — RESOLVED
 
-Replace with: **"Bring your training gear. That’s all you need."**
+Confirmed **Skryba**. That is already what all five references use, across
+`personal-trainers.html` and `personal-training-consult.html`. No change needed.
 
-Also on that email:
-- `{{ fname }}` renders literally. Try `{{fname}}` without spaces, or confirm the
-  autoresponse is built in Formspree’s template editor rather than pasted HTML.
-  If it will not resolve, cut it — "Hey there," beats a visible broken merge tag.
-- Sender is `noreply@formspreemail.com` and Gmail flags it **External**. A
-  `compoundgym.nz` sender needs a paid tier and a DNS record. Deliverability
-  risk on the one email carrying the booking link and the address.
+Loose end: `incoming-photos/` still has files under both spellings. Rename before
+any of them get wired into a page.
 
 ---
 
@@ -72,17 +67,26 @@ Seven new reviews placed. The Julia Morera / James X duplication across
 listing. Verify each against its original review before launch — misquoting a
 named customer is Fair Trading Act exposure.
 
-### 4. Sauna page has no numbers
+### 4. Sauna page — one real question, not four
 `dunedin-gym-sauna.html`
 
-Not one figure on the entire page. How many saunas? How hot? How long is a
-session? Do you book, or walk in?
+**Withdrawn as originally written.** "How many, how hot, how long" was generic
+gym-page thinking and wrong for this page. It is a single infrared sauna, and
+infrared runs far cooler than traditional — publishing a temperature would
+undercut the page’s own "heats the body, not the air" explanation and read as a
+weakness to anyone who does not already know the difference.
 
-"Included, not upsold" is one of the sharpest lines on the site and nothing on
-the page lets a reader picture what's included. This is the least specific page
-on a site whose equipment page names the bar manufacturer.
+The hedged phrasing ("many members use it", "many people find") is also right as
+it stands. Therapeutic claims carry Fair Trading risk; the caution is deliberate.
 
-Needs: sauna count, walk distance from the floor, booking policy.
+What actually remains:
+
+- **Is the sauna on 24/7 key-tag access, or staffed hours only?** For a 24/7 gym
+  that is the real question, and if the answer is yes it is a selling point the
+  page does not currently make.
+- "Only after the sauna? Send us a message and we’ll sort a one-off session" is a
+  vague CTA with no price, pointing at a contact form. Small leak, secondary
+  audience — give it a price or cut it.
 
 ### 5. Photo of Gate J
 `contact.html`
@@ -173,28 +177,37 @@ No warning, no context. Suggested micro-copy under each:
 Reads like a typo. If it's real, say why — e.g. "the two windows when there's
 always a platform free."
 
-### 12. Confirm the equipment list — RESOLVED in part
+### 12. Confirm the equipment list — mostly RESOLVED
 `gym.html`
 
-Zone 1 now names treadmills and warm-up/mobility equipment, and there's a full
-equipment directory under **What's in the gym**.
+**Zone 1 — confirmed by Compound.** Treadmills, Concept2 erg bikes, kettlebells,
+dumbbells, swiss balls, medicine balls, resistance bands, foam rollers and
+trigger-point balls. Now on the page, plus a new **Warm-up & Mobility** column in
+the equipment directory.
 
-**Still owed:** every item in that directory was taken from claims already made
-elsewhere on the site — nothing was inferred from photographs. But the review
-asked for the real list from Compound, and these are still missing:
+**Peak times — confirmed by Compound.** Nine platforms, never all nine in use at
+once. The FAQ now says exactly that instead of hedging with "usually", and it
+matches the homepage's "Come at 6pm. You'll still get a rack."
 
-- **Brand names.** Only Eleiko and Industrial Athletic are confirmed. The review
-  suggested Concept2 rowers and Assault bikes; those are *not* on the page
-  because nothing confirms them. If they're right, name them — they're worth
-  real search traffic.
-- **Zone 1 specifics.** "Treadmills and equipment for warming up and mobility"
-  came from the review, not from Compound. What's actually in there?
+**Still owed:**
+
+- **Are the Conditioning air bikes the same Concept2 ergs as Zone 1?** Concept2's
+  BikeErg *is* an air bike, so "Air bikes" under Conditioning may be double-
+  counting the warm-up zone — or there may be separate machines. If they're
+  separate, name the brand; if not, drop the Conditioning line.
+- **Rowing erg brand.** Concept2 is now confirmed on site for the bikes. If the
+  rowers are Concept2 too, say so — the review flagged "gym with Concept2 rowers
+  Dunedin" as real search traffic, and it's the one brand name still unclaimed.
 - **Zone 4 specifics.** Listed as kettlebells and functional equipment. Anything
   else?
 - **Machine names.** "Selectorised" and "plate-loaded" are categories, not
   models.
-- **Peak-times answer.** The FAQ says it gets busier 4–7pm and you can *usually*
-  get a platform. Deliberately not an absolute promise — confirm it's accurate.
+
+### 12b. Gallery — Compound is handling it
+`gym.html`
+
+The review asked for fewer duplicate angles and more people mid-lift. Compound
+said they'll improve the photos. Nothing to do at a keyboard until they land.
 
 ### 13. "Purpose-built for training — not converted into it" is still on About
 `about-us.html` (~line 117)
@@ -225,12 +238,6 @@ trying to be [an everybody's gym]"* and *"Thirty years in Dunedin"* (the gym).
 Both the '90s and 2023 are correct and refer to different things — confirmed.
 But the brand launching in 2023 and the repositioning being described as 2024 is
 a one-year gap worth resolving.
-
-### 16. Josh Skryba / Skyrba
-`personal-trainers.html`
-
-Site uses **Skryba**. The PT brief spelled it **Skyrba**. `incoming-photos/` has
-both spellings on different files. Confirm with him.
 
 ### 17. Ten raw JPGs sitting untracked
 `images/`
