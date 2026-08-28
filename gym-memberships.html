@@ -58,7 +58,7 @@
   <div class="wrap">
     <p class="eyebrow">Memberships</p>
     <h2>From $16.95 a week.<br>No joining fee.</h2>
-    <p style="color:var(--dusky); margin-top:1rem; max-width:560px;">Every plan gets the same floor, the same equipment, the same personal training. The only thing that changes is when you can train.</p>
+    <p style="color:var(--dusky); margin-top:1rem; max-width:600px;">Every membership includes the full gym, saunas, a training programme and two PT sessions. Choose your plan based on when you want to train and whether you want a 12-month or flexible membership.</p>
 
     <!-- data-term drives every price and terms line on the page. Both values
          are in the DOM and CSS hides the inactive one, so the annual pricing
@@ -69,8 +69,8 @@
         <button type="button" class="term-btn" data-set-term="flexi" aria-pressed="false">Flexi</button>
       </div>
       <p class="term-note">
-        <span class="term-annual">12-month term at the lower weekly rate. Pause any time from the app.</span>
-        <span class="term-flexi">Week to week, no term. Cancel any time, no fee.</span>
+        <span class="term-annual">12-month term at the lower weekly rate. Pause any time from the app. $99 early cancellation fee.</span>
+        <span class="term-flexi">No fixed term. Cancel any time with 3 days' notice.</span>
       </p>
 
       <div class="pricing-grid">
@@ -78,8 +78,8 @@
           <div class="plate-disc">0</div>
           <div class="plate-tier">Free 7-Day Pass</div>
           <div class="plate-price">$0<span> / 7 days</span></div>
-          <p class="plate-desc">Seven days on the floor before you decide anything. Everything a member gets.</p>
-          <a href="/free-7-day-pass#claim" class="btn btn-ghost" style="justify-content:center;">Claim Your Pass</a>
+          <p class="plate-desc">Train at Compound free for 7 days. Full access, any time, sauna included.</p>
+          <a href="/free-7-day-pass#claim" class="btn btn-ghost" style="justify-content:center;">Claim Free 7-Day Pass</a>
           <p class="plate-cta-note">For people living in Dunedin.</p>
         </div>
         <div class="plate-card">
@@ -87,7 +87,7 @@
           <div class="plate-tier">Off Peak</div>
           <div class="plate-price"><span class="term-annual">$16.95</span><span class="term-flexi">$19.95</span><span> / week</span></div>
           <p class="plate-prepay term-annual">Or <strong>$793/yr</strong> paid upfront — save $88</p>
-          <p class="plate-desc">Train 9am–3pm and 9pm–3am. Best if your schedule sits comfortably outside peak hours.</p>
+          <p class="plate-desc">Train between 9am–3pm or 9pm–3am. A lower weekly rate if those hours work for you.</p>
           <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;">Join Off Peak</a>
           <p class="plate-cta-note">Rather talk it through first? <a href="/contact" style="color:var(--olive);">Message us</a>.</p>
         </div>
@@ -97,16 +97,16 @@
           <div class="plate-tier">Standard</div>
           <div class="plate-price"><span class="term-annual">$22.95</span><span class="term-flexi">$27.95</span><span> / week</span></div>
           <p class="plate-prepay term-annual">Or <strong>$1,074/yr</strong> paid upfront — save $119</p>
-          <p class="plate-desc">Full 24/7 access. Train whenever life allows, no schedule to work around.</p>
+          <p class="plate-desc">Full 24/7 access. Train whenever you want.</p>
           <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center;">Join Standard</a>
           <p class="plate-cta-note">Rather talk it through first? <a href="/contact" style="color:var(--olive);">Message us</a>.</p>
         </div>
         <div class="plate-card">
           <div class="plate-disc">21</div>
-          <div class="plate-tier">Youth &amp; First Responders</div>
+          <div class="plate-tier">Youth &amp; First Responder</div>
           <div class="plate-price"><span class="term-annual">$20.95</span><span class="term-flexi">$24.95</span><span> / week</span></div>
           <p class="plate-prepay term-annual">Or <strong>$980/yr</strong> paid upfront — save $109</p>
-          <p class="plate-desc">Full 24/7 access, if you're under 23 or a first responder.</p>
+          <p class="plate-desc">Full 24/7 access for eligible younger members and first responders.</p>
           <div class="plate-eligibility">
             <span class="tag">Students</span>
             <span class="tag">Under 23</span>
@@ -121,17 +121,18 @@
       </div>
 
       <div class="included-strip">
-        <p class="eyebrow">Included On Every Membership</p>
+        <p class="eyebrow">Included With Every Membership</p>
         <ul class="included-list">
-          <li>Nine lifting platforms, Eleiko bars</li>
+          <li>Nine lifting platforms and Eleiko bars</li>
           <li>40m indoor turf, sleds and ergs</li>
-          <li>Infrared sauna, unlimited</li>
+          <li>Unlimited infrared sauna</li>
           <li>A training programme written for you</li>
           <li>2 personal training sessions</li>
-          <li>Free parking at Gate J, and WiFi</li>
+          <li>Free parking and WiFi</li>
         </ul>
-        <!-- Deliberately outside the list above: that list is explicitly
-             "including the free 7-day pass", and these are member-only. -->
+        <!-- Separate from the list above: the programme and PT sessions are
+             membership benefits, not Free 7-Day Pass benefits. -->
+        <p class="included-note">The Free 7-Day Pass includes full gym access, sauna and free parking for seven days.</p>
         <p class="included-note">Members also get discounts at local businesses — Recovery Room, the physio clinic on site, and cafés around town.</p>
         <blockquote class="community-quote" style="margin-top:2rem;">
           <p>"Facilities are impeccable and offer a huge variety of gear… staff are friendly, supportive and extremely knowledgeable."</p>
@@ -139,141 +140,49 @@
         </blockquote>
       </div>
 
-      <div class="compare-wrap">
-        <p class="eyebrow">How Compound Compares</p>
-        <table class="compare">
-          <caption class="sr-only">Compound compared with other kinds of gym in Dunedin</caption>
-          <colgroup>
-            <col class="compare-label">
-            <col class="compare-plan compare-us">
-            <col class="compare-plan">
-            <col class="compare-plan">
-            <col class="compare-plan">
-          </colgroup>
-          <thead>
-            <tr>
-              <th scope="col"><span class="sr-only">What you get</span></th>
-              <th scope="col" class="is-us">Compound</th>
-              <th scope="col">Chain gym</th>
-              <th scope="col">Group fitness studio</th>
-              <th scope="col">University gym</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="compare-group"><th scope="colgroup" colspan="5">Where we win</th></tr>
-            <tr>
-              <th scope="row">Lifting platforms</th>
-              <td class="is-us is-yes-text">Nine</td>
-              <td>One or two, if any</td>
-              <td>Rarely any</td>
-              <td>A few, usually taken</td>
-            </tr>
-            <tr>
-              <th scope="row">Dropping the bar</th>
-              <td class="is-us is-yes-text">Fine</td>
-              <td>Usually not allowed</td>
-              <td>Not that kind of session</td>
-              <td>Usually not allowed</td>
-            </tr>
-            <tr>
-              <th scope="row">Chalk and bare feet</th>
-              <td class="is-us is-yes-text">Both fine</td>
-              <td>Often banned</td>
-              <td>Often banned</td>
-              <td>Often banned</td>
-            </tr>
-            <tr>
-              <th scope="row">Indoor sprint and sled space</th>
-              <td class="is-us is-yes-text">40m turf</td>
-              <td>Rarely</td>
-              <td>Sometimes</td>
-              <td>Sometimes</td>
-            </tr>
-            <tr>
-              <th scope="row">Sauna</th>
-              <td class="is-us is-yes-text">Included</td>
-              <td>Often a paid tier</td>
-              <td>Rarely</td>
-              <td>Sometimes</td>
-            </tr>
-            <tr>
-              <th scope="row">Parking</th>
-              <td class="is-us is-yes-text">Free, at the door</td>
-              <td>Varies</td>
-              <td>Varies</td>
-              <td>Paid or hard to find</td>
-            </tr>
-
-            <tr class="compare-group"><th scope="colgroup" colspan="5">Where they might win</th></tr>
-            <tr>
-              <th scope="row">Price per week</th>
-              <td class="is-us">From <span class="term-annual">$16.95</span><span class="term-flexi">$19.95</span></td>
-              <td class="is-yes-text">Often cheaper</td>
-              <td>Usually more</td>
-              <td class="is-yes-text">Usually cheaper</td>
-            </tr>
-            <tr>
-              <th scope="row">Coached through every session</th>
-              <td class="is-us">2 sessions included, then paid</td>
-              <td>Paid extra</td>
-              <td class="is-yes-text">Yes — that's the model</td>
-              <td>Rarely</td>
-            </tr>
-            <tr>
-              <th scope="row">Locations around town</th>
-              <td class="is-us">One</td>
-              <td class="is-yes-text">Several</td>
-              <td>One or two</td>
-              <td>On campus</td>
-            </tr>
-            <tr>
-              <th scope="row">Classes on a timetable</th>
-              <td class="is-us">No</td>
-              <td class="is-yes-text">Usually</td>
-              <td class="is-yes-text">Yes</td>
-              <td class="is-yes-text">Usually</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="compare-foot">
-        Categories, not particular businesses — plenty of gyms are exceptions to their own column, so check before you switch. If a timetable of classes or the lowest possible price is what you're after, one of the other three is a better fit than we are.
-      </p>
-      <p class="compare-foot">
-        <span class="term-annual">On Annual: 12-month term, then it rolls over — after that, 3 days' notice to cancel, no fee. Need out before 12 months? A flat $99. Pause any time from the app.</span>
-        <span class="term-flexi">On Flexi: no term at all. Pause or cancel any time from the app, no fee, at a slightly higher weekly rate.</span>
-      </p>
-    </div>
 
     <div class="faq-list">
       <div class="faq-item">
         <h3>Do I need to already be fit or experienced to join?</h3>
-        <p>No. Compound's floor has first-time HYROX entrants training next to national-level athletes, at the same time, on the same equipment. You get a free training programme and 2 PT sessions with every plan, so you're never just handed a key-tag and left to work it out.</p>
+        <p>No. Athletes of all levels train at Compound. If you're new to strength training, your programme and two PT sessions will help you get started.</p>
       </div>
       <div class="faq-item">
         <h3>What if I don't really know what I'm doing on the floor?</h3>
-        <p>That's what the free training programme and 2 PT sessions with every plan are for — you'll get shown around properly, not just handed a key-tag.</p>
+        <p>That's what the training programme and 2 PT sessions with every membership are for — you'll get shown around properly, not just handed a key-tag.</p>
       </div>
       <div class="faq-item">
         <h3>Can I pause my membership?</h3>
-        <p>Yes — pause for as long as you need, whenever you need to, right from our app. No calls or admin required.</p>
+        <p>Yes. You can pause your membership from the app whenever you need to.</p>
       </div>
       <div class="faq-item">
         <h3>What if I need to cancel before my 12 months is up?</h3>
-        <p>You can cancel early for a flat $99 fee.</p>
+        <p>You can cancel an Annual membership early for a flat $99 fee.</p>
       </div>
       <div class="faq-item">
         <h3>What happens when my 12-month term ends?</h3>
-        <p>Your membership automatically rolls over. After that first 12 months, you're free to cancel any time with just 3 days' notice — no fee.</p>
+        <p>Your membership automatically rolls over. After the first 12 months, you can cancel any time with 3 days' notice and no cancellation fee.</p>
       </div>
       <div class="faq-item">
         <h3>Is there a joining fee?</h3>
-        <p>No joining fees on any plan, Annual or Flexi.</p>
+        <p>No. There are no joining fees on any membership, Annual or Flexi.</p>
       </div>
       <div class="faq-item">
         <h3>What's the difference between Annual and Flexi?</h3>
-        <p>Annual is a 12-month term at the lower weekly rate, with the pause and cancellation terms above. Flexi is week-to-week with no term — cancel any time, no fee, at a slightly higher weekly rate.</p>
+        <p>Annual is a 12-month membership at the lower weekly rate. Flexi has no fixed term and costs slightly more per week.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="pass-cta" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Free 7-Day Pass</p>
+      <h2>Train at Compound<br>free for 7 days.</h2>
+      <p>Full 24/7 access to the gym and saunas for seven days.</p>
+    </div>
+    <div>
+      <a href="/free-7-day-pass#claim" class="btn btn-primary">Claim Free 7-Day Pass</a>
     </div>
   </div>
 </section>
