@@ -5,6 +5,32 @@ See `README.md` → Open items for older technical/asset items (logo, fonts, raw
 
 ---
 
+## Urgent — live and wrong
+
+### 0. The Formspree autoresponder contradicts the site
+Formspree dashboard · no repo change needed
+
+The free-pass confirmation email still says:
+
+> No card needed, nothing to sign — after your 7 days, you decide.
+
+That claim was cut from the site in `a76e5ef` ("Fix **false** auto-signup/
+no-obligation claims") and `aae263a`. The site now carries no card, signing or
+trial-conversion language anywhere. The email undoes both commits, in writing,
+to every person who claims a pass.
+
+Replace with: **"Bring your training gear. That’s all you need."**
+
+Also on that email:
+- `{{ fname }}` renders literally. Try `{{fname}}` without spaces, or confirm the
+  autoresponse is built in Formspree’s template editor rather than pasted HTML.
+  If it will not resolve, cut it — "Hey there," beats a visible broken merge tag.
+- Sender is `noreply@formspreemail.com` and Gmail flags it **External**. A
+  `compoundgym.nz` sender needs a paid tier and a DNS record. Deliverability
+  risk on the one email carrying the booking link and the address.
+
+---
+
 ## Blocked on someone else
 
 Nothing here can be finished at a keyboard.
@@ -37,19 +63,14 @@ them to `athletes.html`.
 **Also:** the strip wraps 4+3 at desktop with seven. One more athlete gives even
 rows.
 
-### 3. The culture-review pool is exhausted
-`index.html` · `free-7-day-pass.html`
+### 3. Culture-review pool — RESOLVED (`eae46dd`)
 
-Both pages now lead with reviews about the people and the atmosphere rather than
-the equipment, which is right — but there are only about six such reviews
-published anywhere on the site, and both pages want the best of them.
+Seven new reviews placed. The Julia Morera / James X duplication across
+`index.html` and `free-7-day-pass.html` is gone.
 
-Current overlap: **Julia Morera appears on both pages**, and **James X** is a
-card on the homepage and the featured quote on the free-pass page.
-
-Pulling four or five more from Google — people talking about the atmosphere,
-feeling welcome, being motivated, or training hard — fixes both pages at once.
-Use people's actual words; don't reword them to fit.
+**Still owed:** those quotes were researched, not copied from the live Google
+listing. Verify each against its original review before launch — misquoting a
+named customer is Fair Trading Act exposure.
 
 ### 4. Sauna page has no numbers
 `dunedin-gym-sauna.html`
@@ -75,6 +96,29 @@ looking for from the car park. Nothing in `images/` matches.
 ## Needs verifying on production
 
 Couldn't be tested locally.
+
+### GA4 — configured, awaiting a live booking
+
+Done pre-launch:
+- Key events verified. `Free_7_Day_Pass` matches on `page_path contains
+  free-7-day-pass-confirmation`, which the virtual pageview in `js/main.js`
+  satisfies. Conversion history stays comparable across cutover.
+- `invitee_meeting_scheduled` (Calendly’s own) already covers every booking
+  including key-pickup. Nothing needed creating.
+- Cross-domain measurement set to `compoundgym.nz` + `calendly.com`.
+- Deleted the dead `Gym_Tour_Booked` and `test_event_test` custom events.
+
+Deliberately NOT done:
+- `calendly_booked` left unstarred. Starring it alongside
+  `invitee_meeting_scheduled` would double-count every booking. It stays a plain
+  event — it carries `page_path`, which Calendly’s event does not, so it is
+  the only way to tell a pass-page booking from a PT-consult one.
+
+**Open risk:** under Squarespace, bookings were a full navigation to calendly.com.
+They now happen in an iframe. Calendly’s GA integration should still fire from
+inside it, but that is unproven. On the first live booking, check Realtime:
+`invitee_meeting_scheduled` present → done. Absent → the iframe broke it, and
+`calendly_booked` becomes the key event instead.
 
 ### 6. The 301 from `/personal-training-consult`
 `vercel.json`
@@ -129,11 +173,28 @@ No warning, no context. Suggested micro-copy under each:
 Reads like a typo. If it's real, say why — e.g. "the two windows when there's
 always a platform free."
 
-### 12. Zone 1 lists no equipment
-`gym-equipment.html`
+### 12. Confirm the equipment list — RESOLVED in part
+`gym.html`
 
-"Get moving before you load the bar" sits among four zones full of specifics and
-looks like a gap. Name what's in it, or fold it into Zone 5.
+Zone 1 now names treadmills and warm-up/mobility equipment, and there's a full
+equipment directory under **What's in the gym**.
+
+**Still owed:** every item in that directory was taken from claims already made
+elsewhere on the site — nothing was inferred from photographs. But the review
+asked for the real list from Compound, and these are still missing:
+
+- **Brand names.** Only Eleiko and Industrial Athletic are confirmed. The review
+  suggested Concept2 rowers and Assault bikes; those are *not* on the page
+  because nothing confirms them. If they're right, name them — they're worth
+  real search traffic.
+- **Zone 1 specifics.** "Treadmills and equipment for warming up and mobility"
+  came from the review, not from Compound. What's actually in there?
+- **Zone 4 specifics.** Listed as kettlebells and functional equipment. Anything
+  else?
+- **Machine names.** "Selectorised" and "plate-loaded" are categories, not
+  models.
+- **Peak-times answer.** The FAQ says it gets busier 4–7pm and you can *usually*
+  get a platform. Deliberately not an absolute promise — confirm it's accurate.
 
 ### 13. "Purpose-built for training — not converted into it" is still on About
 `about-us.html` (~line 117)

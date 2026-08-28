@@ -24,6 +24,11 @@
       "permanent": true
     },
     {
+      "source": "/gym-equipment",
+      "destination": "/gym",
+      "permanent": true
+    },
+    {
       "source": "/dunedin-gym-blog",
       "destination": "/",
       "permanent": true
