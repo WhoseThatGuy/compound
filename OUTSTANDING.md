@@ -18,8 +18,8 @@ now renders a name rather than the literal placeholder.
 
 ### 16. Josh Skryba — RESOLVED
 
-Confirmed **Skryba**. That is already what all five references use, across
-`personal-trainers.html` and `personal-training-consult.html`. No change needed.
+Confirmed **Skryba**. That is what every reference on `personal-trainers.html`
+uses. No change needed.
 
 Loose end: `incoming-photos/` still has files under both spellings. Rename before
 any of them get wired into a page.
@@ -189,6 +189,10 @@ inside it, but that is unproven. On the first live booking, check Realtime:
 
 Redirects to `/personal-trainers#request`. Vercel redirects don't run under
 local `npx serve`, so this only proves out once deployed. Worth one click.
+
+**Now load-bearing.** `personal-training-consult.html` has been deleted, so this
+redirect is the only thing standing between an old inbound link — or a
+Google-indexed URL — and a 404. Do not remove it.
 
 ### 7. Calendly inline booking, end to end
 `js/main.js` → `mountCalendly()`
