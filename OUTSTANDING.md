@@ -98,8 +98,18 @@ booking, those were promises a free-pass holder would have found false on day
 one. The two claims are now detached everywhere: the gym is 24/7, the sauna is
 included.
 
-**Still owed:** both sauna photos show an empty sauna. The review asked for one
-of a member actually using it — natural, not staged spa photography.
+**Confirmed by Compound:** "unlimited" is accurate — all members get unlimited
+sauna access. Booking, staffed hours and the 45-minute slot are the shape of it,
+not a cap on it, and they are all stated on the page. The word stays.
+
+**Parked by Compound:** both sauna photos show an empty sauna, and the review
+asked for one of a member actually using it. Fine as-is for now — pick this up
+only if the photos get reshot anyway.
+
+**Noted, no action:** sauna access ends at 7pm on weekdays and is unavailable at
+weekends, which is a real limit on using this page as a front door for people
+who want a sauna after work or on a Saturday. That is an operations question,
+not a copy one. The page states the hours plainly and does not work around them.
 
 ### 5. Photo of Gate J
 `contact.html`
