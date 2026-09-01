@@ -218,32 +218,28 @@ path to the pass at all — only in-page CTAs and the footer.
 
 Deliberate on both counts, but worth a second look as a combined effect.
 
-### 10. Join buttons — BLOCKED on four GymMaster URLs
-`gym-memberships.html` · `js/main.js`
+### 10. Join buttons — term-specific links DONE
+ · 
+The Annual/Flexi toggle now repoints each plan's join button at its own
+GymMaster signup link, verified in both directions and back again:
 
-Compound asked for the Annual/Flexi toggle to repoint each plan's join button
-at the matching signup link. **The mechanism is built and tested** — any link
-carrying `data-href-annual` and `data-href-flexi` gets repointed when the
-toggle flips, verified in both directions with test URLs.
+| Plan     | Annual     | Flexi      |
+|----------|------------|------------|
+| Off Peak | a46d9225…  | ed252a4a…  |
+| Standard | a8b542b8…  | f01d549b…  |
 
-**What is missing is the URLs themselves.** The entire repo contains exactly
-one GymMaster link:
+The static  on each button is the **annual** URL, so a visitor with JS
+off still lands on the plan the page is displaying.
 
-    https://worldfitness.gymmasteronline.com/portal/signup
+All four return 200. The two Off Peak pages self-identify as "Off Peak Annual
+(Weekly)" and "Off Peak Flexi (Weekly)", matching their labels. Standard-Annual
+showed "Annual Weekly"; **Standard-Flexi was confirmed only as a 200** — the
+plan name was not read before GymMaster rate-limited the checks. Worth one
+human click to confirm it opens the Flexi plan and not the annual one.
 
-Both plans point at it, for both terms. So today the toggle changes the price
-and changes nothing about where the button goes. Four URLs are needed:
+Youth & First Responder has no term link by design — it routes to for an eligibility check.
 
-| Plan      | Annual | Flexi |
-|-----------|--------|-------|
-| Off Peak  | ?      | ?     |
-| Standard  | ?      | ?     |
-
-Once supplied it is a four-attribute edit, no code change. Youth & First
-Responder deliberately has no term link — it routes to `/contact` for an
-eligibility check.
-
-**Still also true:** both buttons jump to an external portal with no warning.
+**Still open:** both buttons leave for an external portal with no warning.
 Suggested micro-copy under each:
 
 > Takes about three minutes on our member portal. No joining fee, no sign-up call.
