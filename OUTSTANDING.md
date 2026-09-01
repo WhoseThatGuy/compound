@@ -218,11 +218,33 @@ path to the pass at all — only in-page CTAs and the footer.
 
 Deliberate on both counts, but worth a second look as a combined effect.
 
-### 10. Membership join buttons leave the site unannounced
-`gym-memberships.html`
+### 10. Join buttons — BLOCKED on four GymMaster URLs
+`gym-memberships.html` · `js/main.js`
 
-"Join Off Peak" / "Join Standard" jump straight to an external GymMaster portal.
-No warning, no context. Suggested micro-copy under each:
+Compound asked for the Annual/Flexi toggle to repoint each plan's join button
+at the matching signup link. **The mechanism is built and tested** — any link
+carrying `data-href-annual` and `data-href-flexi` gets repointed when the
+toggle flips, verified in both directions with test URLs.
+
+**What is missing is the URLs themselves.** The entire repo contains exactly
+one GymMaster link:
+
+    https://worldfitness.gymmasteronline.com/portal/signup
+
+Both plans point at it, for both terms. So today the toggle changes the price
+and changes nothing about where the button goes. Four URLs are needed:
+
+| Plan      | Annual | Flexi |
+|-----------|--------|-------|
+| Off Peak  | ?      | ?     |
+| Standard  | ?      | ?     |
+
+Once supplied it is a four-attribute edit, no code change. Youth & First
+Responder deliberately has no term link — it routes to `/contact` for an
+eligibility check.
+
+**Still also true:** both buttons jump to an external portal with no warning.
+Suggested micro-copy under each:
 
 > Takes about three minutes on our member portal. No joining fee, no sign-up call.
 

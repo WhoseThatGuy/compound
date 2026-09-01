@@ -58,7 +58,7 @@
   <div class="wrap">
     <p class="eyebrow">Memberships</p>
     <h2>From $16.95 a week.<br>No joining fee.</h2>
-    <p style="color:var(--dusky); margin-top:1rem; max-width:600px;">Every membership includes the full gym, saunas, a training programme and two PT sessions. Choose your plan based on when you want to train and whether you want a 12-month or flexible membership.</p>
+    <p style="color:var(--dusky); margin-top:1rem; max-width:600px;">Every membership includes the full gym, saunas, a training programme and two PT sessions.</p>
 
     <!-- data-term drives every price and terms line on the page. Both values
          are in the DOM and CSS hides the inactive one, so the annual pricing
@@ -75,36 +75,38 @@
 
       <div class="pricing-grid">
         <div class="plate-card plate-free">
-          <div class="plate-disc">0</div>
+          <div class="plate-disc"><span class="plate-amount">$0</span><span class="plate-unit">7 days</span></div>
           <div class="plate-tier">Free 7-Day Pass</div>
-          <div class="plate-price">$0<span> / 7 days</span></div>
           <p class="plate-desc">Train at Compound free for 7 days. Full gym access any time. Sauna included.</p>
           <a href="/free-7-day-pass#claim" class="btn btn-ghost" style="justify-content:center;">Claim Free 7-Day Pass</a>
           <p class="plate-cta-note">For people living in Dunedin.</p>
         </div>
         <div class="plate-card">
-          <div class="plate-disc">17</div>
+          <div class="plate-disc"><span class="plate-amount"><span class="term-annual">$16.95</span><span class="term-flexi">$19.95</span></span><span class="plate-unit">a week</span></div>
           <div class="plate-tier">Off Peak</div>
-          <div class="plate-price"><span class="term-annual">$16.95</span><span class="term-flexi">$19.95</span><span> / week</span></div>
           <p class="plate-prepay term-annual">Or <strong>$793/yr</strong> paid upfront — save $88</p>
           <p class="plate-desc">Train between 9am–3pm or 9pm–3am. A lower weekly rate if those hours work for you.</p>
-          <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;">Join Off Peak</a>
+          <a href="https://worldfitness.gymmasteronline.com/portal/signup"
+             data-href-annual="https://worldfitness.gymmasteronline.com/portal/signup"
+             data-href-flexi="https://worldfitness.gymmasteronline.com/portal/signup"
+             target="_blank" rel="noopener" class="btn btn-ghost" style="justify-content:center;">Join Off Peak</a>
           <p class="plate-cta-note">Rather talk it through first? <a href="/contact" style="color:var(--olive);">Message us</a>.</p>
         </div>
         <div class="plate-card featured">
           <span class="plate-badge">Flagship</span>
-          <div class="plate-disc">23</div>
+          <div class="plate-disc"><span class="plate-amount"><span class="term-annual">$22.95</span><span class="term-flexi">$27.95</span></span><span class="plate-unit">a week</span></div>
           <div class="plate-tier">Standard</div>
-          <div class="plate-price"><span class="term-annual">$22.95</span><span class="term-flexi">$27.95</span><span> / week</span></div>
           <p class="plate-prepay term-annual">Or <strong>$1,074/yr</strong> paid upfront — save $119</p>
           <p class="plate-desc">Full 24/7 access. Train whenever you want.</p>
-          <a href="https://worldfitness.gymmasteronline.com/portal/signup" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center;">Join Standard</a>
+          <a href="https://worldfitness.gymmasteronline.com/portal/signup"
+             data-href-annual="https://worldfitness.gymmasteronline.com/portal/signup"
+             data-href-flexi="https://worldfitness.gymmasteronline.com/portal/signup"
+             target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center;">Join Standard</a>
           <p class="plate-cta-note">Rather talk it through first? <a href="/contact" style="color:var(--olive);">Message us</a>.</p>
         </div>
         <div class="plate-card">
-          <div class="plate-disc">21</div>
+          <div class="plate-disc"><span class="plate-amount"><span class="term-annual">$20.95</span><span class="term-flexi">$24.95</span></span><span class="plate-unit">a week</span></div>
           <div class="plate-tier">Youth &amp; First Responder</div>
-          <div class="plate-price"><span class="term-annual">$20.95</span><span class="term-flexi">$24.95</span><span> / week</span></div>
           <p class="plate-prepay term-annual">Or <strong>$980/yr</strong> paid upfront — save $109</p>
           <p class="plate-desc">Full 24/7 access for eligible younger members and first responders.</p>
           <!-- No "Students" chip: eligibility is strictly under 23, so a chip
@@ -141,8 +143,16 @@
           <cite>— Matthew Hendriks, Google review</cite>
         </blockquote>
       </div>
+    </div>
+  </div>
+</section>
 
-
+<section class="about" id="membership-faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Membership Questions</p>
+      <h2>Before you join.</h2>
+    </div>
     <div class="faq-list">
       <div class="faq-item">
         <h3>Do I need to already be fit or experienced to join?</h3>

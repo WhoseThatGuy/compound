@@ -19,11 +19,24 @@ const CALENDLY_TOUR_URL = "https://calendly.com/compoundgymnz/compound-tour";
 // DOM, so with JS off the page still shows annual pricing rather than nothing.
 const pricingWrap = document.querySelector('.pricing-wrap');
 if (pricingWrap) {
+  // Prices are swapped by CSS off data-term, but a join button has to point at
+  // a different signup URL per term, and CSS cannot change an href. Any link
+  // carrying both data-href-annual and data-href-flexi gets repointed here.
+  // Links without them (Check Eligibility, Claim Free 7-Day Pass) are ignored.
+  const setTermHrefs = term => {
+    pricingWrap.querySelectorAll('a[data-href-' + term + ']').forEach(a => {
+      const href = a.getAttribute('data-href-' + term);
+      if (href) a.setAttribute('href', href);
+    });
+  };
+  setTermHrefs(pricingWrap.getAttribute('data-term') || 'annual');
+
   pricingWrap.querySelectorAll('[data-set-term]').forEach(btn => {
     btn.addEventListener('click', () => {
       const term = btn.getAttribute('data-set-term');
       if (pricingWrap.getAttribute('data-term') === term) return;
       pricingWrap.setAttribute('data-term', term);
+      setTermHrefs(term);
       pricingWrap.querySelectorAll('[data-set-term]').forEach(b => {
         const on = b === btn;
         b.classList.toggle('is-on', on);
