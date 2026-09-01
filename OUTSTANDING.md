@@ -67,62 +67,39 @@ Seven new reviews placed. The Julia Morera / James X duplication across
 listing. Verify each against its original review before launch — misquoting a
 named customer is Fair Trading Act exposure.
 
-### 4. Sauna page — rebuilt to the review brief, five facts still missing
-`dunedin-gym-sauna.html`
+### 4. Sauna page — RESOLVED
 
-The page was rebuilt as a **second front door**, not just a membership perk.
-Someone searching "infrared sauna Dunedin" now lands on unlimited sauna →
-$16.95/week → and the whole gym comes with it. Seven sections, two routes out
-(memberships and the free pass), plus a one-off session route for people who
-do not want a membership at all.
+Rebuilt to the review brief as a **second front door**, not just a membership
+perk. Someone searching "infrared sauna Dunedin" now lands on unlimited sauna →
+$16.95/week → and the whole gym comes with it.
 
-**Five facts are still missing, and the FAQ is short because of it.** The brief
-asked for these and said to insert the real operational answers. Nothing was
-invented, so these questions are simply absent from the page:
+**All the missing facts were supplied by Compound and are now on the page:**
 
-1. **Do I need to book?** Or walk in and use it?
-2. **When can members use it?** 24/7 on the key-tag, or staffed hours only?
-   Deliberately not claimed anywhere on the page. The headline says "Use it as
-   often as you like" — *as often*, not *whenever* — precisely because the
-   hours are unconfirmed. If it really is 24/7, that is a strong claim the page
-   should make, and the brief's original "Use it whenever you want" can go back
-   in.
-3. **How many people fit?**
-4. **Is there a session length limit** members need to know about?
-5. **One-off session price.** The brief wanted it shown for people comparing
-   sauna options around Dunedin. The button goes to the contact form instead.
+- Booking is required. Members book in the Compound app; non-members are booked
+  in by staff.
+- **Staffed hours only** (Mon–Fri 6am–7pm), not 24/7.
+- **Two saunas** — one in the women's changing room, one in the men's.
+- Two people per sauna.
+- 45-minute sessions.
+- **One-off sessions are free.** Promoted from a grey footnote to its own
+  section with its own CTA.
 
-**Also unresolved: one sauna or several?** The page, the brief and 14 other
-places across the site all say "saunas" plural. An earlier note in this file
-said it was a single sauna. Whichever is right, it needs to be consistent — and
-it changes the answer to "how many people fit".
+The FAQ went from 3 questions to 8, all operationally confirmed, all mirrored in
+FAQPage structured data.
 
-**Withdrawn** (kept for the reasoning): the original version of this item asked
-for "how many, how hot, how long". Publishing a temperature would undercut the
-page's own "heats the body, not the air" explanation, since infrared runs far
-cooler than traditional. The hedged phrasing on therapeutic effects is also
-deliberate — those claims carry Fair Trading risk.
+**Settled: it is two saunas, not one.** An earlier note in this file said a
+single sauna. Plural was already correct across the rest of the site. `gym.html`
+said "An infrared sauna, included" and now says two.
 
-### 4b. Old sauna-page notes (superseded)
-`dunedin-gym-sauna.html`
+**Fixed as a consequence:** twelve sentences across five pages folded the sauna
+into the gym's 24/7 claim — "full 24/7 access to the gym and saunas", "seven
+days, any hour, sauna included". With the sauna on staffed hours and requiring a
+booking, those were promises a free-pass holder would have found false on day
+one. The two claims are now detached everywhere: the gym is 24/7, the sauna is
+included.
 
-**Withdrawn as originally written.** "How many, how hot, how long" was generic
-gym-page thinking and wrong for this page. It is a single infrared sauna, and
-infrared runs far cooler than traditional — publishing a temperature would
-undercut the page’s own "heats the body, not the air" explanation and read as a
-weakness to anyone who does not already know the difference.
-
-The hedged phrasing ("many members use it", "many people find") is also right as
-it stands. Therapeutic claims carry Fair Trading risk; the caution is deliberate.
-
-What actually remains:
-
-- **Is the sauna on 24/7 key-tag access, or staffed hours only?** For a 24/7 gym
-  that is the real question, and if the answer is yes it is a selling point the
-  page does not currently make.
-- "Only after the sauna? Send us a message and we’ll sort a one-off session" is a
-  vague CTA with no price, pointing at a contact form. Small leak, secondary
-  audience — give it a price or cut it.
+**Still owed:** both sauna photos show an empty sauna. The review asked for one
+of a member actually using it — natural, not staged spa photography.
 
 ### 5. Photo of Gate J
 `contact.html`
