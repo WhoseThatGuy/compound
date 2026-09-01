@@ -228,10 +228,10 @@ The gold CTA is back in the header on all nine pages, and the floating pill
 in the bottom-right corner is gone. Between them the site went from two
 persistent CTAs, to none, to one.
 
-The pill was removed completely — markup from the footer partial, 
+The pill was removed completely — markup from the footer partial, `.float-cta`
 rules from the CSS, and the JS that retired it after a claim. The nav CTA
-inherits that last behaviour: on  it removes itself once the
-form is submitted, because it points at  and that form no longer
+inherits that last behaviour: on `/free-7-day-pass` it removes itself once the
+form is submitted, because it points at `#claim` and that form no longer
 exists on a page confirming the pass is claimed.
 
 It reads "Free 7-Day Pass", collapsing to "Free Pass" under 520px. Kept that
