@@ -44,6 +44,34 @@ Fallback if quotes can't be obtained: one line per athlete on what they train
 here *for*. "Strength blocks between racing seasons" is sourceable without an
 interview.
 
+**The Athletes page is now built to receive this.** The review wants each card
+to grow a `Meet <name> →` link to its own story page — sport, what they're
+training for, how they train, why here, photography, video. The cards were
+deliberately left thin (name, achievement, sport) so that link is a one-line
+addition rather than a rebuild. Nothing is linked yet because no story pages
+exist; don't add the links until they do.
+
+Breadth over accolades is the goal when adding athletes: running, hockey,
+CrossFit, football, rugby, weightlifting, HYROX, motocross, sprinting. Five
+athletes across five sports today. The point is that Compound reads as a gym
+for athletes rather than a gym known for one sport.
+
+### 1b. The review pool is thin, and the real one is not
+`athletes.html` · site-wide
+
+Fourteen review quotes are placed across the site and **not one is a duplicate**
+— but that is now the constraint rather than an achievement. The Athletes page
+asked for a quote about atmosphere and culture, and the best available was Manu
+McCallum's "Super good vibe!", which spends its first sentence on squat racks.
+
+There are **230+ real Google reviews** and only fourteen have been mined. There
+is almost certainly a better culture quote sitting in the live listing. Worth
+an hour reading them, especially for anything about other members, the training
+environment, or people training seriously.
+
+Ties into item 3: the placed quotes were researched rather than copied from the
+live listing, and still need verifying against their originals before launch.
+
 ### 2. Photos for Billie Allan and Connor Bond
 `index.html` (athlete strip)
 
