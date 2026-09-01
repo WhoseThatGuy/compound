@@ -239,6 +239,21 @@
   .nav-links a:hover, .nav-links a:focus-visible{ color:var(--beige); }
   .nav-links a:hover::after, .nav-links a:focus-visible::after{ width:100%; }
 
+  .nav-cta{
+    background:var(--olive);
+    color:var(--beige) !important;
+    padding:0.65rem 1.3rem;
+    font-size:0.82rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    border-radius:2px;
+    white-space:nowrap;
+    flex-shrink:0;
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .nav-cta:hover{ background:var(--olive-dim); transform:translateY(-1px); }
+
 
   .nav-toggle{ display:none; }
 
@@ -1037,29 +1052,6 @@
   }
   .footer-col a:hover{ color:var(--beige); }
 
-  /* ---------- FLOATING CTA ---------- */
-  .float-cta{
-    position:fixed;
-    bottom:1.6rem;
-    right:1.6rem;
-    z-index:90;
-    background:var(--olive);
-    color:var(--navy);
-    padding:0.9rem 1.3rem;
-    border-radius:40px;
-    font-size:0.85rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:0.03em;
-    box-shadow:0 8px 24px rgba(0,0,0,0.4);
-    display:flex;
-    align-items:center;
-    gap:0.5rem;
-    transition:transform 0.2s ease;
-    cursor:pointer;
-    border:none;
-  }
-  .float-cta:hover{ transform:translateY(-3px) scale(1.03); }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 1120px){
@@ -1082,6 +1074,7 @@
       background:none; border:none; color:var(--beige);
       font-size:1.5rem; cursor:pointer;
     }
+    .nav-cta{ padding:0.5rem 0.9rem; font-size:0.72rem; margin-left:auto; margin-right:0.9rem; }
     .hero-grid{ grid-template-columns:1fr; }
     .hero-plates{ display:none; }
     .hero-stats{ gap:1.6rem; flex-wrap:wrap; }
@@ -1115,7 +1108,6 @@
     .process-arrow{ display:none; }
     .pricing-grid, .trainers-grid{ grid-template-columns:1fr; }
     .form-row{ grid-template-columns:1fr; }
-    .float-cta{ padding:0.8rem 1.1rem; font-size:0.78rem; bottom:1rem; right:1rem; }
     /* Brand block takes its own row; the three link columns sit beneath it.
        It keeps its 360px cap — a full-width address block reads worse. */
     .footer-grid{ grid-template-columns:repeat(3, 1fr); gap:2.4rem 2rem; }
@@ -1137,4 +1129,10 @@
      keep the footer about a third shorter. */
   @media (max-width: 359px){
     .footer-grid{ grid-template-columns:1fr; }
+  }
+
+  /* .nav-cta-long: the "7-Day " span is dropped on the narrowest screens so
+     the pill reads "Free Pass" rather than wrapping or squeezing the logo. */
+  @media (max-width: 520px){
+    .nav-cta-long{ display:none; }
   }

@@ -222,14 +222,21 @@ Session** on `/dunedin-gym-sauna`. Still worth one click on production.
 
 Small, no dependencies.
 
-### 9. No route to the Free 7-Day Pass from the nav
-`partials/nav.html`
+### 9. Nav route to the Free 7-Day Pass — RESOLVED
 
-The "Free Pass" text link was removed (it duplicated the gold CTA), and then the
-gold CTA was removed too (`8a27c5f`). Between them the navigation now has no
-path to the pass at all — only in-page CTAs and the footer.
+The gold CTA is back in the header on all nine pages, and the floating pill
+in the bottom-right corner is gone. Between them the site went from two
+persistent CTAs, to none, to one.
 
-Deliberate on both counts, but worth a second look as a combined effect.
+The pill was removed completely — markup from the footer partial, 
+rules from the CSS, and the JS that retired it after a claim. The nav CTA
+inherits that last behaviour: on  it removes itself once the
+form is submitted, because it points at  and that form no longer
+exists on a page confirming the pass is claimed.
+
+It reads "Free 7-Day Pass", collapsing to "Free Pass" under 520px. Kept that
+wording rather than "Claim" so it matches the one offer name used everywhere
+else on the site.
 
 ### 10. Join buttons — term-specific links DONE
 `gym-memberships.html` · `js/main.js`

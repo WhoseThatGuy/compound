@@ -262,10 +262,15 @@ if (form) {
       });
     }
 
-    // The floating CTA points at the form we just replaced — once the pass is
-    // claimed it only scrolls back to this panel, so retire it.
-    const floatCta = document.getElementById('floatCta');
-    if (floatCta) floatCta.remove();
+    // The nav's gold CTA points at #claim — the form we are about to replace.
+    // Once the pass is claimed it would only scroll back to this panel, and a
+    // "Free 7-Day Pass" button above a page saying the pass is claimed reads
+    // as a mistake. Retire it, on this page only. (The floating pill used to
+    // carry this same problem and was handled the same way before it went.)
+    if (kind === 'pass') {
+      const navCta = document.querySelector('.nav-cta');
+      if (navCta) navCta.remove();
+    }
 
     // Must be in the DOM before Calendly mounts into it.
     form.replaceWith(panel);
