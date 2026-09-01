@@ -244,12 +244,15 @@ bikes are not a double-count.
 The review asked for fewer duplicate angles and more people mid-lift. Compound
 said they'll improve the photos. Nothing to do at a keyboard until they land.
 
-### 13. "Purpose-built for training — not converted into it" is still on About
-`about-us.html` (~line 117)
+### 13. "Purpose-built for training — not converted into it" — RESOLVED
 
-Cut from the homepage hero for being unpicturable — *converted from what?* — and
-because it may not survive the fact that this is Level 2A of a stadium that
-opened in 2011. The About page still runs it.
+Gone. The About page was rebuilt to the review brief and the line went with it,
+along with two others the brief called out: "nobody's watching to judge where
+you're starting from" (raises being judged in order to deny it) and "We didn't
+set out to build a culture" (describes the culture by first disowning it).
+
+Also gone: "we stopped trying to be an everybody's gym", which defined Compound
+by what it stopped being.
 
 ---
 
@@ -267,12 +270,21 @@ client's free session from a member's two included ones.
 ### 15. About page date vs brand date
 `about-us.html`
 
-Footer says **Est. 2023** (the Compound brand). About says *"In 2024 we stopped
-trying to be [an everybody's gym]"* and *"Thirty years in Dunedin"* (the gym).
+Footer says **Est. 2023** (the Compound brand). About now says *"In 2024, we
+decided to build the gym around the people who cared most about training"* and
+*"Thirty years in Dunedin"* (the gym).
 
 Both the '90s and 2023 are correct and refer to different things — confirmed.
-But the brand launching in 2023 and the repositioning being described as 2024 is
-a one-year gap worth resolving.
+But the brand launching in 2023 and the repositioning being dated 2024 is still
+a one-year gap. **2024 came from the review brief**, so it was kept rather than
+quietly corrected. If the rebuild really began in 2023, one of the two numbers
+needs changing.
+
+**Also unverified:** the stats bar reads 30+ years, **635 members**, **10k+
+Dunedinites through the doors**, **$12k+ donated locally**. The first came from
+the review brief; the rest were already on the page. The brief said to use
+current figures at implementation time rather than shipping stale ones — nobody
+has confirmed these are current.
 
 ### 17. Ten raw JPGs sitting untracked
 `images/`
