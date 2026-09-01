@@ -82,13 +82,8 @@
     margin:0 auto;
   }
   .logo{
-    font-family:'Reem Kufi', sans-serif;
-    font-size:1.35rem;
-    letter-spacing:0.03em;
-    text-transform:uppercase;
     display:flex;
     align-items:center;
-    gap:0.55rem;
     color:var(--beige);
   }
   .nav-links a[aria-current="page"]{ color:var(--beige); }
@@ -208,12 +203,15 @@
     font-weight:600;
     color:var(--olive);
   }
-  .logo-mark{
-    width:26px;
-    height:26px;
-    color:var(--olive);
+  /* The brand Primary lockup, 2066x320. Height-driven so the aspect ratio
+     is never forced — setting both dimensions squashes the wordmark. */
+  .logo-lockup{
+    height:22px;
+    width:auto;
     flex-shrink:0;
+    display:block;
   }
+  .footer-lockup{ height:26px; }
   .nav-links{
     display:flex;
     gap:1.5rem;
@@ -993,10 +991,6 @@
     display:flex;
     align-items:center;
     gap:0.6rem;
-    font-family:'Reem Kufi', sans-serif;
-    text-transform:uppercase;
-    font-size:1.35rem;
-    letter-spacing:0.02em;
     color:var(--beige);
   }
   .footer-tagline{
