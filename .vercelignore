@@ -1,0 +1,16 @@
+# Files that live in the repo but are not part of the published site.
+# Without this they are served as static files — compoundgym.nz/OUTSTANDING.md
+# would return the internal working notes verbatim.
+#
+# Do NOT add vercel.json here: Vercel reads it as configuration and never
+# serves it, so ignoring it would silently drop every redirect.
+
+*.md
+build.js
+review/
+.gitignore
+
+# Already gitignored, listed again so a CLI deploy from a dirty working tree
+# can't pick them up either.
+incoming-photos/
+.claude/
