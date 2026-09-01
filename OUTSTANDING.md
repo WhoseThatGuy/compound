@@ -267,24 +267,19 @@ someone needs to own enquiry → match → booking before this gets traffic.
 The form captures an "Already a member?" flag so the team can tell a new
 client's free session from a member's two included ones.
 
-### 15. About page date vs brand date
-`about-us.html`
+### 15. About page date vs brand date — RESOLVED
 
-Footer says **Est. 2023** (the Compound brand). About now says *"In 2024, we
-decided to build the gym around the people who cared most about training"* and
-*"Thirty years in Dunedin"* (the gym).
+**It is 2023.** The review brief said 2024; Compound confirmed 2023, which is
+also what the footer's Est. 2023 has always said. Changed in three places on
+`about-us.html`: the body copy, the meta description and the og:description.
 
-Both the '90s and 2023 are correct and refer to different things — confirmed.
-But the brand launching in 2023 and the repositioning being dated 2024 is still
-a one-year gap. **2024 came from the review brief**, so it was kept rather than
-quietly corrected. If the rebuild really began in 2023, one of the two numbers
-needs changing.
+The gym dates to the early '90s and the Compound brand to 2023. Two different
+things, both correct, and the site no longer implies a third date.
 
-**Also unverified:** the stats bar reads 30+ years, **635 members**, **10k+
-Dunedinites through the doors**, **$12k+ donated locally**. The first came from
-the review brief; the rest were already on the page. The brief said to use
-current figures at implementation time rather than shipping stale ones — nobody
-has confirmed these are current.
+**Stats confirmed by Compound** and safe to leave: 30+ years in Dunedin, 635
+members, 10k+ Dunedinites through the doors, $12k+ donated locally. Worth a
+re-check whenever the About page is next touched, since three of the four only
+move upwards.
 
 ### 17. Ten raw JPGs sitting untracked
 `images/`
