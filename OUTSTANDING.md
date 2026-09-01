@@ -219,7 +219,8 @@ path to the pass at all — only in-page CTAs and the footer.
 Deliberate on both counts, but worth a second look as a combined effect.
 
 ### 10. Join buttons — term-specific links DONE
- · 
+`gym-memberships.html` · `js/main.js`
+
 The Annual/Flexi toggle now repoints each plan's join button at its own
 GymMaster signup link, verified in both directions and back again:
 
@@ -228,7 +229,7 @@ GymMaster signup link, verified in both directions and back again:
 | Off Peak | a46d9225…  | ed252a4a…  |
 | Standard | a8b542b8…  | f01d549b…  |
 
-The static  on each button is the **annual** URL, so a visitor with JS
+The static `href` on each button is the **annual** URL, so a visitor with JS
 off still lands on the plan the page is displaying.
 
 All four return 200. The two Off Peak pages self-identify as "Off Peak Annual
@@ -237,7 +238,7 @@ showed "Annual Weekly"; **Standard-Flexi was confirmed only as a 200** — the
 plan name was not read before GymMaster rate-limited the checks. Worth one
 human click to confirm it opens the Flexi plan and not the annual one.
 
-Youth & First Responder has no term link by design — it routes to for an eligibility check.
+Youth & First Responder has no term link by design — it routes to `/contact` for an eligibility check.
 
 **Still open:** both buttons leave for an external portal with no warning.
 Suggested micro-copy under each:
