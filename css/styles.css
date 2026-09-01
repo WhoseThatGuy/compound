@@ -410,6 +410,11 @@
     font-weight:700;
     font-size:0.95rem;
     padding-top:0.15rem;
+    /* The marks vary from "9" to "24/7", so without a floor the body text
+       beside them starts at a different x in every pillar — a 27px ragged
+       left edge down the column. */
+    min-width:2.6rem;
+    flex-shrink:0;
   }
   .pillar h3{
     font-family:'Montserrat', sans-serif;
@@ -711,7 +716,9 @@
   }
   .process-steps{
     display:flex;
-    align-items:flex-start;
+    /* stretch, not flex-start: the three cards carry different amounts of
+       copy, and ragged-bottom boxes read as a mistake rather than a rhythm. */
+    align-items:stretch;
     gap:1rem;
   }
   .process-step{
@@ -743,6 +750,8 @@
     font-size:1.4rem;
     padding-top:2.4rem;
     flex-shrink:0;
+    /* the cards stretch; the arrow between them should not */
+    align-self:flex-start;
   }
 
   .trainer-card{
