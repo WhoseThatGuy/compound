@@ -67,7 +67,43 @@ Seven new reviews placed. The Julia Morera / James X duplication across
 listing. Verify each against its original review before launch — misquoting a
 named customer is Fair Trading Act exposure.
 
-### 4. Sauna page — one real question, not four
+### 4. Sauna page — rebuilt to the review brief, five facts still missing
+`dunedin-gym-sauna.html`
+
+The page was rebuilt as a **second front door**, not just a membership perk.
+Someone searching "infrared sauna Dunedin" now lands on unlimited sauna →
+$16.95/week → and the whole gym comes with it. Seven sections, two routes out
+(memberships and the free pass), plus a one-off session route for people who
+do not want a membership at all.
+
+**Five facts are still missing, and the FAQ is short because of it.** The brief
+asked for these and said to insert the real operational answers. Nothing was
+invented, so these questions are simply absent from the page:
+
+1. **Do I need to book?** Or walk in and use it?
+2. **When can members use it?** 24/7 on the key-tag, or staffed hours only?
+   Deliberately not claimed anywhere on the page. The headline says "Use it as
+   often as you like" — *as often*, not *whenever* — precisely because the
+   hours are unconfirmed. If it really is 24/7, that is a strong claim the page
+   should make, and the brief's original "Use it whenever you want" can go back
+   in.
+3. **How many people fit?**
+4. **Is there a session length limit** members need to know about?
+5. **One-off session price.** The brief wanted it shown for people comparing
+   sauna options around Dunedin. The button goes to the contact form instead.
+
+**Also unresolved: one sauna or several?** The page, the brief and 14 other
+places across the site all say "saunas" plural. An earlier note in this file
+said it was a single sauna. Whichever is right, it needs to be consistent — and
+it changes the answer to "how many people fit".
+
+**Withdrawn** (kept for the reasoning): the original version of this item asked
+for "how many, how hot, how long". Publishing a temperature would undercut the
+page's own "heats the body, not the air" explanation, since infrared runs far
+cooler than traditional. The hedged phrasing on therapeutic effects is also
+deliberate — those claims carry Fair Trading risk.
+
+### 4b. Old sauna-page notes (superseded)
 `dunedin-gym-sauna.html`
 
 **Withdrawn as originally written.** "How many, how hot, how long" was generic
@@ -140,13 +176,17 @@ would put a real appointment in the Calendly.
 Worth doing once: submit the free-pass form, pick a slot, confirm the
 `calendly_booked` event lands in GA4 realtime.
 
-### 8. Contact deep-link `?interest=`
-`js/main.js`
+### 8. Contact deep-link `?interest=` — RESOLVED locally
 
-`/contact?interest=Sponsorship%20request` should preselect the dropdown. The
-local preview strips query strings, so the matching logic was tested directly
-(exact, case-insensitive and whitespace-tolerant all resolve) but the
-end-to-end path is unproven. The sponsorship button on `/about-us` uses it.
+`/contact?interest=Sauna` was tested end to end in the local preview and works:
+the dropdown preselects "Sauna", the redirect panel stays hidden (correct — no
+route is defined for Sauna, so the message field is the right destination) and
+the message field shows.
+
+The earlier note here said the local preview strips query strings. It does not.
+
+Two buttons rely on this: sponsorship on `/about-us`, and **Book A Sauna
+Session** on `/dunedin-gym-sauna`. Still worth one click on production.
 
 ---
 

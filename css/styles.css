@@ -344,6 +344,22 @@
     text-transform:uppercase;
     margin-top:0.2rem;
   }
+  /* Like .hero-stats but grid rather than flex, because it carries five items
+     rather than three and has to wrap cleanly instead of squeezing. */
+  .stat-strip{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));
+    gap:2rem 1.6rem;
+    margin-top:2.6rem;
+    padding-top:2rem;
+    border-top:1px solid var(--line);
+  }
+  .sauna-photos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.2rem;
+    margin-top:3rem;
+  }
 
   /* ---------- SECTION shared ---------- */
   section{ padding:clamp(4rem, 9vw, 7.5rem) 0; }
