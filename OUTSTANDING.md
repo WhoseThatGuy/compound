@@ -108,7 +108,7 @@ $16.95/week → and the whole gym comes with it.
 - **Staffed hours only** (Mon–Fri 6am–7pm), not 24/7.
 - **Two saunas** — one in the women's changing room, one in the men's.
 - Two people per sauna.
-- 45-minute sessions.
+- 30-minute sessions.
 - **One-off sessions are free.** Promoted from a grey footnote to its own
   section with its own CTA.
 
@@ -127,7 +127,7 @@ one. The two claims are now detached everywhere: the gym is 24/7, the sauna is
 included.
 
 **Confirmed by Compound:** "unlimited" is accurate — all members get unlimited
-sauna access. Booking, staffed hours and the 45-minute slot are the shape of it,
+sauna access. Booking, staffed hours and the 30-minute slot are the shape of it,
 not a cap on it, and they are all stated on the page. The word stays.
 
 **Parked by Compound:** both sauna photos show an empty sauna, and the review
@@ -278,6 +278,21 @@ always a platform free."
 dumbbells, swiss balls, medicine balls, resistance bands, foam rollers and
 trigger-point balls. Now on the page, plus a new **Warm-up & Mobility** column in
 the equipment directory.
+
+**Eleiko was wrong — corrected.** Compound does not stock Eleiko bars. The
+brand name was removed from eight places across five files and replaced with
+"competition bars", which is true and claims nothing unverified. **The actual
+bar brand is still unknown** — worth naming if it is worth naming.
+
+**Industrial Athletic is now the one unverified brand left on the site.** It
+appears on the bumper plates in `gym.html` and came from pre-existing copy, not
+from Compound. Given Eleiko turned out to be wrong, confirm it.
+
+**The turf is 46m, not 40m.** Corrected in 22 places including meta
+descriptions, og tags, stat figures and FAQ structured data.
+
+**Sauna sessions are 30 minutes, not 45.** Corrected in four places including
+the FAQPage schema.
 
 **Rowers — confirmed by Compound.** Concept2. Named in the equipment directory,
 the Zone 5 description and the HYROX answer. This was the brand the review
