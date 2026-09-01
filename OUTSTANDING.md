@@ -139,6 +139,15 @@ weekends, which is a real limit on using this page as a front door for people
 who want a sauna after work or on a Saturday. That is an operations question,
 not a copy one. The page states the hours plainly and does not work around them.
 
+### 4c. Two gym photos are now unused site-wide
+
+Trimming The Gym page from ten photos to six left `facility-cable-machine`
+and `facility-dumbbells-2` referenced by no page at all. They were dropped as
+duplicates of shots the hero already carries.
+
+Left in `images/` rather than deleted — they are fine photos and cost nothing
+sitting there. Delete only if the folder is being tidied deliberately.
+
 ### 5. Photo of Gate J
 `contact.html`
 
