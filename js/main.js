@@ -149,7 +149,7 @@ document.addEventListener('click', (e) => {
 // One endpoint per destination, because they want different treatment: the
 // free-pass form has the onboarding auto-responder attached, PT requests need
 // matching to a trainer, and general enquiries just need answering.
-const FORMSPREE_FREEPASS = "https://formspree.io/f/xqpzyrpq";  // /free-7-day-pass
+const FORMSPREE_FREEPASS = "https://formspree.io/f/xaeyjpoa";  // /free-7-day-pass
 const FORMSPREE_CONTACT  = "https://formspree.io/f/xrpgkyqk";  // /contact
 const FORMSPREE_PT       = "https://formspree.io/f/xppaozgn";  // /personal-trainers
 

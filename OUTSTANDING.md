@@ -7,7 +7,33 @@ See `README.md` → Open items for older technical/asset items (logo, fonts, raw
 
 ## Recently closed
 
-### 0. Formspree autoresponder — RESOLVED
+### 0. Formspree — free-pass form MOVED, autoresponder needs re-checking
+
+**The free-pass form is now a different Formspree form** (`xaeyjpoa`, was
+`xqpzyrpq`), and the contact form is new too (`xrpgkyqk`). Formspree settings do
+not travel with the endpoint, so on the new free-pass form confirm:
+
+- the **onboarding auto-responder exists at all** — it is part of the funnel,
+  not a nicety. Someone claims a pass and expects an email.
+- it does **not** mention cards, billing or trials converting, per the standing
+  rule. The old form had that copy and it was removed; a fresh form may have
+  been set up from a default template that reintroduces it.
+- the `{{ fname }}` merge tag renders a name rather than the literal
+  placeholder.
+- notifications go to the right inbox.
+
+Current routing, verified in the browser on each page:
+
+| Page | Formspree form |
+|---|---|
+| `/free-7-day-pass` | `xaeyjpoa` |
+| `/contact` | `xrpgkyqk` |
+| `/personal-trainers` | `xppaozgn` |
+
+`xppaozgn` was the old shared contact/PT form. PT still points at it — confirm
+that is intended rather than left over.
+
+### 0b. The old autoresponder fix — for reference
 
 The "No card needed, nothing to sign — after your 7 days, you decide" claim is
 gone from the confirmation email, so it no longer contradicts `a76e5ef` and
