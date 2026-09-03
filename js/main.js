@@ -249,7 +249,7 @@ if (form) {
       panel.innerHTML = `
         <h3>Got it.</h3>
         <p>Thanks — we'll be back to you shortly.</p>
-        <p class="success-note">Need us sooner? WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a>, or <a href="${CALENDLY_URL}" target="_blank" rel="noopener">book a key-tag setup time</a>.</p>`;
+        <p class="success-note">Need us sooner? WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a>.</p>`;
     }
     // The old Squarespace site redirected claimants to a real
     // /free-7-day-pass-confirmation page, and the GA4 key event is defined on
