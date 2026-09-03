@@ -7,11 +7,11 @@ constants, chosen by `kind` in the submit handler).
 |---|---|---|
 | `/free-7-day-pass` | `xaeyjpoa` | **live** — accurate, two small suggestions below |
 | `/contact` | `xrpgkyqk` | none — optional, see below |
-| `/personal-trainers` | `mvkorwrk` | **not set up** — copy below, ready to paste |
+| `/personal-trainers` | `mvkorwrk` | **live** — copy below is what it was built from |
 
 Formspree settings do not travel when a form ID changes, and all three IDs were
-replaced in September 2026. The free-pass responder has been rebuilt on the new
-form; the PT one has not.
+replaced in September 2026. Both responders have since been rebuilt on the new
+forms.
 
 ---
 
@@ -37,7 +37,7 @@ email because it arrives unprompted.
 
 ---
 
-## Personal Training — form `mvkorwrk`
+## Personal Training — form `mvkorwrk` — LIVE
 
 **Fields submitted:** `fname` `lname` `name` `email` `phone` `message`
 `trainer` `membership` `interest` `page`
@@ -82,7 +82,7 @@ Gate J, Level 2A, Forsyth Barr Stadium
 compoundgym.nz
 ```
 
-### One thing to add before you turn it on
+### The one thing that was left blank
 
 **A timeframe.** "We'll come back to you" is the weakest line in the email —
 it is the one thing the reader actually wants to know and it currently says
