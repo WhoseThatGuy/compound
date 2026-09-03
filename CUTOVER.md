@@ -49,14 +49,23 @@ compoundgym.nz        A      198.185.159.144, 198.185.159.145,
 www.compoundgym.nz    CNAME  ext-sq.squarespace.com            (Squarespace)
 ```
 
-Both get replaced with the values **Vercel shows you** when you add the domain.
-Don't copy IPs from memory or from an old blog post — Vercel has changed its
-apex IP and the dashboard is the only authority. Expect roughly:
+### The two records to set — confirmed 3 Sept 2026
+
+Both hostnames are now attached to the `compoundgym` project, and Vercel
+returned these:
 
 ```
-compoundgym.nz        A      <the IP Vercel displays>
-www.compoundgym.nz    CNAME  <the hostname Vercel displays>
+compoundgym.nz        A      76.76.21.21            (delete all four Squarespace A records)
+www.compoundgym.nz    CNAME  cname.vercel-dns.com   (replace ext-sq.squarespace.com)
 ```
+
+Vercel's CLI offered `A 76.76.21.21` for **both**. That works, but a `CNAME` is
+the better choice for `www`: it follows Vercel wherever its IPs move, and it is
+a like-for-like swap of the CNAME already there. `cname.vercel-dns.com` was
+checked and resolves to live Vercel addresses.
+
+Only the apex genuinely needs the A record, because a zone apex cannot hold a
+CNAME.
 
 ---
 
@@ -101,11 +110,11 @@ Gives a `*.vercel.app` URL that nothing points at. On it, confirm:
 - [ ] `/contact?interest=Sponsorship%20request` preselects the dropdown
 - [ ] GA4 realtime records a pageview and `calendly_booked`
 
-### 4. Add the domain in Vercel
+### 4. Add the domain in Vercel — DONE 3 Sept 2026
 
-Add **both** `compoundgym.nz` and `www.compoundgym.nz`, and set the apex as
-primary. Vercel then displays the exact DNS records to create. Leave this
-screen open.
+Both `compoundgym.nz` and `www.compoundgym.nz` are attached to the `compoundgym`
+project. They report "not configured" and will keep doing so until the records
+in the next step are changed — that is expected, not an error.
 
 ### 5. Lower the TTL first, if Squarespace lets you
 
