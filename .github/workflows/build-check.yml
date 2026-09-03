@@ -1,0 +1,63 @@
+# The ten HTML pages are both source and build output: build.js rewrites the
+# nav, footer and analytics blocks in place and the result is committed. That
+# creates two silent failure modes this job exists to catch.
+#
+#   1. Edit a file in partials/ and forget `node build.js` -> pages ship stale.
+#   2. Edit a built page's nav directly -> the next build reverts it, quietly.
+#
+# Running the build and failing if anything changed catches both. No
+# dependencies to install, because the build has none.
+
+name: Build is current
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run the build
+        run: node build.js
+
+      - name: Fail if the build changed anything
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::Committed pages are out of sync with partials/."
+            echo "Run 'node build.js' and commit the result."
+            echo ""
+            git diff --stat
+            exit 1
+          fi
+          echo "Committed pages match the partials."
+
+      - name: Every page referenced by sitemap.xml must exist
+        run: |
+          fail=0
+          for loc in $(grep -o '<loc>[^<]*' sitemap.xml | sed 's|<loc>https://compoundgym.nz||'); do
+            path="${loc#/}"
+            file="${path:-index}.html"
+            if [ ! -f "$file" ]; then
+              echo "::error::sitemap lists $loc but $file does not exist"
+              fail=1
+            fi
+          done
+          exit $fail
+
+      - name: No raw camera files in the repo
+        run: |
+          found=$(git ls-files 'images/*.jpg' 'images/*.jpeg' 'images/*.png' || true)
+          if [ -n "$found" ]; then
+            echo "::error::Raw images committed — only optimised .webp belongs in images/"
+            echo "$found"
+            exit 1
+          fi
+          echo "No raw camera files tracked."

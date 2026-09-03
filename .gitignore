@@ -3,3 +3,9 @@ incoming-photos/
 .DS_Store
 
 .vercel
+
+# Raw camera files. Only optimised .webp belongs in images/ — 26MB of
+# unreferenced JPGs were committed by an over-broad `git add -A` once already.
+images/*.jpg
+images/*.jpeg
+images/*.png

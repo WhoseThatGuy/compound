@@ -5,6 +5,12 @@
 # Do NOT add vercel.json here: Vercel reads it as configuration and never
 # serves it, so ignoring it would silently drop every redirect.
 
+# Belt and braces with .gitignore: raw camera files must never deploy, whatever
+# state the working tree is in. Only optimised .webp is referenced by any page.
+images/*.jpg
+images/*.jpeg
+images/*.png
+
 *.md
 build.js
 review/
