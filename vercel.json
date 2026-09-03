@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "buildCommand": "echo 'No build step: HTML is pre-built and committed.'",
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/(.*)",
