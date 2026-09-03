@@ -305,6 +305,15 @@ if (form) {
     const data = Object.fromEntries(new FormData(form).entries());
     data.page = window.location.pathname;
 
+    // The forms collect first and last name separately because that is better
+    // to fill in, but nothing was sending a plain `name`. Formspree's
+    // notification and auto-responder templates key off conventional field
+    // names, and {{ fname }} has not worked in the responder — this gives it a
+    // standard field to reference, and makes the notification email show a
+    // readable name instead of two separate lines.
+    const fullName = [data.fname, data.lname].filter(Boolean).join(' ').trim();
+    if (fullName) data.name = fullName;
+
     // The free-pass page form has no interest dropdown; on the contact page
     // the selected interest decides which onboarding panel appears.
     const interestSel = form.querySelector('#interest');

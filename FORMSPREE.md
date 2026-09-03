@@ -39,9 +39,11 @@ email because it arrives unprompted.
 
 ## Personal Training — form `mvkorwrk`
 
-**Available merge tags** (from the form fields):
-`{{ fname }}` `{{ lname }}` `{{ email }}` `{{ phone }}` `{{ message }}`
-`{{ trainer }}` `{{ membership }}`
+**Fields submitted:** `fname` `lname` `name` `email` `phone` `message`
+`trainer` `membership` `interest` `page`
+
+Note `{{ fname }}` is known not to render. Use `{{ name }}` — see the free-pass
+section below for why.
 
 ### Subject
 
@@ -52,7 +54,7 @@ Your free PT session at Compound
 ### Message
 
 ```
-Hi {{ fname }},
+Hi {{ name }},
 
 Thanks for the request — it's come through.
 
@@ -106,15 +108,29 @@ all you need."
 five minutes" matches the page. It also passes every rule above — no mention of
 cards, billing or what happens after seven days.
 
-Two improvements worth making:
+**Reply-to is already set to `hello@compoundgym.nz` on all three forms**, so the
+`noreply@formspreemail.com` in the From line is cosmetic — replies do reach a
+real inbox. Nothing to do.
 
-1. **It opens "Hey there," rather than using `{{ fname }}`.** The form collects
-   the first name. `Hi {{ fname }},` is warmer, sits better in the register than
-   "Hey there", and settles the long-standing question of whether the merge tag
-   renders properly — which "Hey there" sidesteps rather than answers.
-2. **Sender is `noreply@formspreemail.com`.** The email invites questions and
-   routes them to WhatsApp, which mostly covers it, but replies go nowhere. If
-   the plan allows a custom reply-to, point it at `hello@compoundgym.nz`.
+**"Hey there," rather than a first name — because `{{ fname }}` does not work.**
+Compound has tried it and it renders nothing. "Hey there" is the working
+fallback, not an oversight.
+
+A likely cause, now addressed in the code: the forms collect `fname` and
+`lname` separately because that is nicer to fill in, and **nothing was sending a
+plain `name`** — which is the conventional field these templates key off. The
+submit handler now adds one:
+
+    name: "Rhys Taylor"     alongside fname / lname
+
+So **`{{ name }}` is worth trying** where `{{ fname }}` failed. It also makes
+the notification email show a readable name instead of two separate lines.
+
+If `{{ name }}` fails too, the next thing to check is whether Formspree's
+auto-responder templating works at all with **JSON submissions** — these forms
+post `Content-Type: application/json` rather than form-encoded, and that is the
+kind of difference that quietly disables field substitution. Only Formspree's
+own docs or support can settle that; do not spend an afternoon guessing.
 
 Merge tags: `{{ fname }}` `{{ lname }}` `{{ email }}` `{{ phone }}`
 
@@ -134,7 +150,8 @@ Merge tags: `{{ fname }}` `{{ lname }}` `{{ email }}` `{{ phone }}`
 
 ## Also worth checking on all three
 
-- **Notification recipient** — where the submission itself lands.
+- **Notification recipient** — where the submission itself lands. Reply-to is
+  confirmed as `hello@compoundgym.nz` on all three.
 - **Spam filtering.** None of the forms has a honeypot or captcha of its own,
   so Formspree's filtering is the only thing between you and junk.
 - **No-JS fallback.** The forms have no `action` attribute; submission is
