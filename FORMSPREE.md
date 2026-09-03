@@ -94,15 +94,27 @@ receives from Compound.
 
 ---
 
-## Free 7-Day Pass — form `xaeyjpoa`
+## Free 7-Day Pass — form `xaeyjpoa` — LIVE
 
-**Needs recreating.** The onboarding responder lived on the old form ID and did
-not move. This one matters most: someone claims a pass and expects to hear
-something.
+Set up and sending. Subject: *"You're in — here's how to start your free 7 days
+at Compound"*. Body covers the key-tag step, the Calendly link, the walk-in
+alternative, the address, free parking, and "Bring your training gear. That's
+all you need."
 
-Check against rule 1 above especially — the old version of this email said
-*"No card needed, nothing to sign — after your 7 days, you decide"* and that
-was removed for breaching it.
+**Checked against the site and it is accurate**: Calendly URL matches
+`CALENDLY_URL` exactly, staffed hours match the footer, address matches, "about
+five minutes" matches the page. It also passes every rule above — no mention of
+cards, billing or what happens after seven days.
+
+Two improvements worth making:
+
+1. **It opens "Hey there," rather than using `{{ fname }}`.** The form collects
+   the first name. `Hi {{ fname }},` is warmer, sits better in the register than
+   "Hey there", and settles the long-standing question of whether the merge tag
+   renders properly — which "Hey there" sidesteps rather than answers.
+2. **Sender is `noreply@formspreemail.com`.** The email invites questions and
+   routes them to WhatsApp, which mostly covers it, but replies go nowhere. If
+   the plan allows a custom reply-to, point it at `hello@compoundgym.nz`.
 
 Merge tags: `{{ fname }}` `{{ lname }}` `{{ email }}` `{{ phone }}`
 

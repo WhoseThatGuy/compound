@@ -7,7 +7,7 @@ See `README.md` → Open items for older technical/asset items (logo, fonts, raw
 
 ## Recently closed
 
-### 0. Formspree — free-pass form MOVED, autoresponder needs re-checking
+### 0. Formspree — free-pass responder LIVE, PT one still to set up
 
 **The free-pass form is now a different Formspree form** (`xaeyjpoa`, was
 `xqpzyrpq`), and the contact form is new too (`xrpgkyqk`). Formspree settings do
