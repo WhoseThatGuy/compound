@@ -272,6 +272,21 @@ if (form) {
       if (navCta) navCta.remove();
     }
 
+    // The card's heading, its lede and the trailing walk-in note are siblings
+    // of <form>, not children of it, so replacing the form alone left "Claim
+    // your pass — four fields, about 30 seconds" sitting above "You're in",
+    // and stranded the walk-in note below the Calendly widget where it
+    // duplicated the one inside the panel. Retire the whole pre-submit card.
+    const card = form.closest('.pass-form-card');
+    if (card) {
+      Array.prototype.forEach.call(card.children, el => {
+        if (el !== form) {
+          el.hidden = true;
+          el.style.display = 'none';   // beats any display rule on h2/p
+        }
+      });
+    }
+
     // Must be in the DOM before Calendly mounts into it.
     form.replaceWith(panel);
     if (kind === 'pass') mountCalendly(panel, CALENDLY_URL, data);
