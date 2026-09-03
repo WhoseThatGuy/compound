@@ -18,7 +18,7 @@ files and `build.js` return 404 · MX intact and a real test email delivered.
    but **not** the bare `/`. The homepage served 200 on both hostnames until an
    explicit `"/"` rule was added (`294a576`).
 
-## Still open: switch www to Vercel's newer CNAME target
+## Do NOT "Replace preset" in Squarespace to chase the www warning
 
 Vercel flags `www` as **DNS Change Recommended** and suggests:
 
@@ -36,9 +36,34 @@ resolvers holding the old value keep working while the new one propagates.
 Verified — the recommended target resolves to `64.29.17.65` and
 `216.198.79.65`, the legacy one to `76.76.21.164` and `66.33.60.34`.
 
-In Squarespace the `www` CNAME sits inside the **Vercel preset**. If the preset
-will not let the value be edited, delete that CNAME row and add the new one
-under **Custom records** instead.
+**This was attempted on 3 Sept and abandoned on purpose.** Adding the new CNAME
+as a custom record makes Squarespace offer only one resolution:
+
+> A record in this preset conflicts with existing records. To use the new
+> record, select **Replace preset**.
+
+The Vercel preset holds **two** records, not one:
+
+```
+@     A      216.198.79.1           <- the apex. The live site.
+www   CNAME  cname.vercel-dns.com
+```
+
+"Replace preset" replaces the whole preset, so it would take the apex A record
+with it and `compoundgym.nz` would stop resolving — for up to the 4 hour TTL on
+some resolvers.
+
+The trade is a cosmetic warning badge against hours of downtime on the
+homepage, for a record Vercel says will keep working. Not worth it.
+
+**`www` is fully healthy on the legacy target** — verified after cutover: `/`
+and `/gym` both 308 to the apex, and the certificate covers
+`DNS:www.compoundgym.nz`.
+
+If this is ever genuinely needed, the only safe route is to move DNS off
+Squarespace first — to Vercel's nameservers or another host where individual
+records can be edited without preset semantics. That is the same move required
+before the Squarespace subscription can be cancelled, so do both together.
 
 ---
 
