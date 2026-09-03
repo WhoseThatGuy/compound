@@ -118,7 +118,13 @@
       </div>
     </div>
     <div>
-      <form id="contactForm">
+      <!-- action/method are the no-JS fallback. When the script runs it calls
+             preventDefault() and posts via fetch, so this never fires. If the
+             script is blocked, fails to load, or throws anywhere above the
+             handler, the browser posts natively instead of the form silently
+             doing nothing. Worse experience — Formspree's own thank-you page
+             rather than the inline panel — but the lead is captured. -->
+        <form id="contactForm" action="https://formspree.io/f/xrpgkyqk" method="POST">
         <div class="form-row">
           <div>
             <label for="fname">First name</label>

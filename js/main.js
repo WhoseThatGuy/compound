@@ -1,14 +1,20 @@
 // Mobile nav toggle
+// Guarded, and it matters more than it looks: this is line 4 of a single file
+// whose form handler sits ~300 lines below. An unguarded throw here would stop
+// every line after it, so one missing element would silently disable all three
+// lead-capture forms site-wide with nothing visible to notice.
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-});
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  navLinks.classList.remove('open');
-  navToggle.setAttribute('aria-expanded', 'false');
-}));
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+}
 
 // ---- CALENDLY -----------------------------------------------------
 const CALENDLY_URL = "https://calendly.com/compoundgymnz/key-pickup";

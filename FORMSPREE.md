@@ -154,8 +154,17 @@ Merge tags: `{{ fname }}` `{{ lname }}` `{{ email }}` `{{ phone }}`
   confirmed as `hello@compoundgym.nz` on all three.
 - **Spam filtering.** None of the forms has a honeypot or captcha of its own,
   so Formspree's filtering is the only thing between you and junk.
-- **No-JS fallback.** The forms have no `action` attribute; submission is
-  entirely JavaScript. If a visitor's JS fails, the form silently does nothing
-  and the lead is lost without trace. Adding
-  `action="https://formspree.io/f/<id>" method="POST"` to each `<form>` would
-  make it degrade gracefully.
+- **No-JS fallback — DONE.** Each form now carries
+  `action="https://formspree.io/f/<its own id>" method="POST"`. With JS running
+  the handler calls `preventDefault()` and posts via fetch, so this never fires;
+  verified that submitting still shows the inline panel and does not navigate.
+  Without JS the browser posts natively and the lead is captured, at the cost of
+  landing on Formspree's own thank-you page instead of the panel.
+
+  Two fields are JS-built and so are **absent from a native fallback post**:
+  `page` and `name`. Everything the form actually collects is carried, because
+  every field has a `name` attribute.
+
+- **Honeypot — skipped deliberately.** Formspree's own filtering is the only
+  spam protection. Add `_gotcha` if junk starts arriving; until then it solves a
+  problem that may not exist.

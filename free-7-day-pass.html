@@ -102,7 +102,13 @@
       <div class="pass-form-card" id="claim">
         <h2>Claim your pass.</h2>
         <p>Four fields, about 30 seconds. Then book a time to pick up your key-tag.</p>
-        <form id="contactForm">
+        <!-- action/method are the no-JS fallback. When the script runs it calls
+             preventDefault() and posts via fetch, so this never fires. If the
+             script is blocked, fails to load, or throws anywhere above the
+             handler, the browser posts natively instead of the form silently
+             doing nothing. Worse experience — Formspree's own thank-you page
+             rather than the inline panel — but the lead is captured. -->
+        <form id="contactForm" action="https://formspree.io/f/xaeyjpoa" method="POST">
           <div class="form-row">
             <div>
               <label for="fname">First name</label>
