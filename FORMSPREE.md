@@ -168,3 +168,33 @@ Merge tags: `{{ fname }}` `{{ lname }}` `{{ email }}` `{{ phone }}`
 - **Honeypot — skipped deliberately.** Formspree's own filtering is the only
   spam protection. Add `_gotcha` if junk starts arriving; until then it solves a
   problem that may not exist.
+
+---
+
+## The single point of failure, and the decision about it
+
+**Every lead on this site passes through Formspree.** All three forms post to
+it, the Google Sheet and the Slack message are both downstream of it, and the
+no-JS fallback posts there too. Nothing is written to storage Compound
+controls.
+
+So if Formspree has an outage, silently drops a submission, or the account
+lapses over an expired card, **a lead disappears with no record anywhere** —
+and nobody would know, because the failure mode is an absence and nothing
+alerts on one.
+
+**This was reviewed in September 2026 and accepted.** At current volume the
+risk is small and rebuilding lead capture onto owned infrastructure would cost
+more than it saves. Two mitigations make it cheap to live with:
+
+**Watch for silence.** Once a week, compare the row count in the leads Sheet
+against the `Free_7_Day_Pass` event count in GA4 for the same period. They
+should track. A divergence is the only signal this failure produces.
+
+**Keep the Formspree notification address off `@compoundgym.nz`.** If alerts
+only go to an address on the domain, one Google Workspace problem takes the
+leads and the warning about the leads at the same time. A second recipient on
+a different domain costs nothing.
+
+**Keep the billing card current.** The most likely cause of a total outage here
+is not Formspree failing; it is a payment failing.
