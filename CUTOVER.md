@@ -1,6 +1,48 @@
 # Cutover — Squarespace to Vercel
 
-How to point `compoundgym.nz` at this repo without breaking email.
+> **DONE — 3 September 2026.** `compoundgym.nz` serves from Vercel. Email was
+> confirmed working after the switch. What follows is kept as the record of what
+> was changed and how to reverse it.
+
+**Verified live after cutover:** apex 200 from Vercel · `www` 308s to apex on
+every path including the root · all 9 pages, sitemap, robots and favicon 200 ·
+all 8 legacy Squarespace URLs resolve through their redirects · internal `.md`
+files and `build.js` return 404 · MX intact and a real test email delivered.
+
+**Two things needed fixing during the cutover, both now done:**
+
+1. The `www` TLS certificate initially covered only the apex, so
+   `https://www.compoundgym.nz` failed its handshake. Vercel issued it
+   automatically a few minutes later. No action was needed.
+2. The `www` → apex redirect used `source: "/:path*"`, which matches `/gym`
+   but **not** the bare `/`. The homepage served 200 on both hostnames until an
+   explicit `"/"` rule was added (`294a576`).
+
+## Still open: switch www to Vercel's newer CNAME target
+
+Vercel flags `www` as **DNS Change Recommended** and suggests:
+
+```
+CNAME  www  d5a76876e3674c73.vercel-dns-017.com
+```
+
+Not urgent. Vercel states plainly that the legacy `cname.vercel-dns.com` will
+continue to work, and `www` is fully functional today — cert issued, redirect
+firing. But the apex is already on Vercel's new range (`216.198.79.1`) and shows
+Valid, so `www` is the only record left on the old one.
+
+Changing it has **no downtime window**: both targets serve the site, so
+resolvers holding the old value keep working while the new one propagates.
+Verified — the recommended target resolves to `64.29.17.65` and
+`216.198.79.65`, the legacy one to `76.76.21.164` and `66.33.60.34`.
+
+In Squarespace the `www` CNAME sits inside the **Vercel preset**. If the preset
+will not let the value be edited, delete that CNAME row and add the new one
+under **Custom records** instead.
+
+---
+
+How `compoundgym.nz` was pointed at this repo without breaking email.
 
 Canonical hostname is **`compoundgym.nz`** (apex, no www). Decided Sept 2026.
 The repo is already consistent with it: 9 canonical tags, 9 `og:url`s,
