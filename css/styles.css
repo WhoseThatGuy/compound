@@ -53,6 +53,13 @@
   a{ color:inherit; text-decoration:none; }
   img{ max-width:100%; display:block; }
 
+  /* The hidden attribute only works through the browser's own
+     [hidden]{display:none}, which ANY author display rule outranks.
+     .interest-redirect sets display:grid, so its hidden attribute did nothing
+     and an empty panel with an empty gold button sat on the contact page
+     permanently. This makes the attribute mean what it says, everywhere. */
+  [hidden]{ display:none !important; }
+
   :focus-visible{
     outline:3px solid var(--olive);
     outline-offset:3px;
