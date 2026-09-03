@@ -146,8 +146,12 @@ document.addEventListener('click', (e) => {
 // ---- CONTACT / FREE-PASS FORMS -> FORMSPREE ------------------------
 // Free-pass claims go to the form with the onboarding auto-response;
 // general enquiries go to the plain contact form.
-const FORMSPREE_FREEPASS = "https://formspree.io/f/xqpzyrpq";
-const FORMSPREE_CONTACT  = "https://formspree.io/f/xppaozgn";
+// One endpoint per destination, because they want different treatment: the
+// free-pass form has the onboarding auto-responder attached, PT requests need
+// matching to a trainer, and general enquiries just need answering.
+const FORMSPREE_FREEPASS = "https://formspree.io/f/xqpzyrpq";  // /free-7-day-pass
+const FORMSPREE_CONTACT  = "https://formspree.io/f/xrpgkyqk";  // /contact
+const FORMSPREE_PT       = "https://formspree.io/f/xppaozgn";  // /personal-trainers
 
 // ---- CONTACT: ROUTE TO THE BETTER FLOW -------------------------------
 // Three enquiries already have a dedicated flow that does more than a message
@@ -312,8 +316,14 @@ if (form) {
       : interestSel.value === 'Personal Training' ? 'pt'
       : 'general';
 
+    // Route on `kind` rather than a two-way isFreePass test, so the PT page
+    // keeps its own inbox instead of riding along with general enquiries.
+    const endpoint = kind === 'pass' ? FORMSPREE_FREEPASS
+      : kind === 'pt' ? FORMSPREE_PT
+      : FORMSPREE_CONTACT;
+
     try {
-      const res = await fetch(isFreePass ? FORMSPREE_FREEPASS : FORMSPREE_CONTACT, {
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
