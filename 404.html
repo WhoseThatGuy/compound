@@ -10,6 +10,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/styles.css">
+<!-- Tracked like any other page, deliberately: straight after a migration the
+     404 log is the fastest way to spot an old URL that missed the redirect
+     table. -->
+<!-- ANALYTICS -->
+<!-- Google tag (gtag.js) — GA4 property "Compound Gym", stream 6663089156 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BTDQQ0DQVC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BTDQQ0DQVC');
+</script>
+
+<!-- Vercel Web Analytics and Speed Insights. Both are served first-party from
+     /_vercel/… so there is no third-party request and no cookie, which is why
+     they sit alongside GA4 rather than replacing it: GA4 carries the funnel
+     and the Calendly conversion events, these carry clean pageview counts and
+     real-world Core Web Vitals.
+
+     Web Analytics must also be switched on in the Vercel dashboard
+     (Project → Analytics → Enable). Until it is, /_vercel/insights/script.js
+     returns 404 and this line does nothing — harmless, but it does log a
+     console 404 on every page load, so enable it promptly. -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- /ANALYTICS -->
 </head>
 <body>
 
