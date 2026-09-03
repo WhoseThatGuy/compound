@@ -5,13 +5,13 @@ constants, chosen by `kind` in the submit handler).
 
 | Page | Form ID | Auto-responder |
 |---|---|---|
-| `/free-7-day-pass` | `xaeyjpoa` | **needs recreating** — see below |
+| `/free-7-day-pass` | `xaeyjpoa` | **live** — accurate, two small suggestions below |
 | `/contact` | `xrpgkyqk` | none — optional, see below |
-| `/personal-trainers` | `mvkorwrk` | **copy below, ready to paste** |
+| `/personal-trainers` | `mvkorwrk` | **not set up** — copy below, ready to paste |
 
-Formspree settings do not travel when a form ID changes. All three IDs were
-replaced in September 2026, so every auto-responder has to be set up again on
-the new form.
+Formspree settings do not travel when a form ID changes, and all three IDs were
+replaced in September 2026. The free-pass responder has been rebuilt on the new
+form; the PT one has not.
 
 ---
 
