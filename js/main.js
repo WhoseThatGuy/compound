@@ -165,7 +165,10 @@ const INTEREST_ROUTES = {
   'Personal Training': {
     href: '/personal-trainers#request',
     cta: 'Book A Free PT Session',
-    text: "Tell us what you're training for on the PT form and we'll match you with a trainer. Your first session is free."
+    // "Your first session is free" deliberately avoided: stating it as a rule
+    // is what had people reconciling it against the two sessions included with
+    // a membership instead of booking.
+    text: "Tell us what you're training for on the PT form and we'll match you with a trainer for a free session."
   },
   'Gym Tour': {
     href: 'https://calendly.com/compoundgymnz/compound-tour',
@@ -243,13 +246,13 @@ if (form) {
       panel.innerHTML = `
         <h3>Request received.</h3>
         <p>We'll go through it and come back to you with the trainer who fits what you're training for.</p>
-        <p class="success-note">Need us sooner? WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a>.</p>
+        <p class="success-note">Need to talk to us sooner? Message us on WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a></p>
         <p class="success-note">Your first 2 sessions are included with every membership.</p>`;
     } else {
       panel.innerHTML = `
         <h3>Got it.</h3>
         <p>Thanks — we'll be back to you shortly.</p>
-        <p class="success-note">Need us sooner? WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a>.</p>`;
+        <p class="success-note">Need to talk to us sooner? Message us on WhatsApp <a href="https://wa.me/64273411609">+64 27 341 1609</a></p>`;
     }
     // The old Squarespace site redirected claimants to a real
     // /free-7-day-pass-confirmation page, and the GA4 key event is defined on
