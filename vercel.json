@@ -3,6 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.compoundgym.nz"
+        }
+      ],
+      "destination": "https://compoundgym.nz/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
