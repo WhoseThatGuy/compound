@@ -30,8 +30,9 @@ Current routing, verified in the browser on each page:
 | `/contact` | `xrpgkyqk` |
 | `/personal-trainers` | `xppaozgn` |
 
-`xppaozgn` was the old shared contact/PT form. PT still points at it — confirm
-that is intended rather than left over.
+All three IDs changed in September 2026. **`FORMSPREE.md` now holds the
+routing table, the rules these emails must follow, and ready-to-paste copy for
+the PT auto-responder** — start there rather than writing from scratch.
 
 ### 0b. The old autoresponder fix — for reference
 
