@@ -440,6 +440,26 @@
   .pillar p{ color:var(--dusky); font-size:0.95rem; }
 
 
+  /* Full-bleed panorama band. Height is capped rather than left to the 2.7:1
+     ratio, which would be over 500px tall on a wide desktop and push the page
+     content too far down. */
+  .floor-band{
+    margin:0;
+    max-height:420px;
+    overflow:hidden;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .floor-band img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  @media (max-width: 700px){
+    .floor-band{ max-height:220px; }
+  }
+
   .facility-gallery{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
