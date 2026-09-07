@@ -30,7 +30,14 @@ email because it arrives unprompted.
 3. **Say what happens next, concretely.** That is the entire job of the email.
 4. **Plain New Zealand register.** No exclamation marks, no aphorisms, no
    "we're thrilled". Short sentences.
-5. **"free PT session"** — never "your first session is free". The site
+5. **The first visit is 15 minutes and the key-tag is set up at the start of
+   it, before any training.** Confirmed by Compound, September 2026. The
+   standard sentence is *"Allow 15 minutes for your welcome and key-tag
+   setup"* and it is used verbatim on the homepage, the free-pass page, the
+   success panel and the Calendly event. Do not restate the duration in other
+   words, and do not describe the tag as being issued afterwards — Calendly
+   used to say that, and the mismatch is what prompted this whole clean-up.
+6. **"free PT session"** — never "your first session is free". The site
    deliberately states the offer as an action rather than a rule, because
    members get two included sessions and the two phrasings were being read as
    the same thing.
@@ -108,6 +115,12 @@ Formspree** — see the draft below. Two things changed underneath it:
    appointment exists, and this email must not either. Someone who closes the
    tab before choosing a time has a claimed pass and no booking, and this email
    is the only thing that will tell them so.
+
+**The greeting is the one unproven line.** `{{ fname }}` is known to render
+nothing; `{{ name }}` is now being sent by the submit handler but has never been
+seen working. Paste the draft as-is, send yourself a test, and if the name is
+missing replace that first line with `Hey there,` — the known-good fallback.
+That test settles the open question below as a side effect.
 
 ### Replacement copy — subject
 
