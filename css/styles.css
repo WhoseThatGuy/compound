@@ -946,6 +946,9 @@
   .form-status{ font-size:0.88rem; color:var(--olive); min-height:1.2rem; }
 
   .form-success{
+    /* The panel is scrolled to after submit and the header is fixed, so without
+       this the heading lands underneath it. Same 6rem the form card uses. */
+    scroll-margin-top:6rem;
     background:var(--navy-2);
     border:1px solid var(--olive);
     border-radius:4px;
@@ -971,6 +974,13 @@
   .form-success p{ color:var(--dusky); font-size:0.95rem; }
   .form-success .success-note{ font-size:0.82rem; }
   .form-success .success-note a{ color:var(--olive); font-weight:600; }
+  /* Always on screen under the widget, not revealed on failure — the embed can
+     fail to paint without anything on our side knowing. A footnote while the
+     calendar is there; .is-only is added when the embed has been dropped and
+     this is the only remaining way to book. */
+  .form-success .calendly-fallback{ font-size:0.82rem; }
+  .form-success .calendly-fallback a{ color:var(--olive); font-weight:600; }
+  .form-success .calendly-fallback.is-only{ font-size:0.95rem; margin-top:0.4rem; }
 
   /* Calendly's inline widget needs an explicit height — it scrolls internally
      rather than growing. Taller on narrow screens because the picker stacks. */

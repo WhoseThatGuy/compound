@@ -98,15 +98,59 @@ receives from Compound.
 
 ## Free 7-Day Pass — form `xaeyjpoa` — LIVE
 
-Set up and sending. Subject: *"You're in — here's how to start your free 7 days
-at Compound"*. Body covers the key-tag step, the Calendly link, the walk-in
-alternative, the address, free parking, and "Bring your training gear. That's
-all you need."
+Set up and sending, but **the copy is now out of date and needs replacing in
+Formspree** — see the draft below. Two things changed underneath it:
 
-**Checked against the site and it is accurate**: Calendly URL matches
-`CALENDLY_URL` exactly, staffed hours match the footer, address matches, "about
-five minutes" matches the page. It also passes every rule above — no mention of
+1. **The duration.** Every surface now says *"Allow 15 minutes for your welcome
+   and key-tag setup"*, matching the Calendly slot. The live responder says
+   about five minutes, which was the old website figure.
+2. **Claimed is not booked.** The success panel no longer implies an
+   appointment exists, and this email must not either. Someone who closes the
+   tab before choosing a time has a claimed pass and no booking, and this email
+   is the only thing that will tell them so.
+
+### Replacement copy — subject
+
+```
+Your free pass at Compound is claimed
+```
+
+### Replacement copy — message
+
+```
+Hi {{ name }},
+
+Your Free 7-Day Pass is claimed.
+
+You have not booked a time yet. Choose one here and we'll have your
+key-tag ready:
+https://calendly.com/compoundgymnz/key-pickup
+
+Allow 15 minutes for your welcome and key-tag setup. Bring your training
+gear if you'd like to work out while you're here.
+
+Prefer to drop in? Come during staffed hours, Monday to Friday, 6am to
+7pm, and we'll help you get started.
+
+Find us at Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue,
+Dunedin. Parking is free, right outside.
+
+Once your key-tag is set up you can train any hour for seven days.
+
+See you on the floor,
+
+Compound
+compoundgym.nz
+```
+
+The Calendly URL matches `CALENDLY_URL` in `js/main.js` exactly, and the staffed
+hours and address match the footer. It passes every rule above — no mention of
 cards, billing or what happens after seven days.
+
+**The appointment details are Calendly's job, not this email's.** Date, time,
+rescheduling and cancellation links come from Calendly's own confirmation once
+a booking actually exists. Do not add them here; this email fires on the claim,
+when there is no booking to describe.
 
 **Reply-to is already set to `hello@compoundgym.nz` on all three forms**, so the
 `noreply@formspreemail.com` in the From line is cosmetic — replies do reach a

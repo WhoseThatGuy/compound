@@ -84,8 +84,11 @@ function loadCalendly() {
 
 // Prefill goes through Calendly's JS API, not query params, so nobody's name
 // and email end up in a URL. Ad blockers block Calendly often enough that the
-// plain link has to survive as a fallback — it's revealed if the widget can't
-// mount within 8s.
+// plain link under the widget is always on screen, not revealed on failure:
+// widget.js can load and resolve and the calendar still never paint, and from
+// here that case looks identical to success. If the widget cannot mount within
+// 8s the embed is dropped and the link is promoted, since it is then the only
+// way through.
 function mountCalendly(panel, url, data) {
   const host = panel.querySelector('.calendly-embed');
   const fallback = panel.querySelector('.calendly-fallback');
@@ -96,7 +99,7 @@ function mountCalendly(panel, url, data) {
     if (settled) return;
     settled = true;
     host.remove();
-    if (fallback) fallback.hidden = false;
+    if (fallback) fallback.classList.add('is-only');
   };
   const timer = setTimeout(fail, 8000);
 
@@ -126,10 +129,13 @@ function mountCalendly(panel, url, data) {
 // see it. Calendly posts its own lifecycle events to the parent frame instead —
 // event_scheduled is the one that means a booking actually happened, which is a
 // better signal than the click ever was.
+let calendlyBookedSent = false;
 window.addEventListener('message', (e) => {
   if (!/^https:\/\/([a-z0-9-]+\.)?calendly\.com$/.test(e.origin)) return;
   const name = e.data && e.data.event;
   if (name !== 'calendly.event_scheduled' || typeof gtag !== 'function') return;
+  if (calendlyBookedSent) return;
+  calendlyBookedSent = true;
   gtag('event', 'calendly_booked', { page_path: window.location.pathname });
 });
 
@@ -235,18 +241,22 @@ if (form) {
     panel.className = 'form-success';
     panel.setAttribute('role', 'status');
     if (kind === 'pass') {
+      // Says the pass is claimed and nothing more. Choosing a time is the next
+      // step and is optional — the lead is already saved by the time this
+      // renders, so this must not read as an appointment confirmation.
       panel.innerHTML = `
-        <h3>You're in.</h3>
-        <p>Your Free 7-Day Pass is claimed. Pick a time below to collect your key-tag — five minutes, and you're training.</p>
+        <h3>Your free pass is claimed.</h3>
+        <p>Choose a time below for your first visit. Allow 15 minutes for your welcome and key-tag setup. Bring your training gear if you'd like to work out while you're here.</p>
         <div class="calendly-embed"></div>
-        <p class="calendly-fallback" hidden><a class="btn btn-primary" href="${CALENDLY_URL}" target="_blank" rel="noopener">Book Your Key-Tag Pickup</a></p>
-        <p class="success-note">Or just walk in during staffed hours — Mon–Fri 6am–7pm, Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue.</p>`;
+        <p class="calendly-fallback">Calendar not loading? <a href="${CALENDLY_URL}" target="_blank" rel="noopener">Open the booking page</a>.</p>
+        <p class="success-note">Prefer to drop in? Come during staffed hours, Monday–Friday, 6am–7pm, and we'll help you get started.</p>
+        <p class="success-note">Find us at Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue.</p>`;
     } else if (kind === 'tour') {
       panel.innerHTML = `
         <h3>Good call.</h3>
         <p>Pick a time below and we'll show you around the floor — no workout required.</p>
         <div class="calendly-embed"></div>
-        <p class="calendly-fallback" hidden><a class="btn btn-primary" href="${CALENDLY_TOUR_URL}" target="_blank" rel="noopener">Book Your Gym Tour</a></p>
+        <p class="calendly-fallback">Calendar not loading? <a href="${CALENDLY_TOUR_URL}" target="_blank" rel="noopener">Open the booking page</a>.</p>
         <p class="success-note">Or just drop in during staffed hours — Mon–Fri 6am–7pm, Gate J, Level 2A, Forsyth Barr Stadium.</p>`;
     } else if (kind === 'pt') {
       panel.innerHTML = `
@@ -307,8 +317,22 @@ if (form) {
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  // A second click while the first request is in flight would post the lead
+  // twice: two Formspree submissions, two rows in the Sheet, two auto-responder
+  // emails to the same person. The button is disabled for the duration and the
+  // handler latches, because a slow network is exactly when people click again.
+  let sending = false;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const release = () => {
+    sending = false;
+    if (submitBtn) submitBtn.disabled = false;
+  };
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (sending) return;
+    sending = true;
+    if (submitBtn) submitBtn.disabled = true;
     status.textContent = "Sending...";
 
     const data = Object.fromEntries(new FormData(form).entries());
@@ -351,10 +375,12 @@ if (form) {
       if (res.ok) {
         showSuccess(kind, data);
       } else {
-        status.innerHTML = "That didn't send. WhatsApp us on <a href=\"https://wa.me/64273411609\">+64 27 341 1609</a> and we'll sort it.";
+        release();
+        status.innerHTML = "That didn't send. Try again, or WhatsApp us on <a href=\"https://wa.me/64273411609\">+64 27 341 1609</a> and we'll sort it.";
       }
     } catch (err) {
-      status.innerHTML = "That didn't send. WhatsApp us on <a href=\"https://wa.me/64273411609\">+64 27 341 1609</a> and we'll sort it.";
+      release();
+      status.innerHTML = "That didn't send. Try again, or WhatsApp us on <a href=\"https://wa.me/64273411609\">+64 27 341 1609</a> and we'll sort it.";
     }
   });
 }
