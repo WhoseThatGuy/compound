@@ -1129,7 +1129,23 @@
     }
     .action-strip{ grid-template-columns:1fr; }
     .pass-hero-grid{ grid-template-columns:1fr; gap:2rem; }
-    .pass-hero-grid > *, .pass-hero-grid > .pass-checklist{ grid-column:auto; grid-row:auto; }
+    /* Every child listed by its own class, not just `> *`: the desktop
+       placements are two-class selectors, so `.pass-hero-grid > *` loses to
+       them on specificity. .pass-hero-photo was missing here and kept
+       grid-row:3 on mobile, which pinned it above the checklist regardless of
+       order. It went unnoticed while source order happened to agree. */
+    .pass-hero-grid > *,
+    .pass-hero-grid > .pass-checklist,
+    .pass-hero-grid > .pass-hero-photo{ grid-column:auto; grid-row:auto; }
+    /* Stacked, the checklist and photo put roughly a screen and a half between
+       the headline and the form. The heading and lede still come first — you
+       need to know what you are claiming — but the ask now follows them
+       directly, and the supporting detail sits underneath for anyone who wants
+       it. Source order stays value-then-ask for the no-CSS case. */
+    .pass-hero-grid > .pass-hero-copy{ order:1; }
+    .pass-hero-grid > .pass-form-card{ order:2; }
+    .pass-hero-grid > .pass-checklist{ order:3; }
+    .pass-hero-grid > .pass-hero-photo{ order:4; }
     .process-steps{ flex-direction:column; }
     .process-arrow{ display:none; }
     .pricing-grid, .trainers-grid{ grid-template-columns:1fr; }

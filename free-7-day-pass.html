@@ -85,8 +85,9 @@
         <h2>Train at Compound<br>free for 7 days.</h2>
         <p class="pass-lede">Full 24/7 access to the gym, nine lifting platforms and 46m of turf, with sauna sessions included. Pick up your key-tag, then train whenever you want for seven days.</p>
       </div>
-      <!-- Checklist sits before the form in source order so the mobile stack
-           reads value-then-ask; desktop placement is set explicitly in CSS. -->
+      <!-- Source order is value-then-ask, which is what a no-CSS render gets.
+           Both laid-out cases override it: desktop puts the form in column 2,
+           and the mobile stack reorders it above the checklist and photo. -->
       <ul class="pass-checklist">
         <li>Nine lifting platforms, competition bars and chalk</li>
         <li>46m indoor turf, sleds and ergs</li>
