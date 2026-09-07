@@ -329,6 +329,18 @@
     color:var(--dusky);
   }
   .hero-rating strong{ color:var(--beige); font-weight:700; }
+  .hero-rating-link{
+    display:inline-flex;
+    align-items:center;
+    gap:0.45rem;
+    text-decoration:none;
+    color:inherit;
+  }
+  .hero-rating-text{
+    text-decoration:underline;
+    text-decoration-color:var(--olive);
+    text-underline-offset:3px;
+  }
   .hero-rating-stars{ display:flex; gap:2px; flex-shrink:0; }
   .hero-rating-stars svg{ width:13px; height:13px; fill:var(--olive); }
 
