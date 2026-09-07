@@ -180,6 +180,11 @@
       "permanent": true
     },
     {
+      "source": "/athleteapplication",
+      "destination": "/athletes",
+      "permanent": true
+    },
+    {
       "source": "/openings",
       "destination": "/",
       "permanent": true
