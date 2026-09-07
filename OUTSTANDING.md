@@ -99,16 +99,23 @@ environment, or people training seriously.
 Ties into item 3: the placed quotes were researched rather than copied from the
 live listing, and still need verifying against their originals before launch.
 
-### 2. Photos for Billie Allan and Connor Bond
-`index.html` (athlete strip)
+### 2. Photos for Billie Allan and Connor Bond — PARTLY RESOLVED
 
-Both are on the homepage strip as **initials on the gradient** — the fallback
-this strip used before the other five were shot. Neither is on `athletes.html`
-at all, because those cards use `.trainer-photo` which expects a real image and
-would render a broken one.
+Both now have avatars on the homepage strip, so no initials remain there.
 
-When photos arrive it's a one-line swap per athlete on the homepage, plus adding
-them to `athletes.html`.
+**Connor is done.** A podium portrait cropped two ways: `avatar-connor-bond.webp`
+(96×96) and `trainer-connor-bond.webp` (440×550), and he now has a card on
+`athletes.html` — six cards, not five.
+
+**Billie is a stopgap.** The only two photos supplied are 387×516 and 390×512 —
+too small for the 440-wide `.trainer-photo` card, so she is still not on
+`athletes.html`. Her avatar is cropped from a competition shot taken from
+behind, so it shows no face, and a 4:5 crop of that same frame centres on her
+backside, which is why there is no card.
+
+**What would fix it:** one front-on photo of Billie, at full resolution —
+competing or training, either works. Then it is a 96×96 and a 440×550 crop and
+she matches everyone else.
 
 **Also:** the strip wraps 4+3 at desktop with seven. One more athlete gives even
 rows.

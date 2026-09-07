@@ -154,6 +154,18 @@
     margin-bottom:0.7rem;
   }
   .star-row svg{ width:20px; height:20px; fill:var(--olive); }
+  /* Inline variant: the stars sit inside the "4.9 ★★★★★ from 230+ reviews"
+     heading rather than on their own row, so they size in em and track the
+     heading's clamp instead of staying at a fixed 20px. */
+  .star-row-inline{
+    display:inline-flex;
+    gap:0.12em;
+    margin:0 0.12em;
+    vertical-align:middle;
+    position:relative;
+    top:-0.06em;
+  }
+  .star-row-inline svg{ width:0.6em; height:0.6em; }
 
   .review-grid{
     display:grid;
