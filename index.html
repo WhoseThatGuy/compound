@@ -20,26 +20,6 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
 <link rel="preload" as="image" href="images/hero-bg.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/styles.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ExerciseGym",
-  "name": "Compound Gym",
-  "image": "https://compoundgym.nz/images/hero-bg.webp",
-  "url": "https://compoundgym.nz/",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue",
-    "addressLocality": "Dunedin",
-    "addressCountry": "NZ"
-  },
-  "sameAs": [
-    "https://www.facebook.com/CompoundGymNz",
-    "https://www.instagram.com/compoundgymnz/",
-    "https://www.youtube.com/@compoundgymnz"
-  ]
-}
-</script>
 <!-- ANALYTICS -->
 <!-- Google tag (gtag.js) — GA4 property "Compound Gym", stream 6663089156 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTDQQ0DQVC"></script>
@@ -97,6 +77,8 @@
   </nav>
 </header>
 <!-- /NAV -->
+
+<main id="main">
 
 <section class="hero">
   <div class="hero-photo-bg"></div>
@@ -391,6 +373,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap footer-grid">
@@ -459,6 +443,44 @@
     </nav>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "@id": "https://compoundgym.nz/#gym",
+  "name": "Compound Gym",
+  "description": "Compound is Dunedin's high-performance gym, inside Forsyth Barr Stadium. Nine lifting platforms, 46m of indoor turf, infrared saunas and an on-site sports physiotherapy clinic. Members have 24/7 key-tag access; staff are on site Monday to Friday, 6am to 7pm.",
+  "url": "https://compoundgym.nz/",
+  "image": "https://compoundgym.nz/images/hero-bg.webp",
+  "logo": "https://compoundgym.nz/images/logo-lockup.svg",
+  "telephone": "+64 27 341 1609",
+  "email": "hello@compoundgym.nz",
+  "priceRange": "$16.95-$27.95 per week",
+  "currenciesAccepted": "NZD",
+  "foundingDate": "2023",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue",
+    "addressLocality": "Dunedin",
+    "addressRegion": "Otago",
+    "addressCountry": "NZ"
+  },
+  "areaServed": { "@type": "City", "name": "Dunedin" },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Compound+Gym+Dunedin",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "sameAs": [
+    "https://www.facebook.com/CompoundGymNz",
+    "https://www.instagram.com/compoundgymnz/",
+    "https://www.youtube.com/@compoundgymnz"
+  ]
+}
+</script>
 <!-- /FOOTER -->
 
 <script defer src="js/main.js"></script>

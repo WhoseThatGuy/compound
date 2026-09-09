@@ -77,12 +77,14 @@
 </header>
 <!-- /NAV -->
 
+<main id="main">
+
 <section class="subpage-hero" id="free-pass">
   <div class="wrap">
     <div class="pass-hero-grid">
       <div class="pass-hero-copy">
         <p class="eyebrow">Free 7-Day Pass · Dunedin</p>
-        <h2>Train at Compound<br>free for 7 days.</h2>
+        <h1>Train at Compound<br>free for 7 days.</h1>
         <p class="pass-lede">Full 24/7 access to the gym, nine lifting platforms and 46m of turf, with sauna sessions included. Pick up your key-tag, then train whenever you want for seven days.</p>
       </div>
       <!-- Source order is value-then-ask, which is what a no-CSS render gets.
@@ -231,6 +233,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap footer-grid">
@@ -299,6 +303,44 @@
     </nav>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "@id": "https://compoundgym.nz/#gym",
+  "name": "Compound Gym",
+  "description": "Compound is Dunedin's high-performance gym, inside Forsyth Barr Stadium. Nine lifting platforms, 46m of indoor turf, infrared saunas and an on-site sports physiotherapy clinic. Members have 24/7 key-tag access; staff are on site Monday to Friday, 6am to 7pm.",
+  "url": "https://compoundgym.nz/",
+  "image": "https://compoundgym.nz/images/hero-bg.webp",
+  "logo": "https://compoundgym.nz/images/logo-lockup.svg",
+  "telephone": "+64 27 341 1609",
+  "email": "hello@compoundgym.nz",
+  "priceRange": "$16.95-$27.95 per week",
+  "currenciesAccepted": "NZD",
+  "foundingDate": "2023",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gate J, Level 2A, Forsyth Barr Stadium, 130 Anzac Avenue",
+    "addressLocality": "Dunedin",
+    "addressRegion": "Otago",
+    "addressCountry": "NZ"
+  },
+  "areaServed": { "@type": "City", "name": "Dunedin" },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Compound+Gym+Dunedin",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "sameAs": [
+    "https://www.facebook.com/CompoundGymNz",
+    "https://www.instagram.com/compoundgymnz/",
+    "https://www.youtube.com/@compoundgymnz"
+  ]
+}
+</script>
 <!-- /FOOTER -->
 
 <script defer src="js/main.js"></script>

@@ -404,8 +404,12 @@
   /* Section heading scale lives on the element, not on .section-head. Half the
      h2s on the site aren't wrapped in one, and they were falling back to the
      browser default — 24px against 32px for their neighbours on the same page.
-     Context-specific sizes (.pass-form-card h2, .plate-tier) still override. */
-  h2{
+     Context-specific sizes (.pass-form-card h2, .plate-tier) still override.
+
+     h1 shares the rule because every subpage's lead heading is now an h1 and
+     there is no bare h1 rule — without this they would drop to the browser
+     default. .hero h1 is more specific and still wins on the homepage. */
+  h1, h2{
     font-size:clamp(2rem, 4.4vw, 3.1rem);
     margin-top:0.8rem;
   }
@@ -755,7 +759,7 @@
     align-items:start;
   }
   .pass-hero-copy{ grid-column:1; grid-row:1; }
-  .pass-hero-copy h2{ font-size:clamp(2rem, 4.4vw, 3.1rem); margin-top:0.8rem; }
+  .pass-hero-copy h1, .pass-hero-copy h2{ font-size:clamp(2rem, 4.4vw, 3.1rem); margin-top:0.8rem; }
   .pass-hero-copy .pass-lede{ color:var(--dusky); margin-top:1rem; font-size:1.02rem; max-width:46ch; }
   .pass-hero-grid > .pass-checklist{ grid-column:1; grid-row:2; margin-top:1rem; }
   .pass-hero-grid > .pass-hero-photo{ grid-column:1; grid-row:3; margin-top:1.6rem; }
