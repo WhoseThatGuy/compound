@@ -889,7 +889,7 @@
   }
   .trainer-photo:not(:has(img))::after{ display:none; }
   .trainer-body{ padding:1.4rem 1.5rem 1.7rem; }
-  .trainer-body h3{ font-family:'Montserrat'; text-transform:none; font-weight:700; font-size:1.15rem; margin-bottom:0.3rem; }
+  .trainer-body h2, .trainer-body h3{ font-family:'Montserrat'; text-transform:none; font-weight:700; font-size:1.15rem; margin-bottom:0.3rem; }
   .trainer-role{ color:var(--olive); font-size:0.82rem; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:0.6rem; }
   .trainer-credential{ color:var(--dusky); font-size:0.78rem; margin-bottom:0.6rem; }
   /* Replaces the "I help people…" quote. A reader picking a trainer needs to
@@ -918,7 +918,7 @@
   .contact-info{ display:grid; gap:1.6rem; align-content:start; }
   .info-row{ display:flex; gap:1rem; }
   .info-mark{ color:var(--olive); font-family:'Montserrat', sans-serif; font-weight:700; }
-  .info-row h3{ font-family:'Montserrat'; text-transform:none; font-weight:700; font-size:1rem; margin-bottom:0.25rem; }
+  .info-row h2, .info-row h3{ font-family:'Montserrat'; text-transform:none; font-weight:700; font-size:1rem; margin-bottom:0.25rem; }
   .info-row p, .info-row a{ color:var(--dusky); font-size:0.94rem; }
   .info-row a:hover{ color:var(--beige); }
 

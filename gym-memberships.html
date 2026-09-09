@@ -19,6 +19,287 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="css/styles.css">
+<!-- Membership pricing, machine-readable. Every figure below is the
+     visible price on this page — the weekly Annual and Flexi rates and the
+     upfront annual prices. Keep them in step: if a price changes on the page
+     it has to change here in the same commit, or the site publishes two
+     different answers to "what does it cost". Prices are the plans as sold;
+     seller points at the ExerciseGym entity in the footer. -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Free 7-Day Pass",
+    "description": "Train at Compound free for 7 days. Full gym access any time. Sauna included. For people living in Dunedin.",
+    "category": "Gym membership",
+    "brand": {
+      "@type": "Brand",
+      "name": "Compound Gym"
+    },
+    "url": "https://compoundgym.nz/gym-memberships",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free 7-Day Pass",
+        "price": "0",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://compoundgym.nz/free-7-day-pass",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "0",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "WEE"
+          }
+        },
+        "eligibleDuration": {
+          "@type": "QuantitativeValue",
+          "value": 7,
+          "unitCode": "DAY"
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Off Peak Membership",
+    "description": "Train between 9am–3pm or 9pm–3am. A lower weekly rate if those hours work for you.",
+    "category": "Gym membership",
+    "brand": {
+      "@type": "Brand",
+      "name": "Compound Gym"
+    },
+    "url": "https://compoundgym.nz/gym-memberships",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Off Peak — Annual",
+        "price": "16.95",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://worldfitness.gymmasteronline.com/portal/membership/a46d92255dea8f98e221bc45929e431c",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "16.95",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "WEE"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Off Peak — Flexi",
+        "price": "19.95",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://worldfitness.gymmasteronline.com/portal/membership/a46d92255dea8f98e221bc45929e431c",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "19.95",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "WEE"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Off Peak — Annual, paid upfront",
+        "price": "793",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://worldfitness.gymmasteronline.com/portal/membership/a46d92255dea8f98e221bc45929e431c",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "793",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "ANN"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Standard Membership",
+    "description": "Full 24/7 access. Train whenever you want.",
+    "category": "Gym membership",
+    "brand": {
+      "@type": "Brand",
+      "name": "Compound Gym"
+    },
+    "url": "https://compoundgym.nz/gym-memberships",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Standard — Annual",
+        "price": "22.95",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://worldfitness.gymmasteronline.com/portal/membership/a8b542b835b22e6a5888858ef15979fe",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "22.95",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "WEE"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Standard — Flexi",
+        "price": "27.95",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://worldfitness.gymmasteronline.com/portal/membership/a8b542b835b22e6a5888858ef15979fe",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "27.95",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "WEE"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Standard — Annual, paid upfront",
+        "price": "1074",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://worldfitness.gymmasteronline.com/portal/membership/a8b542b835b22e6a5888858ef15979fe",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1074",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "ANN"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Youth & First Responder Membership",
+    "description": "Full 24/7 access for eligible younger members and first responders.",
+    "category": "Gym membership",
+    "brand": {
+      "@type": "Brand",
+      "name": "Compound Gym"
+    },
+    "url": "https://compoundgym.nz/gym-memberships",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Youth & First Responder — Annual",
+        "price": "20.95",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://compoundgym.nz/gym-memberships",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "20.95",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "WEE"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Youth & First Responder — Flexi",
+        "price": "24.95",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://compoundgym.nz/gym-memberships",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "24.95",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "WEE"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Youth & First Responder — Annual, paid upfront",
+        "price": "980",
+        "priceCurrency": "NZD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://compoundgym.nz/gym-memberships",
+        "seller": {
+          "@id": "https://compoundgym.nz/#gym"
+        },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "980",
+          "priceCurrency": "NZD",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "ANN"
+          }
+        }
+      }
+    ]
+  }
+]
+</script>
 <!-- ANALYTICS -->
 <!-- Google tag (gtag.js) — GA4 property "Compound Gym", stream 6663089156 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTDQQ0DQVC"></script>
