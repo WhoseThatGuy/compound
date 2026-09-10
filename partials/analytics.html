@@ -1,3 +1,30 @@
+<!-- Meta Pixel — Compound Gym dataset 1726258451196338.
+     Lost in the Squarespace cutover on 3 September 2026: the pixel lived in
+     Squarespace's code-injection panel, not in any file, so it did not travel
+     with the content. Meta reporting has been at zero since, not merely down.
+
+     This is the only install on the site — one init, one PageView, in the head
+     of all eleven pages via build.js. The site is multi-page, so every
+     navigation is a real page load and fires its own PageView; there is no
+     SPA router to hook.
+
+     No <noscript> tracking image: the spec only allows link/style/meta inside
+     a <noscript> in <head>, so an <img> there is a parse error the browser
+     silently relocates. It would buy PageViews from JS-disabled visitors, who
+     cannot reach the claim panel anyway. -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1726258451196338');
+fbq('track', 'PageView');
+</script>
+
 <!-- Google tag (gtag.js) — GA4 property "Compound Gym", stream 6663089156 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTDQQ0DQVC"></script>
 <script>

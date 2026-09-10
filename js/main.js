@@ -130,6 +130,10 @@ function mountCalendly(panel, url, data) {
 // event_scheduled is the one that means a booking actually happened, which is a
 // better signal than the click ever was.
 let calendlyBookedSent = false;
+// One claim is one Lead. The submit handler already refuses re-entry, but the
+// latch makes double-counting impossible even if showSuccess were ever called
+// twice for one visit.
+let passLeadSent = false;
 window.addEventListener('message', (e) => {
   if (!/^https:\/\/([a-z0-9-]+\.)?calendly\.com$/.test(e.origin)) return;
   const name = e.data && e.data.event;
@@ -280,6 +284,27 @@ if (form) {
         page_title: 'Free 7-Day Pass Confirmation',
         page_location: window.location.origin + '/free-7-day-pass-confirmation',
         page_path: '/free-7-day-pass-confirmation'
+      });
+    }
+
+    // Meta's conversion was a URL rule on /free-7-day-pass-confirmation, a page
+    // the old Squarespace site navigated to. This site never leaves the form
+    // page — the panel replaces it in place — so that URL 404s and the rule can
+    // never match again. A real event replaces it.
+    //
+    // Lead rather than a custom event: it is a standard event, so Meta ad
+    // delivery can optimise for it. content_name narrows a custom conversion to
+    // the pass specifically, leaving room for the contact and PT forms to send
+    // their own Leads later without polluting this one.
+    //
+    // typeof guard because ad blockers remove fbq, and an unguarded call here
+    // would throw before the panel is inserted — costing the visitor the
+    // booking step to save an analytics event.
+    if (kind === 'pass' && !passLeadSent && typeof fbq === 'function') {
+      passLeadSent = true;
+      fbq('track', 'Lead', {
+        content_name: 'Free 7-Day Pass',
+        content_category: 'Membership trial'
       });
     }
 
