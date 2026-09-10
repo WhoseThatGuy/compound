@@ -1,4 +1,4 @@
-# The ten HTML pages are both source and build output: build.js rewrites the
+# The eleven HTML pages are both source and build output: build.js rewrites the
 # nav, footer and analytics blocks in place and the result is committed. That
 # creates two silent failure modes this job exists to catch.
 #
