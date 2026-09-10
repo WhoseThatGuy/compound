@@ -997,7 +997,7 @@
        auto so its negative margins can actually widen the box — a percentage
        width resolves against the parent's content box and would ignore them. */
     width:100%;
-    height:700px;
+    height:600px;
     margin:1.2rem 0 0.4rem;
     border-radius:6px;
     overflow:hidden;
@@ -1010,7 +1010,7 @@
        auto box at 300px, which the negative margins then shift off-centre
        instead of widening. The calc cancels the margins exactly, so it stays
        symmetrical. */
-    .calendly-embed{ width:calc(100% + 1.8rem); height:940px; margin-inline:-0.9rem; }
+    .calendly-embed{ width:calc(100% + 1.8rem); height:820px; margin-inline:-0.9rem; }
   }
 
   /* ---------- FOOTER ---------- */

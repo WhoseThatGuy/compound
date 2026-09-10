@@ -17,8 +17,9 @@ if (navToggle && navLinks) {
 }
 
 // ---- CALENDLY -----------------------------------------------------
-const CALENDLY_URL = "https://calendly.com/compoundgymnz/key-pickup";
-const CALENDLY_TOUR_URL = "https://calendly.com/compoundgymnz/compound-tour";
+const CALENDLY_PARAMS = "hide_event_type_details=1&hide_gdpr_banner=1";
+const CALENDLY_URL = "https://calendly.com/compoundgymnz/key-pickup?" + CALENDLY_PARAMS;
+const CALENDLY_TOUR_URL = "https://calendly.com/compoundgymnz/compound-tour?" + CALENDLY_PARAMS;
 
 // ---- ANNUAL / FLEXI PRICING TOGGLE -----------------------------------
 // Flips one attribute; CSS does the swapping. Both prices are already in the
